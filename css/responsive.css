@@ -1,0 +1,483 @@
+/* ============================================================
+   NZ Agency — responsive.css
+   Media queries — Mobile First
+   ============================================================ */
+
+/* ===== BREAKPOINTS
+   xs  : < 480px
+   sm  : 480px
+   md  : 768px
+   lg  : 1024px
+   xl  : 1280px
+   2xl : 1440px
+   ============================================================ */
+
+/* ===== LARGE SCREENS (1280px+) ===== */
+@media (min-width: 1280px) {
+  :root {
+    --section-pad: 128px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* ===== TABLET LARGE (max 1024px) ===== */
+@media (max-width: 1024px) {
+  /* Navbar */
+  .nav-links,
+  .btn-nav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Process */
+  .process-line { display: none; }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Team */
+  .team-grid {
+    max-width: 600px;
+  }
+
+  /* Contact */
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    position: static;
+    order: -1;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== TABLET (max 768px) ===== */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 72px;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    letter-spacing: -0.025em;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-ctas .btn-large {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+    margin: 0;
+  }
+
+  /* Services */
+  .card-inner {
+    padding: 28px 24px;
+  }
+
+  /* Process */
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* Team */
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  /* FAQ */
+  .faq-btn {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Contact */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-wrap {
+    padding: 28px 20px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand { grid-column: auto; }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-legal {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ===== MOBILE (max 480px) ===== */
+@media (max-width: 480px) {
+  :root {
+    --section-pad: 56px;
+    --container-px: 16px;
+  }
+
+  /* Navbar */
+  .nav-container {
+    padding: 14px var(--container-px);
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 72px;
+  }
+
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    min-height: 4.2em;
+  }
+
+  .hero-stats {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  /* Section typography */
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+  }
+
+  /* Services */
+  .services-grid {
+    max-width: 100%;
+  }
+
+  .service-card {
+    border-radius: 12px;
+  }
+
+  .card-inner {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  /* Réalisations */
+  .coming-card {
+    padding: 40px 24px;
+  }
+
+  /* Process */
+  .process-steps {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .step-bubble {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Team */
+  .team-card-inner {
+    padding: 32px 20px;
+  }
+
+  .member-photo-wrap {
+    width: 140px;
+    height: 140px;
+  }
+
+  .member-photo,
+  .photo-fallback {
+    width: 140px;
+    height: 140px;
+  }
+
+  .photo-fallback {
+    font-size: 3rem;
+  }
+
+  /* FAQ */
+  .faq-btn {
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  .faq-body p {
+    padding: 0 16px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  .contact-form-wrap {
+    padding: 20px 16px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 16px; /* Prevent iOS zoom */
+    padding: 12px 14px;
+  }
+
+  .btn-submit {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
+
+  .info-card {
+    padding: 24px 20px;
+  }
+}
+
+/* ===== VERY SMALL (max 360px) ===== */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-ctas .btn-large {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== PREFER REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-badge,
+  .hero-title,
+  .hero-subtitle,
+  .hero-ctas,
+  .hero-stats {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card-glow-border {
+    animation: none !important;
+    background: rgba(0, 245, 255, 0.2) !important;
+  }
+
+  .typewriter-cursor {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (forced-colors: active) {
+  .btn-primary {
+    border: 2px solid ButtonText;
+  }
+
+  .card-glow-border {
+    border: 1px solid ButtonText;
+    background: transparent;
+  }
+
+  .text-gradient,
+  .stat-number {
+    -webkit-text-fill-color: unset;
+    background: none;
+    color: ButtonText;
+  }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .navbar,
+  #particlesCanvas,
+  .hero-grid,
+  .footer-social,
+  .btn-primary,
+  .btn-outline,
+  .contact-form-wrap {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .section {
+    padding: 32px 0;
+    break-inside: avoid;
+  }
+
+  a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    color: #555;
+  }
+}
+
+/* ===== TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* Agrandir les zones tactiles */
+  .nav-link-mobile {
+    padding: 14px 16px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .faq-btn {
+    min-height: 56px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    min-height: 48px;
+  }
+
+  /* Supprimer hover effects coûteux */
+  .service-card:hover,
+  .team-card:hover {
+    transform: none;
+  }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vw;
+    padding-top: 60px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .hero-badge {
+    margin-bottom: 16px;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 32px;
+    margin: 0 8px;
+  }
+}
+
+/* ===== WIDE SCREENS (1440px+) ===== */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1320px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .services-grid {
+    gap: 32px;
+  }
+
+  .team-grid {
+    max-width: 880px;
+    gap: 40px;
+  }
+}

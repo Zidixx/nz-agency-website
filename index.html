@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NZ Agency — Agence web premium. Landing pages, sites de réservation, e-commerce clé en main. Optimisés, sécurisés, qui convertissent. Devis gratuit sous 24h.">
+  <meta name="keywords" content="agence web, landing page, site internet, e-commerce, réservation en ligne, développement web, SEO, France, NZ Agency">
+  <meta name="author" content="NZ Agency">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0c0c0c">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NZ Agency — Agence Web Premium">
+  <meta property="og:description" content="Des sites web qui convertissent, impressionnent et se vendent. Landing pages, réservations, e-commerce — clé en main.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nzagency.fr">
+  <meta property="og:image" content="https://nzagency.fr/assets/og-image.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="NZ Agency">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NZ Agency — Agence Web Premium">
+  <meta name="twitter:description" content="Des sites web qui convertissent, impressionnent et se vendent.">
+  <meta name="twitter:image" content="https://nzagency.fr/assets/og-image.jpg">
+
+  <title>NZ Agency — Agence Web Premium | Sites Internet Clé en Main</title>
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2300f5ff'/><stop offset='50%25' stop-color='%237c3aed'/><stop offset='100%25' stop-color='%23f72585'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='68' font-family='Arial Black,sans-serif' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NZ</text></svg>">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NZ Agency",
+    "description": "Agence web premium spécialisée dans la création de sites internet clé en main : landing pages, sites de réservation, e-commerce Stripe.",
+    "url": "https://nzagency.fr",
+    "email": "nzdigitagency@gmail.com",
+    "founders": [
+      { "@type": "Person", "name": "Nathan Loubet", "jobTitle": "Co-fondateur & Développeur Full Stack" },
+      { "@type": "Person", "name": "Enzo Faure", "jobTitle": "Co-fondateur & Designer UI/UX" }
+    ],
+    "address": { "@type": "PostalAddress", "addressCountry": "FR" },
+    "serviceType": ["Web Development", "UI/UX Design", "E-commerce", "SEO"],
+    "priceRange": "€€",
+    "openingHours": "Mo-Fr 09:00-18:00"
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Navigation principale">
+      <a href="#hero" class="nav-logo" aria-label="NZ Agency — Retour à l'accueil">
+        <svg class="nav-logo-svg" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="28" style="font-family:'Syne',sans-serif;font-size:24px;letter-spacing:-0.03em">
+            <tspan style="font-weight:800;fill:#ffffff">NZ</tspan><tspan style="font-weight:600;fill:#ffffff">Agency</tspan>
+          </text>
+        </svg>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" class="nav-link">Accueil</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#equipe" class="nav-link">Notre Équipe</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact" class="btn-primary btn-nav" aria-label="Démarrer un projet avec NZ Agency">
+          Démarrer un projet
+        </a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="navMobile">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#hero" class="nav-link-mobile">Accueil</a></li>
+        <li><a href="#services" class="nav-link-mobile">Services</a></li>
+        <li><a href="#equipe" class="nav-link-mobile">Notre Équipe</a></li>
+        <li><a href="#contact" class="nav-link-mobile">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-primary btn-mobile-cta">Démarrer un projet</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <canvas id="particlesCanvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge" aria-label="Agence Web Premium">
+          <span class="badge-star" aria-hidden="true">✦</span>
+          <span>Agence Web Premium</span>
+          <span class="badge-star" aria-hidden="true">✦</span>
+        </div>
+
+        <h1 class="hero-title" id="heroTitle">
+          Des sites qui parlent,<br>pour vous.
+        </h1>
+
+        <p class="hero-subtitle" aria-live="polite">
+          <span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true">|</span>
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#services" class="btn-primary btn-large">
+            <span>Voir nos services</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-outline btn-large">
+            <span>Nous contacter</span>
+          </a>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="Chiffres clés NZ Agency">
+          <div class="stat-item" role="listitem">
+            <span class="stat-number" data-target="50" data-suffix="+" aria-label="50 projets livrés">0+</span>
+            <span class="stat-label">Projets livrés</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number" data-target="100" data-suffix="%" aria-label="100% clients satisfaits">0%</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number stat-number--plain" aria-label="Site en ligne en moins de 7 jours">&lt; 7 <span style="font-size:0.55em;font-weight:600;vertical-align:middle;">jours</span></span>
+            <span class="stat-label">Site en ligne</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services" aria-labelledby="servicesTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Ce qu'on crée</span>
+          <h2 class="section-title" id="servicesTitle">Ce qu'on crée pour vous</h2>
+          <p class="section-subtitle">Des solutions digitales complètes, de la conception au déploiement</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal reveal-delay-1" aria-label="Service : Landing Pages et Sites Vitrine">
+            <div class="card-glow-border" aria-hidden="true"></div>
+            <div class="card-inner">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Landing Pages &amp; Sites Vitrine</h3>
+              <p class="card-desc">Des landing pages ultra-performantes conçues pour convertir vos visiteurs en clients. Design premium, SEO optimisé, chargement ultra-rapide.</p>
+              <div class="card-tag">
+                <span class="tag-dot" aria-hidden="true"></span>
+                À partir de 790€
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2" aria-label="Service : Sites de Réservation">
+            <div class="card-glow-border" aria-hidden="true"></div>
+            <div class="card-inner">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <path d="M16 2v4M8 2v4M3 10h18"/>
+                  <circle cx="8" cy="15" r="1.2" fill="currentColor"/>
+                  <circle cx="12" cy="15" r="1.2" fill="currentColor"/>
+                  <circle cx="16" cy="15" r="1.2" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="card-title">Sites de Réservation</h3>
+              <p class="card-desc">Système de réservation en ligne intégré pour restaurants, salons, cabinets, coachs. Synchronisation calendrier, rappels automatiques, interface intuitive.</p>
+              <div class="card-tag">
+                <span class="tag-dot" aria-hidden="true"></span>
+                À partir de 1 190€
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card reveal reveal-delay-3" aria-label="Service : E-commerce et Paiement Stripe">
+            <div class="card-glow-border" aria-hidden="true"></div>
+            <div class="card-inner">
+              <div class="card-icon" aria-hidden="true">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="4" width="22" height="16" rx="2"/>
+                  <path d="M1 10h22M7 15h.01M11 15h4"/>
+                </svg>
+              </div>
+              <h3 class="card-title">E-commerce &amp; Paiement</h3>
+              <p class="card-desc">Boutiques en ligne et sites avec paiement intégré via Stripe. Sécurisé, fiable, optimisé pour maximiser les conversions.</p>
+              <div class="card-tag">
+                <span class="tag-dot" aria-hidden="true"></span>
+                À partir de 1 890€
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== PROCESSUS ===== -->
+    <section class="process section" id="processus" aria-labelledby="processTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Notre méthode</span>
+          <h2 class="section-title" id="processTitle">Comment on travaille</h2>
+        </div>
+
+        <div class="process-wrapper">
+          <div class="process-line" aria-hidden="true">
+            <div class="process-line-fill" id="processLineFill"></div>
+          </div>
+
+          <div class="process-steps" role="list" aria-label="Étapes de notre processus">
+
+            <div class="process-step reveal reveal-delay-1" role="listitem">
+              <div class="step-bubble" aria-hidden="true">
+                <span class="step-num">01</span>
+              </div>
+              <div class="step-body">
+                <div class="step-emoji" aria-hidden="true">🎯</div>
+                <h3 class="step-title">Brief</h3>
+                <p class="step-desc">Tu m'expliques ton business et ton objectif.</p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <div class="step-bubble" aria-hidden="true">
+                <span class="step-num">02</span>
+              </div>
+              <div class="step-body">
+                <div class="step-emoji" aria-hidden="true">⚡</div>
+                <h3 class="step-title">V1</h3>
+                <p class="step-desc">Je crée une première version rapide et concrète.</p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-3" role="listitem">
+              <div class="step-bubble" aria-hidden="true">
+                <span class="step-num">03</span>
+              </div>
+              <div class="step-body">
+                <div class="step-emoji" aria-hidden="true">🔧</div>
+                <h3 class="step-title">Ajustements</h3>
+                <p class="step-desc">On affine ensemble jusqu'au résultat parfait.</p>
+              </div>
+            </div>
+
+            <div class="process-step reveal reveal-delay-4" role="listitem">
+              <div class="step-bubble" aria-hidden="true">
+                <span class="step-num">04</span>
+              </div>
+              <div class="step-body">
+                <div class="step-emoji" aria-hidden="true">🚀</div>
+                <h3 class="step-title">Mise en ligne</h3>
+                <p class="step-desc">Ton site est en ligne, prêt à convertir.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÉQUIPE ===== -->
+    <section class="team section" id="equipe" aria-labelledby="teamTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">L'équipe</span>
+          <h2 class="section-title" id="teamTitle">L'équipe derrière NZ Agency</h2>
+          <p class="section-subtitle">Deux experts passionnés, une vision commune : le digital d'excellence</p>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-card reveal reveal-delay-1" aria-label="Profil de Nathan Loubet">
+            <div class="team-card-inner">
+              <div class="member-photo-wrap">
+                <div class="photo-glow" aria-hidden="true"></div>
+                <img
+                  src="./assets/nathan.png?v=2"
+                  alt="Nathan Loubet, Co-fondateur et Développeur Full Stack"
+                  class="member-photo"
+                  width="160"
+                  height="160"
+                  style="object-position: center 15%;"
+                >
+              </div>
+              <h3 class="member-name">Nathan Loubet</h3>
+              <p class="member-role">Co-fondateur &amp; Développeur Full Stack</p>
+              <p class="member-desc">Expert en développement web, infrastructure et cybersécurité. Nathan garantit des sites rapides, robustes et sécurisés.</p>
+              <ul class="skill-list" role="list" aria-label="Compétences de Nathan">
+                <li class="skill-pill">Développement</li>
+                <li class="skill-pill">Cybersécurité</li>
+                <li class="skill-pill">Infrastructure</li>
+                <li class="skill-pill">IA</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="team-card reveal reveal-delay-2" aria-label="Profil de Enzo Faure">
+            <div class="team-card-inner">
+              <div class="member-photo-wrap">
+                <div class="photo-glow" aria-hidden="true"></div>
+                <img
+                  src="./assets/enzo.png?v=2"
+                  alt="Enzo Faure, Co-fondateur et Designer UI/UX"
+                  class="member-photo"
+                  width="160"
+                  height="160"
+                  style="object-position: center 10%;"
+                >
+              </div>
+              <h3 class="member-name">Enzo Faure</h3>
+              <p class="member-role">Co-fondateur &amp; Designer UI/UX</p>
+              <p class="member-desc">Créatif et stratège digital, Enzo transforme chaque projet en expérience visuelle mémorable qui convertit et fidélise.</p>
+              <ul class="skill-list" role="list" aria-label="Compétences d'Enzo">
+                <li class="skill-pill">UI/UX Design</li>
+                <li class="skill-pill">Branding</li>
+                <li class="skill-pill">SEO</li>
+                <li class="skill-pill">Stratégie</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq section" id="faq" aria-labelledby="faqTitle">
+      <div class="container faq-container">
+        <div class="section-header reveal">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title" id="faqTitle">Questions fréquentes</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item reveal">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faqA1" id="faqQ1">
+              <span>Combien coûte un site internet avec NZ Agency ?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faqA1" role="region" aria-labelledby="faqQ1">
+              <p>Nos tarifs démarrent à 790€ pour une landing page. Chaque projet est unique — contactez-nous pour un devis gratuit et personnalisé.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-1">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faqA2" id="faqQ2">
+              <span>Quel est le délai de livraison ?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faqA2" role="region" aria-labelledby="faqQ2">
+              <p>Livré en 3 à 7 jours selon la complexité du projet. Nous respectons toujours les délais convenus.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-2">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faqA3" id="faqQ3">
+              <span>Est-ce que vous vous occupez de l'hébergement ?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faqA3" role="region" aria-labelledby="faqQ3">
+              <p>Oui, nous gérons le déploiement complet : hébergement, nom de domaine, SSL, et maintenance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-3">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faqA4" id="faqQ4">
+              <span>Mes données et celles de mes clients sont-elles sécurisées ?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faqA4" role="region" aria-labelledby="faqQ4">
+              <p>Absolument. Chaque site est développé avec les meilleures pratiques de cybersécurité : HTTPS, protection contre les injections, headers sécurisés, RGPD.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-4">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faqA5" id="faqQ5">
+              <span>Proposez-vous un service après-vente ?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-body" id="faqA5" role="region" aria-labelledby="faqQ5">
+              <p>Oui, nous offrons un support après livraison et des forfaits de maintenance mensuelle pour garder votre site performant.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Contact</span>
+          <h2 class="section-title" id="contactTitle">Démarrons votre projet</h2>
+          <p class="section-subtitle">Répondez-nous sous 24h — devis gratuit et sans engagement</p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- Form -->
+          <div class="contact-form-wrap reveal">
+            <form id="contactForm" class="contact-form" novalidate aria-label="Formulaire de contact NZ Agency">
+              <!-- Honeypot anti-spam (invisible) -->
+              <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Prénom &amp; Nom <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="Jean Dupont"
+                    required minlength="2" maxlength="100" autocomplete="name"
+                    aria-required="true" aria-describedby="fullNameError">
+                  <span class="field-error" id="fullNameError" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                  <input type="email" id="email" name="email" placeholder="jean@entreprise.fr"
+                    required maxlength="150" autocomplete="email"
+                    aria-required="true" aria-describedby="emailError">
+                  <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Téléphone <span class="optional">(optionnel)</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00"
+                    maxlength="20" autocomplete="tel" pattern="[+0-9\s\-\(\)]{7,20}"
+                    aria-describedby="phoneError">
+                  <span class="field-error" id="phoneError" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="projectType">Type de projet <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                  <div class="select-wrap">
+                    <select id="projectType" name="projectType" required
+                      aria-required="true" aria-describedby="projectTypeError">
+                      <option value="" disabled selected>Sélectionnez un type</option>
+                      <option value="Landing Page">Landing Page</option>
+                      <option value="Site de réservation">Site de réservation</option>
+                      <option value="E-commerce">E-commerce</option>
+                      <option value="Autre">Autre</option>
+                    </select>
+                    <svg class="select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                  </div>
+                  <span class="field-error" id="projectTypeError" role="alert" aria-live="polite"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Budget estimé <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                <div class="select-wrap">
+                  <select id="budget" name="budget" required
+                    aria-required="true" aria-describedby="budgetError">
+                    <option value="" disabled selected>Sélectionnez un budget</option>
+                    <option value="Moins de 500€">Moins de 500€</option>
+                    <option value="500-1000€">500 – 1 000€</option>
+                    <option value="1000-2000€">1 000 – 2 000€</option>
+                    <option value="2000€ et plus">2 000€ et plus</option>
+                  </select>
+                  <svg class="select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <span class="field-error" id="budgetError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Description du projet <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                <textarea id="message" name="message" rows="5"
+                  placeholder="Décrivez votre projet, vos objectifs, vos attentes..."
+                  required minlength="10" maxlength="2000"
+                  aria-required="true" aria-describedby="messageError"></textarea>
+                <span class="field-error" id="messageError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="rgpd" name="rgpd" required
+                    aria-required="true" aria-describedby="rgpdError">
+                  <span class="checkbox-custom" aria-hidden="true"></span>
+                  <span class="checkbox-text">
+                    J'accepte que mes données soient utilisées pour me recontacter
+                    <abbr title="Champ obligatoire" class="required">*</abbr>
+                  </span>
+                </label>
+                <span class="field-error" id="rgpdError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+                <span class="btn-text">Envoyer ma demande</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+
+              <div class="form-feedback form-success" id="formSuccess" role="alert" aria-live="assertive" hidden>
+                <span aria-hidden="true">✅</span>
+                <p>Message envoyé ! On revient vers vous sous 24h.</p>
+              </div>
+
+              <div class="form-feedback form-error-msg" id="formErrorMsg" role="alert" aria-live="assertive" hidden>
+                <span aria-hidden="true">❌</span>
+                <p>Erreur d'envoi. Écrivez-nous directement à <a href="mailto:nzdigitagency@gmail.com">nzdigitagency@gmail.com</a></p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <aside class="contact-info reveal reveal-delay-2" aria-label="Coordonnées de contact">
+            <div class="info-card">
+              <h3 class="info-title">Parlons de votre projet</h3>
+              <p class="info-text">Décrivez votre besoin et nous vous répondons avec un devis personnalisé sous 24h.</p>
+
+              <ul class="contact-details" role="list">
+                <li class="contact-detail">
+                  <span class="detail-icon" aria-hidden="true">📧</span>
+                  <div>
+                    <span class="detail-label">Email</span>
+                    <a href="mailto:nzdigitagency@gmail.com" class="detail-value">nzdigitagency@gmail.com</a>
+                  </div>
+                </li>
+                <li class="contact-detail">
+                  <span class="detail-icon" aria-hidden="true">📍</span>
+                  <div>
+                    <span class="detail-label">Localisation</span>
+                    <span class="detail-value">France</span>
+                  </div>
+                </li>
+                <li class="contact-detail">
+                  <span class="detail-icon" aria-hidden="true">⏱️</span>
+                  <div>
+                    <span class="detail-label">Délai de réponse</span>
+                    <span class="detail-value">Sous 24h</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="guarantees" aria-label="Nos garanties">
+                <div class="guarantee-item">
+                  <span class="guarantee-check" aria-hidden="true">✓</span>
+                  <span>Devis 100% gratuit</span>
+                </div>
+                <div class="guarantee-item">
+                  <span class="guarantee-check" aria-hidden="true">✓</span>
+                  <span>Sans engagement</span>
+                </div>
+                <div class="guarantee-item">
+                  <span class="guarantee-check" aria-hidden="true">✓</span>
+                  <span>Réponse garantie sous 24h</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo" aria-label="NZ Agency — retour accueil">
+            <span class="logo-nz">NZ</span><span class="logo-agency">Agency</span>
+          </a>
+          <p class="footer-tagline">L'excellence digitale, clé en main.</p>
+          <div class="footer-social" aria-label="Réseaux sociaux NZ Agency">
+            <a href="#" class="social-link" aria-label="Suivez NZ Agency sur Instagram" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Suivez NZ Agency sur LinkedIn" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="3"/>
+                <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul role="list">
+            <li><a href="#services">Landing Pages</a></li>
+            <li><a href="#services">Sites de Réservation</a></li>
+            <li><a href="#services">E-commerce</a></li>
+            <li><a href="#contact">Devis Gratuit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Liens rapides</h4>
+          <ul role="list">
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#processus">Notre Méthode</a></li>
+            <li><a href="#equipe">L'Équipe</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <ul role="list">
+            <li><a href="mailto:nzdigitagency@gmail.com">nzdigitagency@gmail.com</a></li>
+            <li><span>France</span></li>
+            <li><a href="#contact">Démarrer un projet →</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 NZ Agency. Tous droits réservés.</p>
+        <nav class="footer-legal" aria-label="Liens légaux">
+          <a href="/mentions-legales.html">Mentions légales</a>
+          <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/particles.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

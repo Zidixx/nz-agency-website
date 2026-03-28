@@ -1,6 +1,6 @@
 /**
  * NZ Agency — contact.js
- * Formulaire de contact via Web3Forms
+ * Formulaire de contact via EmailJS
  * Destination : nzdigitagency@gmail.com
  */
 
@@ -8,9 +8,11 @@
   'use strict';
 
   /* ============================================================
-     CONFIG WEB3FORMS
+     CONFIG EMAILJS
      ============================================================ */
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // Remplacer par ton endpoint Formspree
+  const EMAILJS_SERVICE_ID  = 'service_mul4c8e';
+  const EMAILJS_TEMPLATE_ID = 'template_urog0u8';
+  const EMAILJS_PUBLIC_KEY  = 'cRAmhysp09mNHVh3u';
 
   /* ============================================================
      REFERENCES DOM
@@ -21,6 +23,11 @@
   const errorMsg   = document.getElementById('formErrorMsg');
 
   if (!form) return;
+
+  /* ============================================================
+     INIT EMAILJS
+     ============================================================ */
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
   /* ============================================================
      VALIDATION
@@ -96,7 +103,7 @@
   }
 
   /* ============================================================
-     HONEYPOT CHECK (anti-spam)
+     HONEYPOT (anti-spam)
      ============================================================ */
   function isSpam() {
     const honeypot = form.querySelector('input[name="website_url"]');
@@ -113,7 +120,7 @@
   }
 
   /* ============================================================
-     SHOW MESSAGES
+     MESSAGES
      ============================================================ */
   function showSuccess() {
     successMsg.hidden = false;
@@ -133,32 +140,23 @@
   }
 
   /* ============================================================
-     SEND VIA WEB3FORMS
+     ENVOI VIA EMAILJS
      ============================================================ */
   async function sendEmail(data) {
-    const payload = {
-      _subject:     `Nouveau projet — ${data.projectType} (${data.budget})`,
+    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       name:         data.fullName,
+      from_name:    data.fullName,
       email:        data.email,
+      from_email:   data.email,
       phone:        data.phone || 'Non renseigné',
       project_type: data.projectType,
       budget:       data.budget,
       message:      data.message,
-    };
-
-    const res = await fetch(FORMSPREE_ENDPOINT, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body:    JSON.stringify(payload),
     });
-
-    const json = await res.json();
-    if (!res.ok) throw new Error(json.error || 'Erreur envoi');
-    return json;
   }
 
   /* ============================================================
-     FORM SUBMIT
+     SUBMIT
      ============================================================ */
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -191,7 +189,7 @@
       form.reset();
       form.querySelectorAll('select').forEach((s) => { s.selectedIndex = 0; });
     } catch (err) {
-      console.error('[NZ Agency] Erreur envoi:', err);
+      console.error('[NZ Agency] Erreur EmailJS:', err);
       showError();
     } finally {
       setLoading(false);
@@ -199,15 +197,13 @@
   });
 
   /* ============================================================
-     LIVE VALIDATION (au blur)
+     LIVE VALIDATION
      ============================================================ */
   ['fullName', 'email', 'phone', 'message'].forEach((id) => {
     const input = document.getElementById(id);
     if (!input) return;
     input.addEventListener('blur', () => {
-      if (input.value !== '') {
-        showFieldError(id, validators[id](input.value));
-      }
+      if (input.value !== '') showFieldError(id, validators[id](input.value));
     });
     input.addEventListener('input', () => {
       if (input.classList.contains('error')) showFieldError(id, '');

@@ -1,7 +1,7 @@
 /**
  * NZ Agency — contact.js
  * Formulaire de contact via EmailJS
- * Destination : nzdigitagency@gmail.com
+ * Destination : nathanloubet12@gmail.com
  */
 
 (function () {

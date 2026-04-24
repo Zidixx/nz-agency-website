@@ -53,7 +53,7 @@
 
   /* Team */
   .team-grid {
-    max-width: 600px;
+    max-width: 420px;
   }
 
   /* Contact */
@@ -477,7 +477,7 @@
   }
 
   .team-grid {
-    max-width: 880px;
+    max-width: 420px;
     gap: 40px;
   }
 }

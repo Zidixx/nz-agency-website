@@ -1,2 +1,5 @@
 .vercel
 .env*.local
+
+# iCloud : dossiers exclus de la synchro
+*.nosync

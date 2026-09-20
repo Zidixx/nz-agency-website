@@ -302,71 +302,10 @@
   }
 
   /* ============================================================
-     SNAP DE SECTION — le scroll se cale sur chaque section
-     ============================================================ */
-  function initSectionSnap(lenis) {
-    if (REDUCED) return;
-
-    const targets = [...document.querySelectorAll('[data-snap]')];
-    if (!targets.length) return;
-
-    const NAV_OFFSET = 68;   // hauteur de la navbar
-    let timer = null;
-    let locked = false;
-
-    function tops() {
-      const y = window.scrollY;
-      return targets.map((el) => el.getBoundingClientRect().top + y - NAV_OFFSET);
-    }
-
-    function snap() {
-      if (locked) return;
-
-      const y   = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      if (y < 40 || y > max - 40) return;
-
-      // seuil de proximité : on ne recale que si on est déjà proche d'une section
-      const threshold = window.innerHeight * 0.42;
-      let best = null;
-      let bestDist = Infinity;
-
-      tops().forEach((top) => {
-        const d = Math.abs(top - y);
-        if (d < bestDist) { bestDist = d; best = top; }
-      });
-
-      if (best === null || bestDist < 4 || bestDist > threshold) return;
-
-      locked = true;
-      const done = () => { locked = false; };
-
-      if (lenis && typeof lenis.scrollTo === 'function') {
-        lenis.scrollTo(best, { duration: 0.65, onComplete: done });
-        setTimeout(done, 900);
-      } else {
-        window.scrollTo({ top: best, behavior: 'smooth' });
-        setTimeout(done, 700);
-      }
-    }
-
-    window.addEventListener('scroll', () => {
-      if (locked) return;
-      clearTimeout(timer);
-      timer = setTimeout(snap, 150);
-    }, { passive: true });
-
-    // Une interaction directe annule le recalage en cours
-    ['wheel', 'touchstart', 'keydown'].forEach((evt) => {
-      window.addEventListener(evt, () => { clearTimeout(timer); }, { passive: true });
-    });
-  }
-
-  /* ============================================================
      INIT
      ============================================================ */
   function init() {
-    const lenis = initSmoothScroll();
+    initSmoothScroll();
     initProgressBar();
     initParallax();
     initTilt();
@@ -376,7 +315,6 @@
     initPhaseHighlight();
     initJourney();
     initNavDock();
-    initSectionSnap(lenis);
   }
 
   if (document.readyState === 'loading') {

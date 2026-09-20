@@ -911,10 +911,10 @@
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="phone">Téléphone <span class="optional">(optionnel)</span></label>
-                  <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00"
-                    maxlength="20" autocomplete="tel" pattern="[+0-9\s\-\(\)]{7,20}"
-                    aria-describedby="phoneError">
+                  <label for="phone">Téléphone <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                  <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78"
+                    required maxlength="20" inputmode="tel" autocomplete="tel"
+                    aria-required="true" aria-describedby="phoneError">
                   <span class="field-error" id="phoneError" role="alert" aria-live="polite"></span>
                 </div>
 
@@ -938,6 +938,26 @@
                   </div>
                   <span class="field-error" id="projectTypeError" role="alert" aria-live="polite"></span>
                 </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Budget envisagé <abbr title="Champ obligatoire" class="required">*</abbr></label>
+                <div class="select-wrap">
+                  <select id="budget" name="budget" required
+                    aria-required="true" aria-describedby="budgetError">
+                    <option value="" disabled selected>Sélectionnez une fourchette</option>
+                    <option value="Moins de 1 000 €">Moins de 1 000 €</option>
+                    <option value="1 000 € – 2 500 €">1 000 € – 2 500 €</option>
+                    <option value="2 500 € – 5 000 €">2 500 € – 5 000 €</option>
+                    <option value="5 000 € – 10 000 €">5 000 € – 10 000 €</option>
+                    <option value="10 000 € – 20 000 €">10 000 € – 20 000 €</option>
+                    <option value="Plus de 20 000 €">Plus de 20 000 €</option>
+                    <option value="À définir ensemble">Je ne sais pas encore</option>
+                  </select>
+                  <svg class="select-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+                <span class="field-error" id="budgetError" role="alert" aria-live="polite"></span>
+                <p class="field-hint">Une fourchette suffit : elle nous sert à calibrer la proposition, pas à fixer le prix.</p>
               </div>
 
               <div class="form-group">
@@ -1041,25 +1061,18 @@
 
         <div class="seo-text">
           <p>
-            <strong>NZ Agency</strong> est une agence de <strong>développement d&rsquo;applications mobiles</strong> basée en France,
-            qui accompagne entrepreneurs, startups, commerçants et PME de l&rsquo;idée jusqu&rsquo;aux premiers utilisateurs.
-            Nous concevons et développons des <strong>applications iOS et Android</strong>, nous les publions sur
-            l&rsquo;<strong>App Store</strong> et le <strong>Google Play Store</strong> en moins d&rsquo;un mois. C&rsquo;est notre cœur de métier.
-            Si vous le souhaitez, nous prenons aussi en charge le design, l&rsquo;<strong>ASO</strong> et l&rsquo;<strong>acquisition</strong>.
+            <strong>NZ Agency</strong> est une agence de <strong>développement d&rsquo;applications mobiles</strong>
+            basée en France. Nous concevons vos <strong>applications iOS et Android</strong> et les publions sur
+            l&rsquo;<strong>App Store</strong> et le <strong>Google Play Store</strong> en moins d&rsquo;un mois :
+            cadrage produit et <strong>MVP</strong>, <strong>design UI/UX</strong>, développement natif,
+            back-end et API, <strong>ASO</strong> et <strong>acquisition</strong>.
           </p>
           <p>
-            Notre agence couvre toute la chaîne : cadrage produit et <strong>MVP</strong>, direction artistique et
-            <strong>design UI/UX</strong>, développement natif et cross-platform, back-end et API, publication sur les stores.
-            Au-delà du développement, vous pouvez ajouter les prestations dont vous avez besoin :
-            <strong>growth marketing</strong> en organique, contenu et <strong>UGC</strong>, conseil et stratégie,
-            <strong>accompagnement au lancement de startup</strong>, formation des équipes et maintenance.
-            Nous sommes nous-mêmes co-fondateurs d&rsquo;une startup, donc nous connaissons le terrain.
-          </p>
-          <p>
-            Nous créons également des <strong>sites internet</strong> : sites vitrine, landing pages,
-            <strong>sites de réservation en ligne</strong> et boutiques <strong>e-commerce</strong> avec paiement Stripe,
+            Nous réalisons aussi des <strong>sites internet</strong> — vitrine, landing page,
+            <strong>site de réservation en ligne</strong>, <strong>e-commerce</strong> avec paiement Stripe —
             livrés en moins de 7 jours et optimisés pour le <strong>référencement naturel (SEO)</strong>.
-            Toutes nos prestations sont <strong>uniquement sur devis</strong>, gratuit et sans engagement sous 24 heures.
+            Conseil, <strong>accompagnement au lancement de startup</strong>, formation et maintenance complètent
+            l&rsquo;offre. Toutes nos prestations sont sur devis, gratuit et sans engagement sous 24 heures.
           </p>
         </div>
       </div>
@@ -1118,7 +1131,7 @@
 
       <p class="seo-areas">
         Nous intervenons partout en France et à distance, notamment à
-        <span>Bordeaux</span>, <span>Libourne</span>, <span>Paris</span>, <span>Lyon</span>,
+        <span>Bordeaux</span>, <span>Paris</span>, <span>Lyon</span>,
         <span>Marseille</span>, <span>Toulouse</span>, <span>Nantes</span>, <span>Lille</span> et <span>Bruxelles</span>.
       </p>
     </div>

@@ -147,7 +147,36 @@
     }
   }
 
-  /* ---- Animate ---- */
+  /* ---- Animate ----
+     La boucle tourne en continu même onglet caché ou canvas hors écran :
+     c'est du GPU et de la batterie pour rien, et ça vole des images au
+     scroll. On la met en pause dans ces deux cas. */
+  let enPause = false;
+
+  function reprendre() {
+    if (enPause || animationId) return;
+    animationId = requestAnimationFrame(animate);
+  }
+
+  function suspendre() {
+    if (animationId) { cancelAnimationFrame(animationId); animationId = null; }
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) suspendre();
+    else reprendre();
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entrees) => {
+      entrees.forEach((entree) => {
+        enPause = !entree.isIntersecting;
+        if (enPause) suspendre();
+        else reprendre();
+      });
+    }, { threshold: 0 }).observe(canvas);
+  }
+
   function animate() {
     ctx.clearRect(0, 0, W, H);
 

@@ -48,9 +48,24 @@
       return '';
     },
     phone(v) {
-      if (!v.trim()) return '';
-      const re = /^[+0-9\s\-()]{7,20}$/;
-      if (!re.test(v.trim())) return 'Numéro de téléphone invalide.';
+      const brut = v.trim();
+      if (!brut) return 'Ce champ est obligatoire.';
+
+      const international = brut.startsWith('+');
+      const chiffres = brut.replace(/\D/g, '');
+
+      // 10 chiffres pour un numéro français, 8 à 15 en international (E.164).
+      if (international) {
+        if (chiffres.length < 8)  return 'Numéro trop court.';
+        if (chiffres.length > 15) return 'Numéro trop long.';
+      } else {
+        if (!/^0[1-9]/.test(chiffres)) return 'Un numéro français commence par 0 suivi de 1 à 9.';
+        if (chiffres.length !== 10) return 'Un numéro français compte 10 chiffres.';
+      }
+      return '';
+    },
+    budget(v) {
+      if (!v) return 'Veuillez sélectionner une fourchette.';
       return '';
     },
     projectType(v) {
@@ -77,7 +92,7 @@
   }
 
   function clearAllErrors() {
-    ['fullName', 'email', 'phone', 'projectType', 'message', 'rgpd']
+    ['fullName', 'email', 'phone', 'projectType', 'budget', 'message', 'rgpd']
       .forEach((id) => showFieldError(id, ''));
   }
 
@@ -88,6 +103,7 @@
       ['email',       validators.email(data.email)],
       ['phone',       validators.phone(data.phone)],
       ['projectType', validators.projectType(data.projectType)],
+      ['budget',      validators.budget(data.budget)],
       ['message',     validators.message(data.message)],
       ['rgpd',        validators.rgpd(data.rgpd)],
     ];
@@ -143,9 +159,9 @@
       from_name:    data.fullName,
       email:        data.email,
       from_email:   data.email,
-      phone:        data.phone || 'Non renseigné',
+      phone:        data.phone,
       project_type: data.projectType,
-      budget:       'Sur devis',
+      budget:       data.budget,
       message:      data.message,
     });
   }
@@ -165,6 +181,7 @@
       email:       form.email.value,
       phone:       form.phone ? form.phone.value : '',
       projectType: form.projectType.value,
+      budget:      form.budget ? form.budget.value : '',
       message:     form.message.value,
       rgpd:        form.rgpd.checked,
     };
@@ -191,8 +208,66 @@
   });
 
   /* ============================================================
+     SAISIE DU TÉLÉPHONE
+     On ne laisse entrer que des chiffres (plus un « + » initial pour
+     l'international), on groupe par deux à la française et on bloque net au
+     nombre maximum de chiffres : impossible de taper un numéro invalide.
+     ============================================================ */
+  function formaterTelephone(valeur) {
+    const international = valeur.trim().startsWith('+');
+    let chiffres = valeur.replace(/\D/g, '');
+
+    if (international) {
+      chiffres = chiffres.slice(0, 15);
+      if (chiffres.length <= 2) return '+' + chiffres;
+      // +33 6 12 34 56 78 : indicatif, puis le chiffre isolé s'il en reste un
+      // nombre impair, puis des paires. Sans ce décalage on obtient
+      // « +33 61 23 45 67 8 », qui ne ressemble à aucun numéro.
+      const indicatif = chiffres.slice(0, 2);
+      let reste       = chiffres.slice(2);
+      let tete        = '';
+      if (reste.length % 2 === 1) {
+        tete  = reste.slice(0, 1) + ' ';
+        reste = reste.slice(1);
+      }
+      const paires = reste.replace(/(\d{2})(?=\d)/g, '$1 ');
+      return ('+' + indicatif + ' ' + tete + paires).trim();
+    }
+
+    chiffres = chiffres.slice(0, 10);
+    return chiffres.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+  }
+
+  const champTel = document.getElementById('phone');
+  if (champTel) {
+    champTel.addEventListener('input', () => {
+      const avant = champTel.value;
+      const apres = formaterTelephone(avant);
+      if (apres !== avant) {
+        // On replace le curseur en fin de saisie : sans ça, il saute au début
+        // à chaque caractère inséré par le formatage.
+        champTel.value = apres;
+        champTel.setSelectionRange(apres.length, apres.length);
+      }
+    });
+
+    // Un collage peut contenir des points, des slashs, un indicatif exotique.
+    champTel.addEventListener('paste', (e) => {
+      e.preventDefault();
+      const colle = (e.clipboardData || window.clipboardData).getData('text');
+      champTel.value = formaterTelephone(colle);
+    });
+  }
+
+  /* ============================================================
      LIVE VALIDATION
      ============================================================ */
+  ['projectType', 'budget'].forEach((id) => {
+    const select = document.getElementById(id);
+    if (!select) return;
+    select.addEventListener('change', () => showFieldError(id, validators[id](select.value)));
+  });
+
   ['fullName', 'email', 'phone', 'message'].forEach((id) => {
     const input = document.getElementById(id);
     if (!input) return;

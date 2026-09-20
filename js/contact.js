@@ -1,7 +1,9 @@
 /**
  * NZ Agency — contact.js
- * Formulaire de contact via EmailJS
- * Destination : nathanloubet12@gmail.com
+ *
+ * Chaque demande part d'abord vers l'admin NZ, qui l'enregistre, ouvre un fil
+ * de discussion et alerte Discord. EmailJS reste en secours : si l'admin est
+ * injoignable, la demande arrive quand même par email plutôt que d'être perdue.
  */
 
 (function () {
@@ -10,6 +12,11 @@
   /* ============================================================
      CONFIG EMAILJS
      ============================================================ */
+  // Point d'entrée de l'admin. En développement, on parle au serveur local.
+  const API_DEMANDES = /^(localhost|127\.0\.0\.1)$/.test(location.hostname)
+    ? 'http://localhost:3000/api/demandes'
+    : 'https://admin.nzagency.fr/api/demandes';
+
   const EMAILJS_SERVICE_ID  = 'service_mul4c8e';
   const EMAILJS_TEMPLATE_ID = 'template_urog0u8';
   const EMAILJS_PUBLIC_KEY  = 'cRAmhysp09mNHVh3u';
@@ -151,7 +158,35 @@
   }
 
   /* ============================================================
-     ENVOI VIA EMAILJS
+     ENVOI VERS L'ADMIN NZ
+     ============================================================ */
+  async function envoyerAAdmin(data) {
+    const honeypot = form.querySelector('input[name="website_url"]');
+
+    const reponse = await fetch(API_DEMANDES, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nom:         data.fullName,
+        email:       data.email,
+        telephone:   data.phone,
+        type_projet: data.projectType,
+        budget:      data.budget,
+        message:     data.message,
+        source:      'site',
+        website_url: honeypot ? honeypot.value : '',
+      }),
+    });
+
+    if (!reponse.ok) {
+      const detail = await reponse.json().catch(() => ({}));
+      throw new Error(detail.erreur || ('HTTP ' + reponse.status));
+    }
+    return reponse.json();
+  }
+
+  /* ============================================================
+     ENVOI VIA EMAILJS (secours)
      ============================================================ */
   async function sendEmail(data) {
     return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
@@ -195,12 +230,18 @@
     setLoading(true);
 
     try {
-      await sendEmail(data);
+      try {
+        await envoyerAAdmin(data);
+      } catch (erreurAdmin) {
+        // L'admin n'a pas répondu : on ne perd pas la demande pour autant.
+        console.warn('[NZ Agency] Admin injoignable, bascule sur EmailJS :', erreurAdmin);
+        await sendEmail(data);
+      }
       showSuccess();
       form.reset();
       form.querySelectorAll('select').forEach((s) => { s.selectedIndex = 0; });
     } catch (err) {
-      console.error('[NZ Agency] Erreur EmailJS:', err);
+      console.error('[NZ Agency] Envoi impossible :', err);
       showError();
     } finally {
       setLoading(false);

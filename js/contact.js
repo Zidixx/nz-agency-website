@@ -57,10 +57,6 @@
       if (!v) return 'Veuillez sélectionner un type.';
       return '';
     },
-    budget(v) {
-      if (!v) return 'Veuillez sélectionner un budget.';
-      return '';
-    },
     message(v) {
       if (!v.trim()) return 'Ce champ est obligatoire.';
       if (v.trim().length < 10) return 'Minimum 10 caractères.';
@@ -81,7 +77,7 @@
   }
 
   function clearAllErrors() {
-    ['fullName', 'email', 'phone', 'projectType', 'budget', 'message', 'rgpd']
+    ['fullName', 'email', 'phone', 'projectType', 'message', 'rgpd']
       .forEach((id) => showFieldError(id, ''));
   }
 
@@ -92,7 +88,6 @@
       ['email',       validators.email(data.email)],
       ['phone',       validators.phone(data.phone)],
       ['projectType', validators.projectType(data.projectType)],
-      ['budget',      validators.budget(data.budget)],
       ['message',     validators.message(data.message)],
       ['rgpd',        validators.rgpd(data.rgpd)],
     ];
@@ -150,7 +145,7 @@
       from_email:   data.email,
       phone:        data.phone || 'Non renseigné',
       project_type: data.projectType,
-      budget:       data.budget,
+      budget:       'Sur devis',
       message:      data.message,
     });
   }
@@ -170,7 +165,6 @@
       email:       form.email.value,
       phone:       form.phone ? form.phone.value : '',
       projectType: form.projectType.value,
-      budget:      form.budget.value,
       message:     form.message.value,
       rgpd:        form.rgpd.checked,
     };
@@ -210,7 +204,7 @@
     });
   });
 
-  ['projectType', 'budget'].forEach((id) => {
+  ['projectType'].forEach((id) => {
     const select = document.getElementById(id);
     if (!select) return;
     select.addEventListener('change', () => showFieldError(id, ''));

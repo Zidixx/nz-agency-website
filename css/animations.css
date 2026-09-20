@@ -138,7 +138,7 @@
   animation-delay: 0.25s;
 }
 
-.hero-subtitle {
+.hero-lead {
   animation: fade-in-up 0.7s var(--ease, cubic-bezier(0.4,0,0.2,1)) both;
   animation-delay: 0.4s;
 }
@@ -148,9 +148,14 @@
   animation-delay: 0.55s;
 }
 
-.hero-stats {
+.hero-proof {
   animation: fade-in-up 0.7s var(--ease, cubic-bezier(0.4,0,0.2,1)) both;
   animation-delay: 0.7s;
+}
+
+.hero-visual {
+  animation: fade-in-up 0.9s var(--ease, cubic-bezier(0.4,0,0.2,1)) both;
+  animation-delay: 0.35s;
 }
 
 /* ===== SHIMMER LOADING TEXT ===== */
@@ -173,11 +178,6 @@
   animation: scale-in 0.4s var(--ease, cubic-bezier(0.4,0,0.2,1)) both;
 }
 
-/* ===== NEON TEXT GLOW (Hero title gradient words) ===== */
-.hero-title .text-gradient {
-  animation: hero-glow 3s ease-in-out infinite;
-}
-
 /* ===== CARD HOVER ICON FLOAT ===== */
 .service-card:hover .card-icon svg {
   animation: float 2.5s ease-in-out infinite;
@@ -190,16 +190,11 @@
 
 /* ===== TAG DOT SEQUENTIAL ===== */
 .service-card:nth-child(1) .tag-dot { animation-delay: 0s; }
-.service-card:nth-child(2) .tag-dot { animation-delay: 0.3s; }
-.service-card:nth-child(3) .tag-dot { animation-delay: 0.6s; }
-
-/* ===== BADGE STARS ALTERNATE ===== */
-.hero-badge .badge-star:nth-child(1) {
-  animation-direction: normal;
-}
-.hero-badge .badge-star:nth-child(3) {
-  animation-direction: reverse;
-}
+.service-card:nth-child(2) .tag-dot { animation-delay: 0.15s; }
+.service-card:nth-child(3) .tag-dot { animation-delay: 0.3s; }
+.service-card:nth-child(4) .tag-dot { animation-delay: 0.45s; }
+.service-card:nth-child(5) .tag-dot { animation-delay: 0.6s; }
+.service-card:nth-child(6) .tag-dot { animation-delay: 0.75s; }
 
 /* ===== PROCESS LINE FILL trigger ===== */
 .process-line-fill.animate {

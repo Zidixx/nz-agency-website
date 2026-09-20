@@ -90,10 +90,11 @@
     if (!el) return;
 
     const phrases = [
-      'NZ Agency conçoit des expériences digitales haut de gamme.',
-      'Landing pages, réservations, e-commerce — clé en main.',
-      'Optimisés pour la performance. Sécurisés par design.',
-      'Du code propre qui convertit, impressionne et se vend.',
+      'Développement d\'applications mobiles iOS & Android.',
+      'Publiées sur l\'App Store et le Play Store en moins d\'1 mois.',
+      'Design, acquisition, conseil et stratégie en option.',
+      'Sites vitrine, réservation et e-commerce sur mesure.',
+      'Toutes nos prestations sont uniquement sur devis.',
     ];
 
     let phraseIndex = 0;

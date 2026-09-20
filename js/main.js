@@ -234,7 +234,7 @@
      ============================================================ */
   function preloadImages() {
     // Photos equipe
-    ['./assets/nathan.png', './assets/enzo.png'].forEach((src) => {
+    ['./assets/nathan.png', './assets/AlcideM.jpeg'].forEach((src) => {
       const link = document.createElement('link');
       link.rel  = 'preload';
       link.as   = 'image';

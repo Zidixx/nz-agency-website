@@ -19,7 +19,7 @@
   }
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.45rem;
   }
 }
 
@@ -36,10 +36,45 @@
     margin-left: auto;
   }
 
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-copy { text-align: center; }
+  .hero-title { text-align: center; }
+  .hero-lead { margin-left: auto; margin-right: auto; }
+  .hero-ctas { justify-content: center; }
+  .hero-proof { justify-content: center; }
+
+  .hero-visual {
+    min-height: 0;
+    order: -1;
+  }
+
+  .phone { width: clamp(210px, 42vw, 250px); }
+
+  .float-card--stores { left: 2%; }
+  .float-card--growth { right: 2%; }
+
+  /* Incubateur */
+  .phase-grid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
   /* Services */
   .services-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
     margin: 0 auto;
   }
 
@@ -53,7 +88,7 @@
 
   /* Team */
   .team-grid {
-    max-width: 420px;
+    max-width: 600px;
   }
 
   /* Contact */
@@ -64,6 +99,12 @@
   .contact-info {
     position: static;
     order: -1;
+  }
+
+  /* SEO block */
+  .seo-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 24px;
   }
 
   /* Footer */
@@ -101,21 +142,36 @@
     justify-content: center;
   }
 
-  .hero-stats {
+  .hero-proof {
     flex-direction: column;
-    gap: 20px;
-    padding: 24px;
+    align-items: center;
+    gap: 10px;
   }
 
-  .stat-divider {
-    width: 60px;
-    height: 1px;
-    margin: 0;
+  .float-card {
+    font-size: 0.68rem;
+    padding: 10px 13px;
+  }
+
+  .float-card--stores { left: -2%; top: 6%; }
+  .float-card--growth { right: -2%; bottom: 8%; }
+
+  .stat-item { align-items: center; text-align: center; }
+
+  .stats-strip {
+    margin-top: 40px;
+    padding-top: 32px;
   }
 
   /* Services */
   .card-inner {
     padding: 28px 24px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   /* Process */
@@ -144,6 +200,14 @@
   .contact-form-wrap {
     padding: 28px 20px;
   }
+
+  /* SEO block */
+  .seo-links {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .seo-intro { margin-bottom: 40px; }
 
   /* Footer */
   .footer-grid {
@@ -178,10 +242,6 @@
   }
 
   /* Hero */
-  .hero {
-    padding-top: 72px;
-  }
-
   .hero-badge {
     font-size: 0.7rem;
     padding: 6px 14px;
@@ -196,9 +256,23 @@
     min-height: 4.2em;
   }
 
-  .hero-stats {
-    padding: 20px 16px;
-    border-radius: 12px;
+  .hero { padding-top: 108px; }
+
+  .phone { width: min(215px, 62vw); }
+
+  .float-card {
+    font-size: 0.62rem;
+    padding: 8px 11px;
+    gap: 7px;
+  }
+
+  .float-ico { width: 22px; height: 22px; }
+
+  .phase-card { padding: 28px 22px; }
+
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
   }
 
   .stat-number {
@@ -336,13 +410,18 @@
 
   .hero-badge,
   .hero-title,
-  .hero-subtitle,
+  .hero-lead,
   .hero-ctas,
-  .hero-stats {
+  .hero-proof,
+  .phone,
+  .float-card,
+  .badge-dot,
+  .app-hero::after {
     animation: none !important;
     opacity: 1 !important;
-    transform: none !important;
   }
+
+  .phone { transform: none !important; }
 
   .card-glow-border {
     animation: none !important;
@@ -477,7 +556,90 @@
   }
 
   .team-grid {
-    max-width: 420px;
+    max-width: 880px;
     gap: 40px;
   }
+
+  .phase-grid { gap: 28px; }
+}
+
+/* ===== EFFETS PREMIUM — réglages responsive ===== */
+@media (max-width: 768px) {
+  .marquee { padding: 16px 0; }
+  .marquee-group { gap: 26px; padding-right: 26px; }
+  .marquee-item { font-size: 0.68rem; }
+  .grain { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .marquee-track {
+    animation: none !important;
+  }
+
+  [data-split] .word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  [data-parallax] { --parallax: 0px !important; }
+}
+
+/* ===== PARCOURS ÉPINGLÉ ===== */
+@media (max-width: 1024px) {
+  .journey-grid {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .journey-scenes { display: none; }
+  .journey-wrap { height: 340vh; }
+}
+
+@media (max-width: 768px) {
+  .journey-wrap {
+    height: auto;
+  }
+
+  .journey-sticky {
+    position: static;
+    height: auto;
+    padding: 24px 0 8px;
+  }
+
+  .journey-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .journey-rail { display: none; }
+
+  .journey-panels {
+    position: static;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .journey-panel {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    filter: none;
+    padding: 28px 24px;
+    border-radius: var(--border-radius);
+    background: var(--bg-card);
+    border: var(--border-glass);
+  }
+
+  .journey-panel .ghost-num {
+    color: rgba(255, 255, 255, 0.10);
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.40);
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+
+  .aurora { display: none; }
 }

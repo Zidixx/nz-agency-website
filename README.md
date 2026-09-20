@@ -46,7 +46,7 @@ SITE_WEB_NZ/
 1. Dans le dashboard → **Email Templates** → **Create New Template**
 2. Configurer le template :
 
-**Subject :** `Nouveau projet — {{project_type}} ({{budget}}) de {{from_name}}`
+**Subject :** `Nouveau projet — {{project_type}} de {{from_name}}`
 
 **Body (HTML) :**
 ```html
@@ -55,7 +55,7 @@ SITE_WEB_NZ/
 <p><strong>Email :</strong> {{from_email}}</p>
 <p><strong>Téléphone :</strong> {{phone}}</p>
 <p><strong>Type de projet :</strong> {{project_type}}</p>
-<p><strong>Budget :</strong> {{budget}}</p>
+<p><strong>Tarification :</strong> {{budget}}</p> <!-- toujours "Sur devis" : le champ budget a été retiré du formulaire -->
 <hr>
 <p><strong>Message :</strong></p>
 <p>{{message}}</p>

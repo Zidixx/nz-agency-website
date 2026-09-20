@@ -166,8 +166,10 @@ h1, h2, h3, h4 {
 }
 .btn-primary:active { transform: translateY(0); }
 
-/* Ripple */
-.btn-primary .ripple {
+/* Ripple (btn-primary ET btn-outline : sans position absolue, le span
+   gonfle le bouton et le transforme en cercle géant) */
+.btn-primary .ripple,
+.btn-outline .ripple {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.3);

@@ -2644,3 +2644,13 @@ a.detail-value:hover { color: var(--cyan); }
 }
 
 .marquee + .marquee { border-top: 0; }
+
+/* --- Sections plein écran (le scroll se cale dessus) --- */
+.section--full {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section--full > .container { width: 100%; }

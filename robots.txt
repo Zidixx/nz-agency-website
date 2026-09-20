@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nzagency.fr/sitemap.xml
+Sitemap: https://www.nzagency.fr/sitemap.xml

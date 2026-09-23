@@ -660,9 +660,15 @@
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     padding: 28px 20px calc(24px + env(safe-area-inset-bottom));
   }
+  .booking-head .section-badge { font-size: 0.62rem; padding: 5px 12px; white-space: nowrap; }
   .booking-progress li { padding: 5px 10px 5px 5px; font-size: 0.75rem; }
   .booking-slots { grid-template-columns: repeat(3, 1fr); }
   .booking-form .form-row { grid-template-columns: 1fr; }
   .booking-recap { grid-template-columns: 1fr; }
   .booking-success .btn-primary { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .faq-cta { flex-direction: column; align-items: stretch; text-align: center; padding: 24px 20px; }
+  .faq-cta .btn-primary { justify-content: center; }
 }

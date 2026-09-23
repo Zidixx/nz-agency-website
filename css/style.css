@@ -2658,6 +2658,8 @@ a.detail-value:hover { color: var(--cyan); }
 }
 .booking-modal[hidden] { display: none; }
 .booking-modal.open { opacity: 1; }
+/* La section de confirmation est en flex : sans !important, hidden perdrait. */
+.booking-step[hidden] { display: none !important; }
 
 .booking-backdrop {
   position: absolute;
@@ -2956,3 +2958,65 @@ a.detail-value:hover { color: var(--cyan); }
 }
 .booking-recap dd { font-weight: 600; text-transform: capitalize; }
 .booking-success .booking-hint { margin-top: 0; max-width: 420px; }
+
+/* ============================================================
+   CTA « RÉSERVER UN CALL »
+   ============================================================ */
+/* Bandeau en fin de FAQ */
+.faq-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 40px auto 0;
+  max-width: 800px;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: var(--border-radius);
+}
+.faq-cta-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.faq-cta-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.faq-cta .btn-primary { flex-shrink: 0; }
+
+/* Card « Réservez directement votre call » sous la card contact */
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.info-card--booking { position: relative; gap: 14px; }
+.info-card-or {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.info-card-or span {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.btn-booking-card { justify-content: center; margin-top: 6px; }
+
+/* Lien footer, sous forme de bouton pour ouvrir la modale */
+.footer-link-btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: color var(--trans);
+  text-align: left;
+}
+.footer-link-btn:hover { color: var(--text-primary); }

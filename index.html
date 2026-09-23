@@ -195,9 +195,9 @@
       </ul>
 
       <div class="nav-right">
-        <button type="button" class="btn-outline btn-nav" data-booking aria-label="Réserver un call de 30 minutes avec NZ Agency">
+        <a href="/reserver-un-call.html" class="btn-outline btn-nav" aria-label="Réserver un call de 30 minutes avec NZ Agency">
           Réserver un call
-        </button>
+        </a>
         <a href="#contact" class="btn-primary btn-nav" data-magnetic="0.2" aria-label="Démarrer un projet avec NZ Agency">
           Lancer mon app
         </a>
@@ -219,7 +219,7 @@
         <li><a href="#contact" class="nav-link-mobile">Contact</a></li>
       </ul>
       <a href="#contact" class="btn-primary btn-mobile-cta">Lancer mon app</a>
-      <button type="button" class="btn-outline btn-mobile-cta" data-booking>Réserver un call</button>
+      <a href="/reserver-un-call.html" class="btn-outline btn-mobile-cta">Réserver un call</a>
     </div>
   </header>
 
@@ -881,10 +881,10 @@
             <p class="faq-cta-title">Une question qui n&rsquo;est pas ici ?</p>
             <p class="faq-cta-text">30 minutes en visio pour en parler de vive voix, gratuit et sans engagement.</p>
           </div>
-          <button type="button" class="btn-primary" data-booking data-magnetic="0.15">
+          <a href="/reserver-un-call.html" class="btn-primary" data-magnetic="0.15">
             Réserver un call
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -1065,10 +1065,10 @@
               <div class="info-card-or" aria-hidden="true"><span>ou</span></div>
               <h3 class="info-title">Réservez directement votre call</h3>
               <p class="info-text">30 min en visio pour cadrer votre projet, gratuit et sans engagement. Choisissez votre créneau, on vous envoie le lien Google Meet.</p>
-              <button type="button" class="btn-primary btn-booking-card" data-booking data-magnetic="0.15">
+              <a href="/reserver-un-call.html" class="btn-primary btn-booking-card" data-magnetic="0.15">
                 Réserver un call
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-              </button>
+              </a>
             </div>
           </aside>
 
@@ -1205,7 +1205,7 @@
             <li><a href="mailto:contact@nzagency.fr">contact@nzagency.fr</a></li>
             <li><span>France</span></li>
             <li><a href="#contact">Démarrer un projet →</a></li>
-            <li><button type="button" class="footer-link-btn" data-booking>Réserver un call →</button></li>
+            <li><a href="/reserver-un-call.html">Réserver un call →</a></li>
           </ul>
         </div>
 
@@ -1223,132 +1223,6 @@
     </div>
   </footer>
 
-  <!-- ===== RÉSERVATION DE CALL (modale) ===== -->
-  <div class="booking-modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" hidden>
-    <div class="booking-backdrop" data-booking-close aria-hidden="true"></div>
-    <div class="booking-panel" data-lenis-prevent tabindex="-1">
-      <button type="button" class="booking-close" data-booking-close aria-label="Fermer la réservation">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-
-      <header class="booking-head">
-        <span class="section-badge">Call de cadrage · 30 min · gratuit</span>
-        <h2 class="booking-title" id="bookingTitle">Réservez votre call</h2>
-        <ol class="booking-progress" aria-label="Étapes de la réservation">
-          <li data-step="1" class="active"><span>1</span>Date</li>
-          <li data-step="2"><span>2</span>Heure</li>
-          <li data-step="3"><span>3</span>Vos infos</li>
-        </ol>
-      </header>
-
-      <p class="booking-error" id="bookingError" role="alert" aria-live="assertive" hidden></p>
-
-      <!-- Étape 1 : date -->
-      <section class="booking-step" data-step="1" aria-label="Choix de la date">
-        <div class="booking-month">
-          <button type="button" class="booking-nav" id="bookingPrev" aria-label="Mois précédent">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <span class="booking-month-label" id="bookingMonthLabel" aria-live="polite"></span>
-          <button type="button" class="booking-nav" id="bookingNext" aria-label="Mois suivant">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-          </button>
-        </div>
-        <div class="booking-weekdays" aria-hidden="true">
-          <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
-        </div>
-        <div class="booking-grid" id="bookingGrid" role="group" aria-label="Jours disponibles"></div>
-        <p class="booking-hint">Du lundi au vendredi, de 10h à 18h, heure de Paris. Jours grisés : complets.</p>
-      </section>
-
-      <!-- Étape 2 : heure -->
-      <section class="booking-step" data-step="2" aria-label="Choix de l'heure" hidden>
-        <button type="button" class="booking-back" data-booking-back="1">← Changer de date</button>
-        <p class="booking-day-label" id="bookingDayLabel"></p>
-        <p class="booking-hint">Créneaux affichés en heure de Paris.</p>
-        <div class="booking-slots" id="bookingSlots" role="group" aria-label="Créneaux disponibles"></div>
-      </section>
-
-      <!-- Étape 3 : infos -->
-      <section class="booking-step" data-step="3" aria-label="Vos informations" hidden>
-        <button type="button" class="booking-back" data-booking-back="2">← Changer d'heure</button>
-        <p class="booking-summary" id="bookingSummary"></p>
-
-        <form id="bookingForm" class="contact-form booking-form" novalidate>
-          <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="bkPrenom">Prénom <abbr title="Champ obligatoire" class="required">*</abbr></label>
-              <input type="text" id="bkPrenom" name="bkPrenom" placeholder="Jean" autocomplete="given-name" required aria-describedby="bkPrenomError">
-              <span class="field-error" id="bkPrenomError" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label for="bkNom">Nom <abbr title="Champ obligatoire" class="required">*</abbr></label>
-              <input type="text" id="bkNom" name="bkNom" placeholder="Dupont" autocomplete="family-name" required aria-describedby="bkNomError">
-              <span class="field-error" id="bkNomError" role="alert" aria-live="polite"></span>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="bkEmail">Email <abbr title="Champ obligatoire" class="required">*</abbr></label>
-              <input type="email" id="bkEmail" name="bkEmail" placeholder="jean@entreprise.fr" autocomplete="email" inputmode="email" required aria-describedby="bkEmailError">
-              <span class="field-error" id="bkEmailError" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label for="bkPhone">Téléphone <abbr title="Champ obligatoire" class="required">*</abbr></label>
-              <input type="tel" id="bkPhone" name="bkPhone" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" required aria-describedby="bkPhoneError">
-              <span class="field-error" id="bkPhoneError" role="alert" aria-live="polite"></span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="bkProjet">Parlez-nous de votre projet en quelques lignes <abbr title="Champ obligatoire" class="required">*</abbr></label>
-            <textarea id="bkProjet" name="bkProjet" rows="4" minlength="20" maxlength="1000" placeholder="Votre idée, votre cible, où vous en êtes…" required aria-describedby="bkProjetError bkProjetCount"></textarea>
-            <div class="form-meta">
-              <span class="field-error" id="bkProjetError" role="alert" aria-live="polite"></span>
-              <span class="char-count" id="bkProjetCount" aria-live="polite">0 / 1000</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="checkbox-label" for="bkRgpd">
-              <input type="checkbox" id="bkRgpd" name="bkRgpd" required aria-describedby="bkRgpdError">
-              <span class="checkbox-custom" aria-hidden="true"></span>
-              <span class="checkbox-text">J'accepte que mes données soient utilisées pour me recontacter <abbr title="Champ obligatoire" class="required">*</abbr></span>
-            </label>
-            <span class="field-error" id="bkRgpdError" role="alert" aria-live="polite"></span>
-          </div>
-
-          <div id="bkTurnstile"></div>
-
-          <button type="submit" class="btn-primary btn-submit" id="bookingSubmit">
-            <span class="btn-text">Confirmer le call</span>
-            <span class="btn-spinner" aria-hidden="true"></span>
-            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
-          </button>
-        </form>
-      </section>
-
-      <!-- Étape 4 : confirmation -->
-      <section class="booking-step booking-success" data-step="4" id="bookingSuccess" aria-label="Réservation confirmée" hidden>
-        <span class="booking-success-icon" aria-hidden="true">✓</span>
-        <h3 class="booking-success-title">Votre call est réservé</h3>
-        <dl class="booking-recap">
-          <div><dt>Date</dt><dd id="bkDoneDate"></dd></div>
-          <div><dt>Heure</dt><dd id="bkDoneTime"></dd></div>
-        </dl>
-        <a id="bkMeetLink" class="btn-primary" href="#" target="_blank" rel="noopener noreferrer">
-          Rejoindre le call sur Google Meet
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-        </a>
-        <p class="booking-hint" id="bkDoneMail"></p>
-        <button type="button" class="btn-outline" data-booking-close>Fermer</button>
-      </section>
-    </div>
-  </div>
-
   <!-- Smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <!-- EmailJS SDK -->
@@ -1357,7 +1231,6 @@
   <script src="js/particles.js?v=2.1" defer></script>
   <script src="js/animations.js?v=2.1" defer></script>
   <script src="js/contact.js?v=2.1" defer></script>
-  <script src="js/booking.js?v=1.0" defer></script>
   <script src="js/main.js?v=2.1" defer></script>
   <script src="js/effects.js?v=2.1" defer></script>
 

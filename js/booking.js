@@ -1,9 +1,10 @@
 /**
  * NZ Agency — booking.js
  *
- * Réservation d'un call en visio, en trois étapes : date, heure, infos.
- * Les disponibilités et la réservation passent par l'admin NZ, qui interroge
- * Google Agenda, crée l'événement Meet et envoie les emails.
+ * Page /reserver-un-call.html : réservation d'un call en visio, en trois
+ * étapes (date, heure, infos). Les disponibilités et la réservation passent
+ * par l'admin NZ, qui interroge Google Agenda, crée l'événement Meet et
+ * envoie les emails.
  */
 
 (function () {
@@ -20,7 +21,6 @@
   const modal = document.getElementById('bookingModal');
   if (!modal) return;
 
-  const panel      = modal.querySelector('.booking-panel');
   const steps      = [...modal.querySelectorAll('.booking-step')];
   const stepDots   = [...modal.querySelectorAll('.booking-progress li')];
   const monthLabel = modal.querySelector('#bookingMonthLabel');
@@ -44,51 +44,20 @@
     days: new Map(),      // 'AAAA-MM' → Set('AAAA-MM-JJ')
     date: null,           // 'AAAA-MM-JJ'
     slot: null,           // { start, end, label }
-    lastFocus: null,
     turnstileId: null,
   };
 
   /* ============================================================
-     OUVERTURE / FERMETURE
+     DÉMARRAGE
+     Un retour arrière du navigateur peut ressusciter la page depuis son
+     cache, à l'étape où on l'avait laissée : on recharge pour repartir de
+     zéro, avec des disponibilités fraîches.
      ============================================================ */
-  function open(e) {
-    if (e) e.preventDefault();
-    state.lastFocus = document.activeElement;
-    modal.hidden = false;
-    requestAnimationFrame(() => modal.classList.add('open'));
-    document.body.style.overflow = 'hidden';
-    if (!state.month) {
-      const now = new Date();
-      renderMonth(`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`);
-    }
-    goTo(state.step === 4 ? 1 : state.step);
-    setTimeout(() => (modal.querySelector('.booking-close') || panel).focus(), 50);
+  window.addEventListener('pageshow', (e) => { if (e.persisted) location.reload(); });
+  {
+    const now = new Date();
+    renderMonth(`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`);
   }
-
-  function close() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => { modal.hidden = true; }, 250);
-    if (state.lastFocus && state.lastFocus.focus) state.lastFocus.focus();
-  }
-
-  document.querySelectorAll('[data-booking]').forEach((el) => el.addEventListener('click', open));
-  modal.querySelectorAll('[data-booking-close]').forEach((el) => el.addEventListener('click', close));
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) close();
-  });
-
-  // Piège le focus dans la modale : Tab ne doit pas partir derrière.
-  modal.addEventListener('keydown', (e) => {
-    if (e.key !== 'Tab') return;
-    const focusables = [...panel.querySelectorAll('button:not([disabled]), input:not([disabled]), textarea:not([disabled]), a[href]')]
-      .filter((el) => el.offsetParent !== null);
-    if (!focusables.length) return;
-    const first = focusables[0];
-    const last  = focusables[focusables.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  });
 
   /* ============================================================
      ÉTAPES
@@ -101,8 +70,8 @@
       d.classList.toggle('active', n === step);
       d.classList.toggle('done', n < step);
     });
-    panel.scrollTop = 0;
     hideError();
+    if (step !== 1) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   modal.querySelectorAll('[data-booking-back]').forEach((btn) => {

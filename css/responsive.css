@@ -651,15 +651,14 @@
 }
 
 /* ===== RÉSERVATION DE CALL ===== */
+@media (max-width: 900px) {
+  /* Sur mobile, seul le sélecteur compte : la présentation disparaît. */
+  .booking-page { grid-template-columns: 1fr; gap: 0; padding-top: 4px; padding-bottom: 48px; }
+  .booking-intro { display: none; }
+}
 @media (max-width: 640px) {
-  .booking-modal { padding: 0; align-items: flex-end; }
-  .booking-panel {
-    max-width: none;
-    max-height: 94vh;
-    max-height: 94dvh;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    padding: 28px 20px calc(24px + env(safe-area-inset-bottom));
-  }
+  .booking-topbar { padding: 16px var(--container-px); }
+  .booking-panel { padding: 26px 18px 24px; border-radius: 16px; }
   .booking-head .section-badge { font-size: 0.62rem; padding: 5px 12px; white-space: nowrap; }
   .booking-progress li { padding: 5px 10px 5px 5px; font-size: 0.75rem; }
   .booking-slots { grid-template-columns: repeat(3, 1fr); }

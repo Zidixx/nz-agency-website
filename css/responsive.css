@@ -649,3 +649,20 @@
     display: block;
   }
 }
+
+/* ===== RÉSERVATION DE CALL ===== */
+@media (max-width: 640px) {
+  .booking-modal { padding: 0; align-items: flex-end; }
+  .booking-panel {
+    max-width: none;
+    max-height: 94vh;
+    max-height: 94dvh;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    padding: 28px 20px calc(24px + env(safe-area-inset-bottom));
+  }
+  .booking-progress li { padding: 5px 10px 5px 5px; font-size: 0.75rem; }
+  .booking-slots { grid-template-columns: repeat(3, 1fr); }
+  .booking-form .form-row { grid-template-columns: 1fr; }
+  .booking-recap { grid-template-columns: 1fr; }
+  .booking-success .btn-primary { width: 100%; justify-content: center; }
+}

@@ -183,10 +183,6 @@
   animation: float 2.5s ease-in-out infinite;
 }
 
-/* ===== SOCIAL LINK HOVER ===== */
-.social-link:hover svg {
-  animation: neon-pulse 1.5s ease-in-out infinite;
-}
 
 /* ===== TAG DOT SEQUENTIAL ===== */
 .service-card:nth-child(1) .tag-dot { animation-delay: 0s; }

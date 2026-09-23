@@ -1793,31 +1793,6 @@ a.detail-value:hover { color: var(--cyan); }
   line-height: 1.5;
 }
 
-.footer-social {
-  display: flex;
-  gap: 10px;
-}
-
-.social-link {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: var(--radius-sm);
-  color: var(--text-secondary);
-  transition: var(--trans);
-}
-
-.social-link:hover {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.10);
-  transform: translateY(-2px);
-}
-
 .footer-col-title {
   font-family: var(--font-heading);
   font-size: 0.875rem;

@@ -3066,3 +3066,64 @@ a.detail-value:hover { color: var(--cyan); }
   text-align: left;
 }
 .footer-link-btn:hover { color: var(--text-primary); }
+
+/* ============================================================
+   DA BLEUE — le bleu du logo, par petites touches
+   ============================================================ */
+:root {
+  --blue:        #2f7bff;
+  --blue-light:  #6aa8ff;
+  --blue-deep:   #0a3fd1;
+  --blue-soft:   rgba(47, 123, 255, 0.14);
+  --blue-line:   rgba(47, 123, 255, 0.35);
+  --gradient-blue: linear-gradient(135deg, #ffffff 0%, #9cc4ff 38%, #2f7bff 100%);
+}
+
+::selection { background: rgba(47, 123, 255, 0.35); }
+
+/* Logo */
+.nav-logo { gap: 8px; }
+.nav-logo-mark {
+  display: block;
+  height: 26px;
+  width: auto;
+  max-width: none;
+  filter: drop-shadow(0 0 10px rgba(47, 123, 255, 0.35));
+}
+.nav-logo-word {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: 2px;
+}
+.footer-logo img { display: block; width: 132px; height: auto; margin-bottom: 14px; }
+
+/* Hero */
+.hero-title .text-gradient { background: var(--gradient-blue); -webkit-background-clip: text; background-clip: text; }
+.badge-dot {
+  background: var(--blue);
+  animation-name: badge-pulse-blue;
+}
+@keyframes badge-pulse-blue {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(47,123,255,0.25); opacity: 1; }
+  50%      { box-shadow: 0 0 0 7px rgba(47,123,255,0.06); opacity: 0.8; }
+}
+.hero-badge { border-color: var(--blue-line); }
+.hero-proof span { color: var(--blue-light); opacity: 1; }
+.aurora--b { background: radial-gradient(circle, rgba(47,123,255,0.22), transparent 72%); }
+
+/* Mockup téléphone */
+.app-dot, .app-cta { background: linear-gradient(135deg, #9cc4ff, var(--blue) 60%, var(--blue-deep)); }
+.float-ico { background: var(--blue-soft); color: var(--blue-light); }
+
+/* Boutons */
+.btn-primary:hover { box-shadow: 0 8px 32px rgba(47, 123, 255, 0.35); }
+
+/* Icônes et puces */
+.card-icon { color: var(--blue-light); }
+.service-card:hover .card-icon { background: var(--blue-soft); border-color: var(--blue-line); box-shadow: 0 4px 24px rgba(47,123,255,0.25); }
+.guarantee-check { color: var(--blue-light); border-color: var(--blue-line); background: var(--blue-soft); }
+.marquee-item::after { background: var(--blue); opacity: 0.7; }

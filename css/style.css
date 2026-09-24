@@ -3214,32 +3214,7 @@ a.detail-value:hover { color: var(--cyan); }
 }
 
 /* ============================================================
-   TÉLÉPHONE 3D (js/phone3d.js) — remplace le téléphone CSS
-   quand WebGL est disponible
-   ============================================================ */
-.phone3d {
-  display: block;
-  width: 100%;
-  height: 560px;
-  opacity: 0;
-  animation: phone3d-in 1.2s var(--ease) 0.2s forwards;
-}
-@keyframes phone3d-in {
-  from { opacity: 0; transform: translateY(24px) scale(0.96); }
-  to   { opacity: 1; transform: none; }
-}
-.hero-visual--3d .phone { display: none; }
-.hero-visual--3d .float-card { z-index: 3; }
-
-@media (max-width: 1024px) {
-  .phone3d { height: 440px; }
-}
-@media (max-width: 480px) {
-  .phone3d { height: 380px; }
-}
-
-/* ============================================================
-   PARCOURS — indicateur de scroll, relances, barre mobile
+   PARCOURS — indicateur de scroll, barre mobile
    ============================================================ */
 
 /* Indicateur « Découvrir notre modèle » en bas du hero */
@@ -3280,65 +3255,6 @@ a.detail-value:hover { color: var(--cyan); }
 }
 @keyframes hero-scroll-line {
   to { top: 100%; }
-}
-
-/* Relances entre les sections */
-.cta-band-wrap { padding-top: 24px; padding-bottom: 24px; }
-.cta-band {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 40px 44px;
-  border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
-    #0f1014;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  isolation: isolate;
-}
-/* Halo bleu qui suit la souris (variables posées par effects.js) */
-.cta-band-glow {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(520px circle at var(--mx, 85%) var(--my, 0%), rgba(47, 123, 255, 0.22), transparent 60%);
-  transition: opacity var(--trans);
-  pointer-events: none;
-}
-.cta-band::after {
-  /* fine ligne lumineuse en haut de la carte */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 12%;
-  right: 12%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(106, 168, 255, 0.7), transparent);
-}
-.cta-band-title {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-.cta-band-text {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  max-width: 460px;
-}
-.cta-band-actions { display: flex; gap: 12px; flex-shrink: 0; }
-
-@media (max-width: 900px) {
-  .cta-band { flex-direction: column; align-items: flex-start; padding: 32px 26px; }
-  .cta-band-actions { width: 100%; flex-wrap: wrap; }
-  .cta-band-actions a { flex: 1 1 200px; justify-content: center; }
 }
 
 /* Barre d'action fixe sur mobile */

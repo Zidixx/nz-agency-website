@@ -124,7 +124,7 @@
      ============================================================ */
   function initSpotlight() {
     if (COARSE) return;
-    const cards = document.querySelectorAll('.service-card, .phase-card, .team-card, .cta-band');
+    const cards = document.querySelectorAll('.service-card, .phase-card, .team-card');
     cards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const r = card.getBoundingClientRect();

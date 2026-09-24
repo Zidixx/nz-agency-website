@@ -161,10 +161,8 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover::before { opacity: 1; }
 .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(255, 255, 255, 0.20);
 }
-.btn-primary:active { transform: translateY(0); }
 
 /* Ripple (btn-primary ET btn-outline : sans position absolue, le span
    gonfle le bouton et le transforme en cercle géant) */
@@ -202,7 +200,6 @@ h1, h2, h3, h4 {
   border-color: rgba(255, 255, 255, 0.30);
   color: #ffffff;
   background: rgba(255, 255, 255, 0.09);
-  transform: translateY(-2px);
   box-shadow: var(--glow-cyan);
 }
 
@@ -2581,22 +2578,6 @@ a.detail-value:hover { color: var(--cyan); }
   50%      { transform: translate(-60px, -34px) scale(0.92); }
 }
 
-/* --- Sheen sur le bouton principal --- */
-.btn-primary { position: relative; overflow: hidden; }
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
-  transform: translateX(-120%);
-  transition: transform 0.75s var(--ease);
-  pointer-events: none;
-  mix-blend-mode: overlay;
-}
-
-.btn-primary:hover::after { transform: translateX(120%); }
-
 /* --- Lift sur les cartes --- */
 .service-card,
 .phase-card,
@@ -3109,11 +3090,66 @@ a.detail-value:hover { color: var(--cyan); }
 .app-dot, .app-cta { background: linear-gradient(135deg, #9cc4ff, var(--blue) 60%, var(--blue-deep)); }
 .float-ico { background: var(--blue-soft); color: var(--blue-light); }
 
-/* Boutons */
-.btn-primary:hover { box-shadow: 0 8px 32px rgba(47, 123, 255, 0.35); }
 
 /* Icônes et puces */
 .card-icon { color: var(--blue-light); }
 .service-card:hover .card-icon { background: var(--blue-soft); border-color: var(--blue-line); box-shadow: 0 4px 24px rgba(47,123,255,0.25); }
 .guarantee-check { color: var(--blue-light); border-color: var(--blue-line); background: var(--blue-soft); }
 .marquee-item::after { background: var(--blue); opacity: 0.7; }
+
+/* « app mobile » en bleu dans le titre du hero (dégradé posé mot par mot, le data-split découpe le texte) */
+.hero-title .text-blue .word,
+.hero-title .text-blue {
+  background: linear-gradient(135deg, #7fb2ff 0%, var(--blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   NAVBAR PILULE — logo, liens et boutons dans une seule barre
+   ============================================================ */
+.navbar,
+.navbar.scrolled {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 0;
+  padding: 16px var(--container-px) 0;
+}
+
+.nav-container,
+.navbar.is-docked .nav-container,
+.navbar.scrolled .nav-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 6px 6px 6px 22px;
+  border-radius: var(--radius-full);
+  background: rgba(18, 18, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: background var(--trans), box-shadow var(--trans);
+}
+
+.navbar.scrolled .nav-container {
+  background: rgba(14, 14, 14, 0.88);
+}
+
+.nav-logo-img { height: 44px; margin: 0; }
+
+/* Les liens ne sont plus une pilule dans la pilule */
+.nav-links {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
+  gap: 2px;
+}
+.nav-link { padding: 9px 18px; font-size: 0.92rem; }
+
+.nav-right { gap: 8px; }
+.btn-nav { padding: 11px 22px; }

@@ -3082,22 +3082,12 @@ a.detail-value:hover { color: var(--cyan); }
 ::selection { background: rgba(47, 123, 255, 0.35); }
 
 /* Logo */
-.nav-logo { gap: 8px; }
-.nav-logo-mark {
+.nav-logo-img {
   display: block;
-  height: 26px;
+  height: 58px;
+  margin: -6px 0;
   width: auto;
   max-width: none;
-  filter: drop-shadow(0 0 10px rgba(47, 123, 255, 0.35));
-}
-.nav-logo-word {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-  padding-top: 2px;
 }
 .footer-logo img { display: block; width: 132px; height: auto; margin-bottom: 14px; }
 

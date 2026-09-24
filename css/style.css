@@ -2732,31 +2732,6 @@ a.detail-value:hover { color: var(--cyan); }
   border: 1px solid rgba(255, 255, 255, 0.10);
   color: #fff;
 }
-.booking-intro-team {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  border-radius: var(--border-radius);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  max-width: 480px;
-}
-.booking-intro-photos { display: flex; flex-shrink: 0; }
-.booking-intro-photos img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #111;
-}
-.booking-intro-photos img + img { margin-left: -14px; }
-.booking-intro-team p {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-.booking-intro-team strong { color: #fff; }
 
 /* Colonne droite : le panneau de réservation */
 .booking-panel {

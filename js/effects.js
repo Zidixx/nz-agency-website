@@ -124,7 +124,7 @@
      ============================================================ */
   function initSpotlight() {
     if (COARSE) return;
-    const cards = document.querySelectorAll('.service-card, .phase-card, .team-card');
+    const cards = document.querySelectorAll('.service-card, .phase-card, .team-card, .cta-band');
     cards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const r = card.getBoundingClientRect();
@@ -302,6 +302,28 @@
   }
 
   /* ============================================================
+     BARRE D'ACTION MOBILE — visible après le hero, masquée
+     quand le formulaire de contact est à l'écran
+     ============================================================ */
+  function initMobileCta() {
+    const barre = document.getElementById('mobileCta');
+    const hero = document.getElementById('hero');
+    const contact = document.getElementById('contact');
+    if (!barre || !hero || !contact) return;
+
+    let heroVisible = true;
+    let contactVisible = false;
+    const maj = () => {
+      const afficher = !heroVisible && !contactVisible;
+      barre.classList.toggle('is-visible', afficher);
+      barre.setAttribute('aria-hidden', String(!afficher));
+      barre.querySelectorAll('a').forEach((a) => (a.tabIndex = afficher ? 0 : -1));
+    };
+    new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; maj(); }).observe(hero);
+    new IntersectionObserver(([e]) => { contactVisible = e.isIntersecting; maj(); }).observe(contact);
+  }
+
+  /* ============================================================
      INIT
      ============================================================ */
   function init() {
@@ -315,6 +337,7 @@
     initPhaseHighlight();
     initJourney();
     initNavDock();
+    initMobileCta();
   }
 
   if (document.readyState === 'loading') {

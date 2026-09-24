@@ -3107,7 +3107,7 @@ a.detail-value:hover { color: var(--cyan); }
 }
 
 /* ============================================================
-   NAVBAR PILULE — logo, liens et boutons dans une seule barre
+   NAVBAR — logo à gauche, liens et boutons dans une pilule
    ============================================================ */
 .navbar,
 .navbar.scrolled {
@@ -3118,26 +3118,39 @@ a.detail-value:hover { color: var(--cyan); }
   padding: 16px var(--container-px) 0;
 }
 
-.nav-container,
+.navbar .nav-container,
 .navbar.is-docked .nav-container,
 .navbar.scrolled .nav-container {
-  max-width: 1120px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 6px 6px 6px 22px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* La pilule : liens + boutons, le logo reste à côté */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 5px 5px 8px;
   border-radius: var(--radius-full);
   background: rgba(18, 18, 18, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  transition: background var(--trans), box-shadow var(--trans);
+  transition: background var(--trans);
+}
+.navbar.scrolled .nav-pill { background: rgba(14, 14, 14, 0.88); }
+
+@media (max-width: 1024px) {
+  .nav-pill { padding: 4px; }
 }
 
-.navbar.scrolled .nav-container {
-  background: rgba(14, 14, 14, 0.88);
-}
-
-.nav-logo-img { height: 44px; margin: 0; }
+.nav-logo-img { height: 52px; margin: 0; }
 
 /* Les liens ne sont plus une pilule dans la pilule */
 .nav-links {
@@ -3149,7 +3162,7 @@ a.detail-value:hover { color: var(--cyan); }
   padding: 0;
   gap: 2px;
 }
-.nav-link { padding: 9px 18px; font-size: 0.92rem; }
+.nav-link { padding: 7px 16px; font-size: 0.9rem; }
 
 .nav-right { gap: 8px; }
-.btn-nav { padding: 11px 22px; }
+.btn-nav { padding: 7px 16px; font-size: 0.82rem; font-weight: 500; }

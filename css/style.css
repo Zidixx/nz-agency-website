@@ -3132,13 +3132,13 @@ a.detail-value:hover { color: var(--cyan); }
 
 .nav-logo-img { height: 52px; margin: 0; }
 
-/* La pilule centrée : les liens seuls ; les boutons sont à droite, hors pilule */
+/* La pilule centrée : liens | séparateur | boutons */
 .nav-pill {
   grid-column: 2;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px;
+  gap: 8px;
+  padding: 8px;
   border-radius: var(--radius-full);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
@@ -3162,11 +3162,11 @@ a.detail-value:hover { color: var(--cyan); }
 }
 
 .navbar .nav-link {
-  padding: 0 16px;
-  height: 36px;
+  padding: 0 20px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
-  font-size: 0.88rem;
+  font-size: 0.94rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
   box-shadow: none;
@@ -3174,18 +3174,25 @@ a.detail-value:hover { color: var(--cyan); }
 .navbar .nav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
 .navbar .nav-link.active { color: #fff; background: rgba(255, 255, 255, 0.10); box-shadow: none; }
 
-.navbar .nav-right { grid-column: 3; justify-self: end; gap: 8px; }
+.navbar .nav-right { gap: 6px; }
+.navbar .nav-right::before {
+  content: '';
+  width: 1px;
+  height: 22px;
+  margin: 0 8px 0 4px;
+  background: rgba(255, 255, 255, 0.14);
+}
 
 .navbar .btn-nav {
-  height: 36px;
-  padding: 0 16px;
-  font-size: 0.84rem;
+  height: 44px;
+  padding: 0 22px;
+  font-size: 0.9rem;
   font-weight: 500;
   justify-content: center;
 }
 .navbar .btn-outline.btn-nav {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
   color: rgba(255, 255, 255, 0.9);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -3203,4 +3210,5 @@ a.detail-value:hover { color: var(--cyan); }
     -webkit-backdrop-filter: none;
     padding: 0;
   }
+  .navbar .nav-right::before { display: none; }
 }

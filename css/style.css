@@ -3287,3 +3287,32 @@ a.detail-value:hover { color: var(--cyan); }
   }
   .hero-scroll { display: none; }
 }
+
+/* ===== Délais de livraison ===== */
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.delivery-grid .card-inner { padding: 32px 26px; }
+.delivery-num {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+.delivery-num .text-gradient {
+  font-size: clamp(3.5rem, 6vw, 4.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 1100px) {
+  .delivery-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
+}
+@media (max-width: 640px) {
+  .delivery-grid { grid-template-columns: 1fr; max-width: 500px; }
+}

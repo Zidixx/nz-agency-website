@@ -1,28 +1,30 @@
-# NZ Agency — Landing Page
+# NZ Agency, site vitrine
 
-Site web production-ready pour **NZ Agency**, agence web premium.
+Site de **NZ Agency**, incubateur d'applications mobiles (nzagency.fr).
 
----
+## Direction artistique (refonte du 2026-09-30)
+
+- **Idée** : le lancement. Ciel nuit, orange de l'allumage.
+- **Couleurs** : nuit `#0b1033` / `#070a22`, orange `#ff6a13` vers ambre `#ffb224`, clair `#f4f5fa`, encre `#11142b`.
+- **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Manrope pour le texte.
+- **Logo** : monogramme N et Z en formes pleines, diagonale du Z en orange (`assets/nz-mark.svg`, `assets/favicon.svg`).
+- **Navbar** : pilule de verre qui passe en clair sur les sections claires (`data-theme` sur chaque section) ; sur mobile, pilule compacte et menu plein écran.
 
 ## Structure des fichiers
 
 ```
 SITE_WEB_NZ/
 ├── index.html                    # Page principale
-├── mentions-legales.html         # Page mentions légales
-├── politique-confidentialite.html
+├── reserver-un-call.html         # Réservation d'un call (API de l'admin NZ)
+├── mentions-legales.html, cgv.html, cgu.html, politique-confidentialite.html
 ├── css/
-│   ├── animations.css            # Keyframes et animations
-│   ├── style.css                 # Styles principaux + design system
-│   └── responsive.css            # Media queries mobile-first
+│   ├── nz.css                    # Tout le site : tokens, sections, responsive, réservation
+│   └── legal.css                 # Pages légales
 ├── js/
-│   ├── particles.js              # Canvas particules hero
-│   ├── animations.js             # Scroll reveal + compteurs + typewriter + FAQ
+│   ├── site.js                   # Navbar, hero (étoiles, décollage), apparitions, méthode épinglée, FAQ
 │   ├── contact.js                # Formulaire EmailJS
-│   └── main.js                   # Cursor + navbar + ripple + smooth scroll
-├── assets/
-│   ├── nathan.svg                # Placeholder photo Nathan (remplacer par nathan.jpg)
-│   └── enzo.svg                  # Placeholder photo Enzo (remplacer par enzo.jpg)
+│   └── booking.js                # Réservation de call
+├── assets/                       # Logo, favicons, image de partage (og-image.jpg), photos équipe
 └── README.md
 ```
 
@@ -30,23 +32,23 @@ SITE_WEB_NZ/
 
 ## 1. Configuration EmailJS (Formulaire de contact)
 
-### Étape 1 — Créer un compte EmailJS
+### Étape 1 : Créer un compte EmailJS
 1. Aller sur [https://www.emailjs.com](https://www.emailjs.com)
 2. Créer un compte gratuit (200 emails/mois gratuits)
 3. Connecter votre compte Gmail `nzdigitagency@gmail.com`
 
-### Étape 2 — Créer un Service Email
+### Étape 2 : Créer un Service Email
 1. Dans le dashboard EmailJS → **Email Services** → **Add New Service**
 2. Choisir **Gmail**
 3. Se connecter avec `nzdigitagency@gmail.com`
 4. Nommer le service (ex: `NZ Agency Contact`)
 5. Copier le **Service ID** (ex: `service_abc123`)
 
-### Étape 3 — Créer un Template Email
+### Étape 3 : Créer un Template Email
 1. Dans le dashboard → **Email Templates** → **Create New Template**
 2. Configurer le template :
 
-**Subject :** `Nouveau projet — {{project_type}} de {{from_name}}`
+**Subject :** `Nouveau projet : {{project_type}} de {{from_name}}`
 
 **Body (HTML) :**
 ```html
@@ -66,10 +68,10 @@ SITE_WEB_NZ/
 
 3. Enregistrer et copier le **Template ID** (ex: `template_xyz789`)
 
-### Étape 4 — Récupérer la Public Key
+### Étape 4 : Récupérer la Public Key
 1. Dashboard → **Account** → **General** → copier **Public Key** (ex: `abCdEfGhIjKlMnOp`)
 
-### Étape 5 — Coller les IDs dans le code
+### Étape 5 : Coller les IDs dans le code
 
 Ouvrir `js/contact.js` et remplacer les 3 constantes :
 
@@ -101,7 +103,7 @@ Les photos placeholder SVG se trouvent dans `assets/`.
 <img src="./assets/nathan.jpg" ...>
 ```
 
-> **Note :** Le fallback `onerror` est déjà en place — si la photo ne charge pas, le placeholder gradient s'affiche automatiquement.
+> **Note :** Le fallback `onerror` est déjà en place : si la photo ne charge pas, le placeholder gradient s'affiche automatiquement.
 
 ### Optimisation des photos (recommandé)
 ```bash
@@ -150,14 +152,14 @@ Vercel détecte automatiquement les changements.
 
 ## 4. Connecter un nom de domaine custom sur Vercel
 
-### Étape 1 — Ajouter le domaine dans Vercel
+### Étape 1 : Ajouter le domaine dans Vercel
 1. Dashboard Vercel → votre projet → **Settings** → **Domains**
 2. Cliquer **Add** → entrer votre domaine (ex: `nzagency.fr`)
 3. Vercel vous donne les enregistrements DNS à configurer
 
-### Étape 2 — Configurer le DNS chez votre registrar
+### Étape 2 : Configurer le DNS chez votre registrar
 
-**Option A — Utiliser les nameservers Vercel (recommandé)**
+**Option A : Utiliser les nameservers Vercel (recommandé)**
 
 Chez votre registrar (OVH, Namecheap, Gandi...), changer les nameservers pour :
 ```
@@ -165,7 +167,7 @@ ns1.vercel-dns.com
 ns2.vercel-dns.com
 ```
 
-**Option B — Enregistrement A/CNAME manuel**
+**Option B : Enregistrement A/CNAME manuel**
 
 ```
 Type : A
@@ -177,10 +179,10 @@ Name : www
 Value : cname.vercel-dns.com
 ```
 
-### Étape 3 — SSL automatique
+### Étape 3 : SSL automatique
 Vercel génère automatiquement un certificat SSL Let's Encrypt sous quelques minutes.
 
-### Étape 4 — Mettre à jour les URLs dans index.html
+### Étape 4 : Mettre à jour les URLs dans index.html
 Remplacer `https://nzagency.fr` par votre vrai domaine dans :
 - Les balises `og:url` et `og:image`
 - Les balises `twitter:image`
@@ -197,7 +199,7 @@ Remplacer `https://nzagency.fr` par votre vrai domaine dans :
 - [ ] Ajouter les vraies photos `nathan.jpg` et `enzo.jpg` dans `assets/`
 - [ ] Mettre à jour l'URL réelle dans les balises OG/Twitter (`index.html`)
 - [ ] Mettre à jour le Schema.org JSON-LD avec l'URL réelle
-- [ ] Créer une image OG (`assets/og-image.jpg` — 1200×630px)
+- [ ] Créer une image OG (`assets/og-image.jpg` : 1200×630px)
 - [ ] Vérifier les liens des réseaux sociaux (Instagram, LinkedIn) dans le footer
 - [ ] Remplacer les `href="#"` des réseaux sociaux par les vraies URLs
 
@@ -266,7 +268,7 @@ Créer `vercel.json` à la racine pour les headers de sécurité :
 ## 7. Maintenance
 
 ### Mise à jour du contenu
-Tout le contenu est directement dans `index.html` — éditable sans outil externe.
+Tout le contenu est directement dans `index.html` : éditable sans outil externe.
 
 ### Mise à jour du design
 - Couleurs et variables : début de `css/style.css` (`:root { ... }`)
@@ -296,4 +298,4 @@ Tout le contenu est directement dans `index.html` — éditable sans outil exter
 
 ---
 
-*NZ Agency — L'excellence digitale, clé en main.*
+*NZ Agency : L'excellence digitale, clé en main.*

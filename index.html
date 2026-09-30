@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://www.nzagency.fr/">
   <meta name="geo.region" content="FR">
   <meta name="geo.placename" content="France">
-  <meta name="theme-color" content="#0c0c0c">
+  <meta name="theme-color" content="#070a22">
 
   <!-- Open Graph -->
   <meta property="og:title" content="NZ Agency, agence de développement d’applications mobiles">
@@ -29,20 +29,19 @@
 
   <title>Agence de développement d’application mobile iOS &amp; Android | NZ Agency</title>
 
-  <!-- Favicon SVG inline -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=2">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=3">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=3">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3">
 
   <!-- Preconnect Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@150,800;150,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/animations.css?v=2.2">
-  <link rel="stylesheet" href="css/style.css?v=2.2">
-  <link rel="stylesheet" href="css/responsive.css?v=2.2">
+  <link rel="stylesheet" href="css/nz.css?v=3.0">
+  <script>document.documentElement.classList.add('js')</script>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -53,7 +52,7 @@
         "@type": ["ProfessionalService", "Organization"],
         "@id": "https://www.nzagency.fr/#organization",
         "name": "NZ Agency",
-        "alternateName": "NZ Agency \u2014 Agence de d\u00e9veloppement d\u2019applications mobiles",
+        "alternateName": "NZ Agency, agence de d\u00e9veloppement d\u2019applications mobiles",
         "description": "Agence de d\u00e9veloppement d\u2019applications mobiles et incubateur de startups : conception, design UI/UX, d\u00e9veloppement iOS et Android, publication sur l\u2019App Store et le Google Play Store, ASO, acquisition marketing (organique, UGC), conseil, formation et maintenance. Cr\u00e9ation de sites vitrine, de r\u00e9servation et e-commerce.",
         "url": "https://www.nzagency.fr",
         "email": "contact@nzagency.fr",
@@ -163,7 +162,7 @@
           {
             "@type": "Question",
             "name": "Est-ce que vous vous occupez de l\u2019h\u00e9bergement et de la maintenance ?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous g\u00e9rons le d\u00e9ploiement complet \u2014 h\u00e9bergement, nom de domaine, SSL \u2014 ainsi que la maintenance continue de vos sites et applications : mises \u00e0 jour, s\u00e9curit\u00e9 et performance." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Oui, nous g\u00e9rons le d\u00e9ploiement complet (h\u00e9bergement, nom de domaine, SSL) ainsi que la maintenance continue de vos sites et applications : mises \u00e0 jour, s\u00e9curit\u00e9 et performance." }
           }
         ]
       }
@@ -173,838 +172,408 @@
 </head>
 <body>
 
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-
   <!-- ===== NAVBAR ===== -->
-  <header class="navbar" id="navbar" role="banner">
-    <nav class="nav-container" aria-label="Navigation principale">
-      <a href="#hero" class="nav-logo" aria-label="NZ Agency, retour à l'accueil">
-        <img class="nav-logo-img" src="/assets/nz-logo.png" alt="" width="82" height="52">
-      </a>
-
-      <div class="nav-pill">
+  <header class="nav" id="nav" data-tone="dark">
+    <nav class="nav-pill" aria-label="Navigation principale">
+      <a href="#hero" class="nav-brand" aria-label="NZ Agency, retour à l'accueil"><svg class="nz-mark" viewBox="0 0 92 64" aria-hidden="true"><defs><linearGradient id="nzo1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6A13"/><stop offset="1" stop-color="#FFB224"/></linearGradient></defs><g class="ink"><rect x="0" y="0" width="13" height="64"/><polygon points="0,0 13,0 45,64 32,64"/><rect x="32" y="0" width="13" height="64"/><rect x="32" y="0" width="60" height="13"/><rect x="45" y="51" width="47" height="13"/></g><polygon points="79,13 92,13 58,51 45,51" fill="url(#nzo1)"/></svg><span>NZ&nbsp;Agency</span></a>
       <ul class="nav-links" role="list">
-        <li><a href="#incubateur" class="nav-link">Incubateur</a></li>
-        <li><a href="#services" class="nav-link">Expertises</a></li>
-        <li><a href="#processus" class="nav-link">Méthode</a></li>
-        <!-- <li><a href="#equipe" class="nav-link">L'Agence</a></li> -->
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#incubateur">Incubateur</a></li>
+        <li><a href="#services">Expertises</a></li>
+        <li><a href="#processus">Méthode</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-
-      <div class="nav-right">
-        <a href="/reserver-un-call.html" class="btn-outline btn-nav" aria-label="Réserver un call de 30 minutes avec NZ Agency">
-          Réserver un call
-        </a>
-        <a href="#contact" class="btn-primary btn-nav" aria-label="Démarrer un projet avec NZ Agency">
-          Lancer mon app
-        </a>
-        <button class="burger" id="burger" aria-label="Ouvrir le menu de navigation" aria-expanded="false" aria-controls="navMobile">
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-          <span class="burger-line"></span>
-        </button>
-      </div>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <div class="nav-actions">
+        <a href="/reserver-un-call.html" class="btn nav-call">Réserver un call</a>
+        <a href="#contact" class="btn btn--flame">Lancer mon app</a>
+        <button class="nav-burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
       </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="nav-mobile" id="navMobile" aria-hidden="true">
-      <ul role="list">
-        <li><a href="#incubateur" class="nav-link-mobile">Incubateur</a></li>
-        <li><a href="#services" class="nav-link-mobile">Expertises</a></li>
-        <li><a href="#processus" class="nav-link-mobile">Méthode</a></li>
-        <!-- <li><a href="#equipe" class="nav-link-mobile">L'Agence</a></li> -->
-        <li><a href="#contact" class="nav-link-mobile">Contact</a></li>
-      </ul>
-      <a href="#contact" class="btn-primary btn-mobile-cta">Lancer mon app</a>
-      <a href="/reserver-un-call.html" class="btn-outline btn-mobile-cta">Réserver un call</a>
-    </div>
   </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <ul class="menu-links" role="list">
+      <li><a href="#incubateur">Incubateur</a></li>
+      <li><a href="#services">Expertises</a></li>
+      <li><a href="#processus">Méthode</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-ctas">
+      <a href="#contact" class="btn btn--flame">Lancer mon app</a>
+      <a href="/reserver-un-call.html" class="btn btn--ghost-night">Réserver un call</a>
+    </div>
+  </div>
 
   <main>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="hero" aria-labelledby="heroTitle">
-      <canvas id="particlesCanvas" aria-hidden="true"></canvas>
-      <div class="aurora aurora--a" style="top:-120px;left:-140px;" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-2" aria-hidden="true" data-parallax="0.18"></div>
-      <div class="aurora aurora--b" style="bottom:-200px;right:-160px;" aria-hidden="true"></div>
-      <div class="hero-orb hero-orb-3" aria-hidden="true" data-parallax="-0.14"></div>
-
-      <div class="hero-inner">
-
+    <section class="hero" id="hero" data-theme="dark" aria-labelledby="heroTitle">
+      <canvas class="hero-stars" id="stars" aria-hidden="true"></canvas>
+      <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="hero-badge" aria-label="Incubateur d'applications mobiles">
-            <span class="badge-dot" aria-hidden="true"></span>
-            Incubateur d&rsquo;applications mobiles
-          </p>
-
-          <h1 class="hero-title" id="heroTitle" data-split>
-            On développe<br>
-            votre <span class="text-blue">app mobile</span>.<br>
-            <span class="text-gradient">Et on la fait décoller.</span>
+          <p class="hero-kicker" data-in="1"><span class="dot" aria-hidden="true"></span>Incubateur d&rsquo;applications mobiles</p>
+          <h1 class="hero-title display" id="heroTitle">
+            <span class="line"><span>On développe</span></span>
+            <span class="line"><span>votre app mobile.</span></span>
+            <span class="line"><span class="flame-text">Et on la fait décoller.</span></span>
           </h1>
-
-          <p class="hero-lead">
+          <p class="hero-lead" data-in="2">
             NZ Agency conçoit, développe et publie votre <strong>application mobile iOS &amp; Android</strong>
             sur l&rsquo;App&nbsp;Store et le Play&nbsp;Store en 12&nbsp;jours. C&rsquo;est notre cœur de métier.
             Et si vous voulez aller plus loin, on vous accompagne aussi sur
             l&rsquo;<strong>acquisition</strong>, la <strong>stratégie</strong> et le <strong>conseil</strong>.
           </p>
-
-          <div class="hero-ctas">
-            <a href="#contact" class="btn-primary btn-large">
-              <span>Lancer mon application</span>
+          <div class="hero-ctas" data-in="3">
+            <a href="#contact" class="btn btn--flame btn--lg">Lancer mon application
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="/reserver-un-call.html" class="btn-outline btn-large">
+            <a href="/reserver-un-call.html" class="btn btn--ghost-night btn--lg">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-              <span>Réserver un call</span>
+              Réserver un call
             </a>
           </div>
-
-          <ul class="hero-proof" role="list" aria-label="Points clés de l'agence">
-            <li><span aria-hidden="true">✓</span> Dev iOS &amp; Android</li>
-            <li><span aria-hidden="true">✓</span> Publication stores en 12 jours</li>
-            <li><span aria-hidden="true">✓</span> Accompagnement acquisition en option</li>
-            <li><span aria-hidden="true">✓</span> Uniquement sur devis</li>
+          <ul class="hero-proof" role="list" aria-label="Points clés de l'agence" data-in="4">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Dev iOS &amp; Android</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Publication stores en 12 jours</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Accompagnement acquisition en option</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Uniquement sur devis</li>
           </ul>
         </div>
 
-        <div class="hero-visual" aria-hidden="true" data-parallax="0.06">
-          <div class="phone" data-tilt="9">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="app-bar">
-                <span class="app-dot"></span>
-                <span class="app-title">Votre app</span>
+        <div class="hero-stage" aria-hidden="true" data-in="5">
+          <div class="launch-pad"></div>
+          <div class="rocket">
+            <div class="phone">
+              <div class="phone-screen">
+                <span class="phone-island"></span>
+                <div class="app-head">
+                  <span class="app-icon"><svg class="nz-mark" viewBox="0 0 92 64" aria-hidden="true"><defs><linearGradient id="nzo2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6A13"/><stop offset="1" stop-color="#FFB224"/></linearGradient></defs><g fill="#fff"><rect x="0" y="0" width="13" height="64"/><polygon points="0,0 13,0 45,64 32,64"/><rect x="32" y="0" width="13" height="64"/><rect x="32" y="0" width="60" height="13"/><rect x="45" y="51" width="47" height="13"/></g><polygon points="79,13 92,13 58,51 45,51" fill="#0b1033"/></svg></span>
+                  <span><span class="app-name">Votre app</span><br><span class="app-sub">iOS &amp; Android</span></span>
+                </div>
+                <div class="app-card">
+                  <small>Installations cette semaine</small>
+                  <b>+ 1 240</b>
+                  <div class="app-bars"><i style="height:30%"></i><i style="height:42%"></i><i style="height:38%"></i><i style="height:58%"></i><i style="height:66%"></i><i style="height:100%"></i></div>
+                </div>
+                <div class="app-row"><span style="width:44%"></span><span style="width:28%"></span></div>
+                <div class="app-tiles"><span></span><span></span><span></span><span></span></div>
+                <div class="app-btn">Télécharger</div>
               </div>
-              <div class="app-hero"></div>
-              <div class="app-row"><span class="app-chip"></span><span class="app-chip"></span><span class="app-chip short"></span></div>
-              <div class="app-line"></div>
-              <div class="app-line short"></div>
-              <div class="app-grid">
-                <div class="app-tile"></div>
-                <div class="app-tile"></div>
-                <div class="app-tile"></div>
-                <div class="app-tile"></div>
-              </div>
-              <div class="app-cta"></div>
             </div>
+            <div class="exhaust"></div>
           </div>
-
-          <div class="float-card float-card--stores" data-parallax="0.14">
-            <span class="float-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            </span>
+          <div class="chip chip--stores">
+            <span class="chip-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>
             <span><strong>Publiée</strong><br>App&nbsp;Store &amp; Play&nbsp;Store</span>
           </div>
-
-          <div class="float-card float-card--growth" data-parallax="-0.12">
-            <span class="float-ico">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h5v5"/></svg>
-            </span>
+          <div class="chip chip--growth">
+            <span class="chip-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h5v5"/></svg></span>
             <span><strong>Acquisition</strong><br>ASO, organique &amp; UGC</span>
           </div>
         </div>
-
       </div>
-      <a href="#incubateur" class="hero-scroll" aria-label="Découvrir notre modèle d'incubateur">
-        <span>Découvrir notre modèle</span>
-        <i aria-hidden="true"></i>
-      </a>
     </section>
 
-    <!-- ===== MARQUEE ===== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span class="marquee-item">Développement iOS</span>
-          <span class="marquee-item">Développement Android</span>
-          <span class="marquee-item">React Native</span>
-          <span class="marquee-item">Swift</span>
-          <span class="marquee-item">Kotlin</span>
-          <span class="marquee-item">Back-end &amp; API</span>
-          <span class="marquee-item">Design UI/UX</span>
-          <span class="marquee-item">Publication App Store</span>
-          <span class="marquee-item">Publication Play Store</span>
-          <span class="marquee-item">ASO</span>
-          <span class="marquee-item">SEO</span>
-          <span class="marquee-item">Acquisition organique</span>
-          <span class="marquee-item">UGC &amp; créateurs</span>
-          <span class="marquee-item">MVP &amp; startup</span>
-          <span class="marquee-item">Conseil &amp; stratégie</span>
-          <span class="marquee-item">Sites web &amp; e-commerce</span>
-        </div>
-        <div class="marquee-group">
-          <span class="marquee-item">Développement iOS</span>
-          <span class="marquee-item">Développement Android</span>
-          <span class="marquee-item">React Native</span>
-          <span class="marquee-item">Swift</span>
-          <span class="marquee-item">Kotlin</span>
-          <span class="marquee-item">Back-end &amp; API</span>
-          <span class="marquee-item">Design UI/UX</span>
-          <span class="marquee-item">Publication App Store</span>
-          <span class="marquee-item">Publication Play Store</span>
-          <span class="marquee-item">ASO</span>
-          <span class="marquee-item">SEO</span>
-          <span class="marquee-item">Acquisition organique</span>
-          <span class="marquee-item">UGC &amp; créateurs</span>
-          <span class="marquee-item">MVP &amp; startup</span>
-          <span class="marquee-item">Conseil &amp; stratégie</span>
-          <span class="marquee-item">Sites web &amp; e-commerce</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee marquee--reverse" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span class="marquee-item">Développement iOS</span>
-          <span class="marquee-item">Développement Android</span>
-          <span class="marquee-item">React Native</span>
-          <span class="marquee-item">Swift</span>
-          <span class="marquee-item">Kotlin</span>
-          <span class="marquee-item">Back-end &amp; API</span>
-          <span class="marquee-item">Design UI/UX</span>
-          <span class="marquee-item">Publication App Store</span>
-          <span class="marquee-item">Publication Play Store</span>
-          <span class="marquee-item">ASO</span>
-          <span class="marquee-item">SEO</span>
-          <span class="marquee-item">Acquisition organique</span>
-          <span class="marquee-item">UGC &amp; créateurs</span>
-          <span class="marquee-item">MVP &amp; startup</span>
-          <span class="marquee-item">Conseil &amp; stratégie</span>
-          <span class="marquee-item">Sites web &amp; e-commerce</span>
-        </div>
-        <div class="marquee-group">
-          <span class="marquee-item">Développement iOS</span>
-          <span class="marquee-item">Développement Android</span>
-          <span class="marquee-item">React Native</span>
-          <span class="marquee-item">Swift</span>
-          <span class="marquee-item">Kotlin</span>
-          <span class="marquee-item">Back-end &amp; API</span>
-          <span class="marquee-item">Design UI/UX</span>
-          <span class="marquee-item">Publication App Store</span>
-          <span class="marquee-item">Publication Play Store</span>
-          <span class="marquee-item">ASO</span>
-          <span class="marquee-item">SEO</span>
-          <span class="marquee-item">Acquisition organique</span>
-          <span class="marquee-item">UGC &amp; créateurs</span>
-          <span class="marquee-item">MVP &amp; startup</span>
-          <span class="marquee-item">Conseil &amp; stratégie</span>
-          <span class="marquee-item">Sites web &amp; e-commerce</span>
-        </div>
+    <!-- ===== SAVOIR-FAIRE ===== -->
+    <div class="ticker" data-theme="light" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group"><span>Développement iOS</span><span>Développement Android</span><span>React Native</span><span>Swift</span><span>Kotlin</span><span>Back-end &amp; API</span><span>Design UI/UX</span><span>Publication App Store</span><span>Publication Play Store</span><span>ASO</span><span>SEO</span><span>Acquisition organique</span><span>UGC &amp; créateurs</span><span>MVP &amp; startup</span><span>Conseil &amp; stratégie</span><span>Sites web &amp; e-commerce</span></div>
+        <div class="ticker-group"><span>Développement iOS</span><span>Développement Android</span><span>React Native</span><span>Swift</span><span>Kotlin</span><span>Back-end &amp; API</span><span>Design UI/UX</span><span>Publication App Store</span><span>Publication Play Store</span><span>ASO</span><span>SEO</span><span>Acquisition organique</span><span>UGC &amp; créateurs</span><span>MVP &amp; startup</span><span>Conseil &amp; stratégie</span><span>Sites web &amp; e-commerce</span></div>
       </div>
     </div>
 
     <!-- ===== DÉLAIS DE LIVRAISON ===== -->
-    <section class="delivery section" id="delais" aria-labelledby="deliveryTitle">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge">Nos délais</span>
-          <h2 class="section-title" data-split id="deliveryTitle">Livré vite. Vraiment vite.</h2>
-          <p class="section-subtitle">
-            Des délais annoncés dès le devis et tenus. Vous savez exactement quand votre projet sera en ligne.
-          </p>
+    <section class="section" id="delais" data-theme="light" aria-labelledby="deliveryTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">Nos délais</span>
+          <h2 class="display" id="deliveryTitle">Livré vite. Vraiment vite.</h2>
+          <p>Des délais annoncés dès le devis et tenus. Vous savez exactement quand votre projet sera en ligne.</p>
         </div>
 
-        <div class="delivery-grid">
-
-          <article class="service-card reveal reveal-delay-1" aria-label="Site vitrine livré en 2 jours">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <p class="delivery-num"><span class="text-gradient">2</span> jours</p>
-              <h3 class="card-title">Votre site vitrine</h3>
-              <p class="card-desc">Design sur mesure, responsive, optimisé pour le référencement Google. En ligne 2 jours après validation du contenu.</p>
-              <div class="card-tag"><span class="tag-dot" aria-hidden="true"></span>Livré en 2 jours</div>
+        <div class="days" role="list" aria-label="Délais de livraison">
+          <div class="days-scale" aria-hidden="true">
+            <span>Projet</span>
+            <div class="days-ticks">
+              <span style="left:0">Jour 0</span><span style="left:16.66%">2</span><span style="left:41.66%">5</span><span style="left:58.33%">7</span><span style="left:calc(100% - 22px)">12</span>
             </div>
+          </div>
+          <article class="day-row" role="listitem" style="--d:2">
+            <div><h3>Votre site vitrine</h3><p>Design sur mesure, responsive, optimisé pour le référencement Google. En ligne 2 jours après validation du contenu.</p></div>
+            <div class="day-track"><div class="day-bar"><b>2 j</b></div></div>
           </article>
-
-          <article class="service-card reveal reveal-delay-2" aria-label="Site e-commerce livré en 5 jours">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <p class="delivery-num"><span class="text-gradient">5</span> jours</p>
-              <h3 class="card-title">Votre site e&#8209;commerce</h3>
-              <p class="card-desc">Catalogue, panier, paiement Stripe sécurisé et back-office pour gérer vos commandes. Prêt à vendre en 5 jours.</p>
-              <div class="card-tag"><span class="tag-dot" aria-hidden="true"></span>Livré en 5 jours</div>
-            </div>
+          <article class="day-row" role="listitem" style="--d:5">
+            <div><h3>Votre site e&#8209;commerce</h3><p>Catalogue, panier, paiement Stripe sécurisé et back-office pour gérer vos commandes. Prêt à vendre en 5 jours.</p></div>
+            <div class="day-track"><div class="day-bar"><b>5 jours</b></div></div>
           </article>
-
-          <article class="service-card reveal reveal-delay-3" aria-label="SaaS livré en 7 jours">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <p class="delivery-num"><span class="text-gradient">7</span> jours</p>
-              <h3 class="card-title">Votre SaaS</h3>
-              <p class="card-desc">Comptes utilisateurs, abonnements Stripe, tableau de bord et back-office. Votre logiciel en ligne, prêt à accueillir ses premiers clients en 7 jours.</p>
-              <div class="card-tag"><span class="tag-dot" aria-hidden="true"></span>Livré en 7 jours</div>
-            </div>
+          <article class="day-row" role="listitem" style="--d:7">
+            <div><h3>Votre SaaS</h3><p>Comptes utilisateurs, abonnements Stripe, tableau de bord et back-office. Votre logiciel en ligne, prêt à accueillir ses premiers clients en 7 jours.</p></div>
+            <div class="day-track"><div class="day-bar"><b>7 jours</b></div></div>
           </article>
-
-          <article class="service-card reveal reveal-delay-4" aria-label="Application mobile livrée en 12 jours, publiée sur les stores">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <p class="delivery-num"><span class="text-gradient">12</span> jours</p>
-              <h3 class="card-title">Votre application mobile</h3>
-              <p class="card-desc">Développée pour iOS &amp; Android et publiée sur l&rsquo;App&nbsp;Store et le Google Play&nbsp;Store en 12 jours.</p>
-              <div class="card-tag"><span class="tag-dot" aria-hidden="true"></span>Publiée sur les stores</div>
-            </div>
+          <article class="day-row day-row--app" role="listitem" style="--d:12">
+            <div><h3>Votre application mobile</h3><p>Développée pour iOS &amp; Android et publiée sur l&rsquo;App&nbsp;Store et le Google Play&nbsp;Store en 12 jours.</p></div>
+            <div class="day-track"><div class="day-bar"><b>12 jours<span class="day-more"> · publiée sur les stores</span></b></div></div>
           </article>
-
         </div>
       </div>
     </section>
 
     <!-- ===== INCUBATEUR ===== -->
-    <section class="incubator section section--full" id="incubateur" data-snap aria-labelledby="incubatorTitle">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge">Notre modèle</span>
-          <h2 class="section-title" data-split id="incubatorTitle">Votre application, puis tout ce qu&rsquo;il y a autour</h2>
-          <p class="section-subtitle">
-            Notre offre principale, c&rsquo;est le développement de votre application. Ensuite, libre à vous :
-            on peut s&rsquo;arrêter à la livraison, ou continuer ensemble sur l&rsquo;acquisition, la stratégie et le conseil.
-          </p>
+    <section class="section section--white" id="incubateur" data-theme="light" aria-labelledby="incubatorTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">Notre modèle</span>
+          <h2 class="display" id="incubatorTitle">Votre application, puis tout ce qu&rsquo;il y a autour</h2>
+          <p>Notre offre principale, c&rsquo;est le développement de votre application. Ensuite, libre à vous : on peut s&rsquo;arrêter à la livraison, ou continuer ensemble sur l&rsquo;acquisition, la stratégie et le conseil.</p>
         </div>
 
-        <div class="phase-grid">
-
-          <article class="phase-card reveal reveal-delay-1">
-            <span class="phase-num" aria-hidden="true">01</span>
-            <span class="phase-tag">Inclus</span>
-            <h3 class="phase-title">On construit votre app</h3>
-            <p class="phase-desc">
-              Cadrage produit, design UI/UX, développement iOS &amp; Android, back-end et API.
-              Votre app est pensée pour tenir la charge et pour plaire dès le premier écran.
-            </p>
-            <ul class="phase-list" role="list">
-              <li>Cadrage &amp; MVP</li>
-              <li>Design UI/UX</li>
-              <li>Développement natif &amp; cross-platform</li>
-              <li>Back-end, API, base de données</li>
-            </ul>
+        <div class="phases" data-reveal="2">
+          <article class="phase">
+            <div class="phase-top"><span class="phase-num" aria-hidden="true">01</span><span class="phase-badge">Inclus</span></div>
+            <h3>On construit votre app</h3>
+            <p>Cadrage produit, design UI/UX, développement iOS &amp; Android, back-end et API. Votre app est pensée pour tenir la charge et pour plaire dès le premier écran.</p>
+            <ul role="list"><li>Cadrage &amp; MVP</li><li>Design UI/UX</li><li>Développement natif &amp; cross-platform</li><li>Back-end, API, base de données</li></ul>
           </article>
-
-          <article class="phase-card reveal reveal-delay-2">
-            <span class="phase-num" aria-hidden="true">02</span>
-            <span class="phase-tag">Inclus</span>
-            <h3 class="phase-title">On la publie sur les stores</h3>
-            <p class="phase-desc">
-              Comptes développeurs, conformité Apple et Google, fiches store optimisées, visuels, tests.
-              Votre application est en ligne sur l&rsquo;App&nbsp;Store et le Play&nbsp;Store en 12&nbsp;jours.
-            </p>
-            <ul class="phase-list" role="list">
-              <li>Publication App&nbsp;Store &amp; Play&nbsp;Store</li>
-              <li>ASO : titre, mots-clés, visuels</li>
-              <li>Conformité &amp; RGPD</li>
-              <li>Analytics et suivi des installs</li>
-            </ul>
+          <article class="phase">
+            <div class="phase-top"><span class="phase-num" aria-hidden="true">02</span><span class="phase-badge">Inclus</span></div>
+            <h3>On la publie sur les stores</h3>
+            <p>Comptes développeurs, conformité Apple et Google, fiches store optimisées, visuels, tests. Votre application est en ligne sur l&rsquo;App&nbsp;Store et le Play&nbsp;Store en 12&nbsp;jours.</p>
+            <ul role="list"><li>Publication App&nbsp;Store &amp; Play&nbsp;Store</li><li>ASO : titre, mots-clés, visuels</li><li>Conformité &amp; RGPD</li><li>Analytics et suivi des installs</li></ul>
           </article>
-
-          <article class="phase-card reveal reveal-delay-3">
-            <span class="phase-num" aria-hidden="true">03</span>
-            <span class="phase-tag phase-tag--option">En option</span>
-            <h3 class="phase-title">On vous accompagne ensuite</h3>
-            <p class="phase-desc">
-              Vous voulez aller plus loin que la livraison ? On vous accompagne sur l&rsquo;acquisition,
-              la stratégie produit, le conseil et la formation de vos équipes. Vous choisissez ce dont vous avez besoin.
-            </p>
-            <ul class="phase-list" role="list">
-              <li>Conseil &amp; stratégie d&rsquo;acquisition</li>
-              <li>Organique, contenu, UGC</li>
-              <li>Itérations produit &amp; A/B tests</li>
-              <li>Formation, maintenance, support</li>
-            </ul>
+          <article class="phase phase--option">
+            <div class="phase-top"><span class="phase-num" aria-hidden="true">03</span><span class="phase-badge">En option</span></div>
+            <h3>On vous accompagne ensuite</h3>
+            <p>Vous voulez aller plus loin que la livraison ? On vous accompagne sur l&rsquo;acquisition, la stratégie produit, le conseil et la formation de vos équipes. Vous choisissez ce dont vous avez besoin.</p>
+            <ul role="list"><li>Conseil &amp; stratégie d&rsquo;acquisition</li><li>Organique, contenu, UGC</li><li>Itérations produit &amp; A/B tests</li><li>Formation, maintenance, support</li></ul>
           </article>
-
         </div>
 
-        <div class="stats-strip reveal" role="list" aria-label="Chiffres clés de l'agence">
-          <div class="stat-item" role="listitem">
-            <span class="stat-number" data-target="50" data-suffix="+" aria-label="50 projets livrés">0+</span>
-            <span class="stat-label">Projets livrés</span>
-          </div>
-          <div class="stat-item" role="listitem">
-            <span class="stat-number" aria-label="30 jours">30 <span class="stat-unit">jours</span></span>
-            <span class="stat-label">De l&rsquo;idée à l&rsquo;App Store</span>
-          </div>
-          <div class="stat-item" role="listitem">
-            <span class="stat-number" data-target="100" data-suffix="%" aria-label="100% clients satisfaits">0%</span>
-            <span class="stat-label">Clients satisfaits</span>
-          </div>
-          <div class="stat-item" role="listitem">
-            <span class="stat-number" aria-label="24 heures">24<span class="stat-unit">h</span></span>
-            <span class="stat-label">Pour recevoir votre devis</span>
-          </div>
+        <div class="stats" role="list" aria-label="Chiffres clés de l'agence" data-reveal="3">
+          <div class="stat" role="listitem"><b data-count="50" data-suffix="+" aria-label="50 projets livrés">50+</b><span>Projets livrés</span></div>
+          <div class="stat" role="listitem"><b aria-label="30 jours">30<small>jours</small></b><span>De l&rsquo;idée à l&rsquo;App Store</span></div>
+          <div class="stat" role="listitem"><b data-count="100" data-suffix="%" aria-label="100% clients satisfaits">100%</b><span>Clients satisfaits</span></div>
+          <div class="stat" role="listitem"><b aria-label="24 heures">24<small>h</small></b><span>Pour recevoir votre devis</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services section section--full" id="services" data-snap aria-labelledby="servicesTitle">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge">Nos expertises</span>
-          <h2 class="section-title" data-split id="servicesTitle">Une agence, plusieurs expertises</h2>
-          <p class="section-subtitle">
-            Le développement d&rsquo;application est notre métier principal. Autour, vous piochez ce dont
-            vous avez besoin : design, publication, acquisition, conseil, sites web. Tout est sur devis.
-          </p>
+    <!-- ===== EXPERTISES ===== -->
+    <section class="section" id="services" data-theme="light" aria-labelledby="servicesTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">Nos expertises</span>
+          <h2 class="display" id="servicesTitle">Une agence, plusieurs expertises</h2>
+          <p>Le développement d&rsquo;application est notre métier principal. Autour, vous piochez ce dont vous avez besoin : design, publication, acquisition, conseil, sites web. Tout est sur devis.</p>
         </div>
 
-        <div class="services-grid">
-
-          <article class="service-card reveal reveal-delay-1" aria-label="Service : Développement d'application mobile iOS et Android">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18" r="1.1" fill="currentColor"/></svg></div>
-              <h3 class="card-title">Développement d&rsquo;application mobile</h3>
-              <p class="card-desc">Développement d&rsquo;applications iOS et Android : natif et cross-platform, back-end, API, paiement, notifications. Du MVP de startup à l&rsquo;app scalable, votre projet est codé proprement et pensé pour durer.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+        <div class="skills" data-reveal="2">
+          <article class="skill skill--main">
+            <span class="skill-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18" r="1.1" fill="currentColor"/></svg></span>
+            <h3>Développement d&rsquo;application mobile</h3>
+            <p>Développement d&rsquo;applications iOS et Android : natif et cross-platform, back-end, API, paiement, notifications. Du MVP de startup à l&rsquo;app scalable, votre projet est codé proprement et pensé pour durer.</p>
+            <span class="skill-foot">Notre cœur de métier · sur devis</span>
           </article>
-
-          <article class="service-card reveal reveal-delay-2" aria-label="Service : Design UI UX d'application">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
-              <h3 class="card-title">Design UI/UX &amp; identité</h3>
-              <p class="card-desc">Direction artistique, design UI/UX, prototypes interactifs et design system complet. Une interface qui donne envie de télécharger, de rester, et qui fait passer votre app pour une app de référence.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+          <article class="skill">
+            <span class="skill-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></span>
+            <h3>Design UI/UX &amp; identité</h3>
+            <p>Direction artistique, design UI/UX, prototypes interactifs et design system complet. Une interface qui donne envie de télécharger, de rester, et qui fait passer votre app pour une app de référence.</p>
+            <span class="skill-foot">Sur devis</span>
           </article>
-
-          <article class="service-card reveal reveal-delay-3" aria-label="Service : Publication App Store et Play Store avec ASO">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></div>
-              <h3 class="card-title">Publication stores &amp; ASO</h3>
-              <p class="card-desc">Publication sur l&rsquo;App&nbsp;Store et le Google Play&nbsp;Store en 12&nbsp;jours : comptes développeurs, conformité Apple et Google, fiches optimisées, visuels, mots-clés ASO et suivi des installations.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+          <article class="skill">
+            <span class="skill-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg></span>
+            <h3>Publication stores &amp; ASO</h3>
+            <p>Publication sur l&rsquo;App&nbsp;Store et le Google Play&nbsp;Store en 12&nbsp;jours : comptes développeurs, conformité Apple et Google, fiches optimisées, visuels, mots-clés ASO et suivi des installations.</p>
+            <span class="skill-foot">Sur devis</span>
           </article>
-
-          <article class="service-card reveal reveal-delay-1" aria-label="Service : Acquisition marketing organique et UGC">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h5v5"/><path d="M3 21h18"/></svg></div>
-              <h3 class="card-title">Acquisition &amp; growth marketing</h3>
-              <p class="card-desc">Stratégie d&rsquo;acquisition complète : organique (SEO, ASO, contenu, réseaux sociaux), UGC et créateurs, tunnels de conversion. On amène du trafic qualifié vers votre app et on mesure chaque euro.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+          <article class="skill">
+            <span class="skill-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"/><path d="M14 8h5v5"/><path d="M3 21h18"/></svg></span>
+            <h3>Acquisition &amp; growth marketing</h3>
+            <p>Stratégie d&rsquo;acquisition complète : organique (SEO, ASO, contenu, réseaux sociaux), UGC et créateurs, tunnels de conversion. On amène du trafic qualifié vers votre app et on mesure chaque euro.</p>
+            <span class="skill-foot">Sur devis</span>
           </article>
-
-          <article class="service-card reveal reveal-delay-2" aria-label="Service : Accompagnement et incubation de startup">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.9H20l-4.9 3.6 1.9 5.9-5-3.7-5 3.7 1.9-5.9L4 8.9h6.1z"/></svg></div>
-              <h3 class="card-title">Accompagnement startup</h3>
-              <p class="card-desc">De l&rsquo;idée au lancement : cadrage, MVP, stratégie produit, mise sur le marché, conseil et formation de vos équipes. Nous sommes nous-mêmes fondateurs de startup, on sait ce que coûte chaque semaine perdue.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+          <article class="skill">
+            <span class="skill-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.9H20l-4.9 3.6 1.9 5.9-5-3.7-5 3.7 1.9-5.9L4 8.9h6.1z"/></svg></span>
+            <h3>Accompagnement startup</h3>
+            <p>De l&rsquo;idée au lancement : cadrage, MVP, stratégie produit, mise sur le marché, conseil et formation de vos équipes. Nous sommes nous-mêmes fondateurs de startup, on sait ce que coûte chaque semaine perdue.</p>
+            <span class="skill-foot">Sur devis</span>
           </article>
-
-          <article class="service-card reveal reveal-delay-3" aria-label="Service : Création de site internet vitrine, réservation et e-commerce">
-            <div class="card-glow-border" aria-hidden="true"></div>
-            <div class="card-inner">
-              <div class="card-icon" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-              <h3 class="card-title">Sites web &amp; e-commerce</h3>
-              <p class="card-desc">Sites vitrine, landing pages, sites de réservation en ligne et boutiques e-commerce avec paiement Stripe. Le complément naturel de votre application, vitrine en 2 jours, e-commerce en 5 jours.</p>
-              <div class="card-tag">
-                <span class="tag-dot" aria-hidden="true"></span>
-                Sur devis
-              </div>
-            </div>
+          <article class="skill skill--wide">
+            <span class="skill-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+            <h3>Sites web &amp; e-commerce</h3>
+            <p>Sites vitrine, landing pages, sites de réservation en ligne et boutiques e-commerce avec paiement Stripe. Le complément naturel de votre application, vitrine en 2 jours, e-commerce en 5 jours.</p>
+            <span class="skill-foot">Sur devis</span>
           </article>
-
         </div>
       </div>
     </section>
 
-
-    <!-- ===== PARCOURS (section épinglée au scroll) ===== -->
-    <section class="journey" id="processus" aria-labelledby="journeyTitle">
-      <div class="journey-head container">
-        <div class="section-header reveal">
-          <span class="section-badge">Notre méthode</span>
-          <h2 class="section-title" data-split id="journeyTitle">De l&rsquo;idée à l&rsquo;App Store</h2>
-          <p class="section-subtitle">Quatre étapes, un interlocuteur, aucune zone d&rsquo;ombre.</p>
+    <!-- ===== MÉTHODE (étapes pilotées par le scroll) ===== -->
+    <section class="journey" id="processus" data-theme="dark" aria-labelledby="journeyTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">Notre méthode</span>
+          <h2 class="display" id="journeyTitle">De l&rsquo;idée à l&rsquo;App Store</h2>
+          <p>Quatre étapes, un interlocuteur, aucune zone d&rsquo;ombre.</p>
         </div>
       </div>
-
-      <div class="journey-wrap" id="journeyWrap">
+      <div class="journey-track" id="journeyTrack">
         <div class="journey-sticky">
-          <div class="journey-grid container">
-
-            <nav class="journey-rail" aria-label="Étapes du projet">
-              <span class="rail-line" aria-hidden="true"><span class="rail-fill" id="railFill"></span></span>
-            <button class="rail-step" type="button" data-step="0" aria-label="Étape 01 : Cadrage">
-              <span class="rail-dot" aria-hidden="true"></span>
-              <span class="rail-label">Cadrage</span>
-            </button>
-            <button class="rail-step" type="button" data-step="1" aria-label="Étape 02 : Design &amp; Dev">
-              <span class="rail-dot" aria-hidden="true"></span>
-              <span class="rail-label">Design &amp; Dev</span>
-            </button>
-            <button class="rail-step" type="button" data-step="2" aria-label="Étape 03 : Publication">
-              <span class="rail-dot" aria-hidden="true"></span>
-              <span class="rail-label">Publication</span>
-            </button>
-            <button class="rail-step" type="button" data-step="3" aria-label="Étape 04 : Croissance">
-              <span class="rail-dot" aria-hidden="true"></span>
-              <span class="rail-label">Croissance</span>
-            </button>
+          <div class="wrap journey-grid">
+            <nav class="rail" aria-label="Étapes du projet">
+              <span class="rail-line" aria-hidden="true"><span class="rail-fill"></span></span>
+              <button class="rail-step" type="button"><small>Étape 1</small><span>Cadrage</span></button>
+              <button class="rail-step" type="button"><small>Étape 2</small><span>Design &amp; Dev</span></button>
+              <button class="rail-step" type="button"><small>Étape 3</small><span>Publication</span></button>
+              <button class="rail-step" type="button"><small>Étape 4</small><span>Croissance</span></button>
             </nav>
 
-            <div class="journey-panels">
-            <article class="journey-panel" data-panel="0">
-              <span class="ghost-num" aria-hidden="true">01</span>
-              <h3 class="journey-heading">On cadre votre produit</h3>
-              <p class="journey-desc">Vous nous exposez votre idée, votre marché et vos utilisateurs. On définit le périmètre du MVP, les fonctionnalités prioritaires et le calendrier. Vous repartez avec un devis clair et un plan de livraison.</p>
-            </article>
-            <article class="journey-panel" data-panel="1">
-              <span class="ghost-num" aria-hidden="true">02</span>
-              <h3 class="journey-heading">On dessine puis on code</h3>
-              <p class="journey-desc">Direction artistique, maquettes et prototype cliquable, puis développement iOS et Android, back-end et API. Vous testez une première version réelle sur votre téléphone en quelques jours.</p>
-            </article>
-            <article class="journey-panel" data-panel="2">
-              <span class="ghost-num" aria-hidden="true">03</span>
-              <h3 class="journey-heading">On publie sur les stores</h3>
-              <p class="journey-desc">Comptes développeurs, conformité Apple et Google, fiches optimisées, visuels et mots-clés ASO, tests finaux. Votre application est en ligne sur l&rsquo;App Store et le Play Store en 12&nbsp;jours.</p>
-            </article>
-            <article class="journey-panel" data-panel="3">
-              <span class="ghost-num" aria-hidden="true">04</span>
-              <h3 class="journey-heading">On vous accompagne si vous voulez</h3>
-              <p class="journey-desc">C&rsquo;est optionnel et vous décidez : acquisition organique, contenu et UGC, conseil et stratégie, formation de vos équipes, maintenance et évolutions. Vous prenez ce dont vous avez besoin, rien de plus.</p>
-            </article>
+            <div class="panels">
+              <article class="panel">
+                <span class="panel-num" aria-hidden="true">01</span>
+                <h3>On cadre votre produit</h3>
+                <p>Vous nous exposez votre idée, votre marché et vos utilisateurs. On définit le périmètre du MVP, les fonctionnalités prioritaires et le calendrier. Vous repartez avec un devis clair et un plan de livraison.</p>
+              </article>
+              <article class="panel">
+                <span class="panel-num" aria-hidden="true">02</span>
+                <h3>On dessine puis on code</h3>
+                <p>Direction artistique, maquettes et prototype cliquable, puis développement iOS et Android, back-end et API. Vous testez une première version réelle sur votre téléphone en quelques jours.</p>
+              </article>
+              <article class="panel">
+                <span class="panel-num" aria-hidden="true">03</span>
+                <h3>On publie sur les stores</h3>
+                <p>Comptes développeurs, conformité Apple et Google, fiches optimisées, visuels et mots-clés ASO, tests finaux. Votre application est en ligne sur l&rsquo;App Store et le Play Store en 12&nbsp;jours.</p>
+              </article>
+              <article class="panel">
+                <span class="panel-num" aria-hidden="true">04</span>
+                <h3>On vous accompagne si vous voulez</h3>
+                <p>C&rsquo;est optionnel et vous décidez : acquisition organique, contenu et UGC, conseil et stratégie, formation de vos équipes, maintenance et évolutions. Vous prenez ce dont vous avez besoin, rien de plus.</p>
+              </article>
             </div>
 
-            <div class="journey-scenes" aria-hidden="true">
-            <div class="journey-scene" data-scene="0">
-              <div class="scene-card">
-                <span class="scene-eyebrow">Brief</span>
-                <div class="scene-line w70"></div>
-                <div class="scene-line w95"></div>
-                <div class="scene-line w55"></div>
-                <div class="scene-chips">
-                  <span>MVP</span><span>iOS</span><span>Android</span><span>Back-end</span>
-                </div>
-                <div class="scene-quote">&ldquo;Devis et planning validés.&rdquo;</div>
-              </div>
-            </div>
-
-            <div class="journey-scene" data-scene="1">
-              <div class="scene-split">
-                <div class="scene-card scene-card--design">
-                  <span class="scene-eyebrow">Design</span>
-                  <div class="scene-swatches"><i></i><i></i><i></i><i></i></div>
-                  <div class="scene-box"></div>
-                  <div class="scene-line w80"></div>
-                </div>
-                <div class="scene-card scene-card--code">
-                  <span class="scene-eyebrow">Code</span>
-                  <code class="scene-code"><span>const</span> app = <span>build</span>({<br>&nbsp;&nbsp;ios: <em>true</em>,<br>&nbsp;&nbsp;android: <em>true</em><br>});</code>
+            <div class="scenes" aria-hidden="true">
+              <div class="scene">
+                <div class="scard">
+                  <span class="scard-label">Brief</span>
+                  <div class="sline" style="width:70%"></div><div class="sline" style="width:95%"></div><div class="sline" style="width:55%"></div>
+                  <div class="schips"><span>MVP</span><span>iOS</span><span>Android</span><span>Back-end</span></div>
+                  <div class="squote">&laquo;&nbsp;Devis et planning validés.&nbsp;&raquo;</div>
                 </div>
               </div>
-            </div>
-
-            <div class="journey-scene" data-scene="2">
-              <div class="scene-stores">
-                <div class="store-badge">
-                  <span class="store-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  </span>
-                  <span><strong>App Store</strong><br>En ligne</span>
+              <div class="scene">
+                <div class="ssplit">
+                  <div class="scard"><span class="scard-label">Design</span><div class="swatches"><i></i><i></i><i></i><i></i></div><div class="sbox"></div><div class="sline" style="width:80%"></div></div>
+                  <div class="scard"><span class="scard-label">Code</span><code class="scode"><b>const</b> app = <b>build</b>({<br>&nbsp;&nbsp;ios: true,<br>&nbsp;&nbsp;android: true<br>});</code></div>
                 </div>
-                <div class="store-badge">
-                  <span class="store-ico" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-                  </span>
-                  <span><strong>Play Store</strong><br>En ligne</span>
+              </div>
+              <div class="scene">
+                <div class="stores">
+                  <div class="store"><span class="store-ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>App Store</strong><br>En ligne</span></div>
+                  <div class="store"><span class="store-ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong>Play Store</strong><br>En ligne</span></div>
+                  <div class="scard"><span class="scard-label">Fiche store</span><div class="sline" style="width:60%"></div><div class="sline" style="width:90%"></div><span class="stars">★★★★★</span></div>
                 </div>
-                <div class="scene-card scene-card--aso">
-                  <span class="scene-eyebrow">Fiche store</span>
-                  <div class="scene-line w60"></div>
-                  <div class="scene-line w90"></div>
-                  <div class="scene-stars" aria-hidden="true">★★★★★</div>
+              </div>
+              <div class="scene">
+                <div class="scard">
+                  <span class="scard-label">Installations</span>
+                  <svg class="chart" viewBox="0 0 220 110" preserveAspectRatio="none">
+                    <defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(255,178,36,0.45)"/><stop offset="100%" stop-color="rgba(255,178,36,0)"/></linearGradient></defs>
+                    <path class="area" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8 L220,110 L0,110 Z"/>
+                    <path class="stroke" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8"/>
+                  </svg>
+                  <div class="schips"><span>Organique</span><span>UGC</span><span>ASO</span><span>Conseil</span></div>
                 </div>
               </div>
             </div>
-
-            <div class="journey-scene" data-scene="3">
-              <div class="scene-card scene-card--chart">
-                <span class="scene-eyebrow">Installations</span>
-                <svg class="scene-chart" viewBox="0 0 220 110" preserveAspectRatio="none" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="gchart" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
-                      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-                    </linearGradient>
-                  </defs>
-                  <path class="chart-area" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8 L220,110 L0,110 Z" fill="url(#gchart)"/>
-                  <path class="chart-line" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <div class="scene-chips">
-                  <span>Organique</span><span>UGC</span><span>ASO</span><span>Conseil</span>
-                </div>
-              </div>
-            </div>
-            </div>
-
           </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ===== ÉQUIPE ===== -->
-    <!-- Section masquée à la demande de Nathan (2026-09-24), conservée pour
-         pouvoir la réactiver : retirer style="display:none" et rétablir les
-         liens « L'Agence » commentés dans la navbar, le menu mobile et le footer. -->
-    <section class="team section section--full" id="equipe" data-snap aria-labelledby="teamTitle" style="display:none" aria-hidden="true">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge">L'agence</span>
-          <h2 class="section-title" data-split id="teamTitle">Des fondateurs, pas des prestataires</h2>
-          <p class="section-subtitle">Deux associés, co-fondateurs de la startup Fady : on construit nos propres applications, donc on connaît le terrain. La technique d'un côté, l'acquisition de l'autre.</p>
-        </div>
-
-        <div class="team-grid">
-
-          <article class="team-card reveal reveal-delay-1" aria-label="Profil de Nathan Loubet">
-            <div class="team-card-inner">
-              <div class="member-photo-wrap">
-                <div class="photo-glow" aria-hidden="true"></div>
-                <img
-                  src="./assets/nathan.png?v=2"
-                  alt="Nathan Loubet, Co-fondateur et Développeur Full Stack"
-                  class="member-photo"
-                  width="160"
-                  height="160"
-                  style="object-position: center 15%;"
-                >
-              </div>
-              <h3 class="member-name">Nathan Loubet</h3>
-              <p class="member-role">Co-fondateur &amp; Développeur Full Stack</p>
-              <p class="member-desc">Expert en développement web et mobile, infrastructure et cybersécurité. Co-fondateur de la startup Fady, Nathan garantit des sites et des applications rapides, robustes et sécurisés.</p>
-              <ul class="skill-list" role="list" aria-label="Compétences de Nathan">
-                <li class="skill-pill">Développement Web</li>
-                <li class="skill-pill">Apps iOS &amp; Android</li>
-                <li class="skill-pill">Cybersécurité</li>
-                <li class="skill-pill">Infrastructure</li>
-                <li class="skill-pill">IA</li>
-                <li class="skill-pill">SEO</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="team-card reveal reveal-delay-2" aria-label="Profil de Alcide Marty-Nonin">
-            <div class="team-card-inner">
-              <div class="member-photo-wrap">
-                <div class="photo-glow" aria-hidden="true"></div>
-                <img
-                  src="./assets/AlcideM.jpeg"
-                  alt="Alcide Marty-Nonin, Co-fondateur et Directeur Marketing &amp; Acquisition"
-                  class="member-photo"
-                  width="160"
-                  height="160"
-                  style="object-position: center 10%;"
-                >
-              </div>
-              <h3 class="member-name">Alcide Marty-Nonin</h3>
-              <p class="member-role">Co-fondateur &amp; Directeur Marketing</p>
-              <p class="member-desc">Spécialiste acquisition et croissance : organique, contenu et UGC. Co-fondateur de la startup Fady, Alcide construit les stratégies qui amènent du trafic qualifié et transforment vos lancements en résultats.</p>
-              <ul class="skill-list" role="list" aria-label="Compétences d'Alcide">
-                <li class="skill-pill">Acquisition</li>
-                <li class="skill-pill">Organique &amp; SEO/ASO</li>
-                <li class="skill-pill">UGC &amp; Contenu</li>
-                <li class="skill-pill">Branding</li>
-                <li class="skill-pill">Stratégie</li>
-                <li class="skill-pill">Relation client</li>
-              </ul>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
 
     <!-- ===== FAQ ===== -->
-    <section class="faq section section--full" id="faq" data-snap aria-labelledby="faqTitle">
-      <div class="container faq-container">
-        <div class="section-header reveal">
-          <span class="section-badge">FAQ</span>
-          <h2 class="section-title" data-split id="faqTitle">Questions fréquentes</h2>
+    <section class="section" id="faq" data-theme="light" aria-labelledby="faqTitle">
+      <div class="wrap faq-layout">
+        <div class="faq-side">
+          <div class="head" data-reveal>
+            <span class="tag">FAQ</span>
+            <h2 class="display" id="faqTitle">Questions fréquentes</h2>
+          </div>
+          <div class="ask" data-reveal="2">
+            <p>Une question qui n&rsquo;est pas ici ?</p>
+            <p>30 minutes en visio pour en parler de vive voix, gratuit et sans engagement.</p>
+            <a href="/reserver-un-call.html" class="btn btn--flame">Réserver un call</a>
+          </div>
         </div>
 
         <div class="faq-list">
-
-          <div class="faq-item reveal">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA1" id="faqQ1">
-              <span>Quels sont vos tarifs ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA1" role="region" aria-labelledby="faqQ1">
-              <p>Toutes nos prestations sont uniquement sur devis. Chaque projet est unique : site, application mobile, acquisition, formation ou maintenance. Décrivez-nous votre besoin et vous recevez un devis gratuit, détaillé et sans engagement sous 24h.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA1" id="faqQ1"><span>Quels sont vos tarifs ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA1" role="region" aria-labelledby="faqQ1"><div><p>Toutes nos prestations sont uniquement sur devis. Chaque projet est unique : site, application mobile, acquisition, formation ou maintenance. Décrivez-nous votre besoin et vous recevez un devis gratuit, détaillé et sans engagement sous 24h.</p></div></div>
           </div>
-
-          <div class="faq-item reveal reveal-delay-1">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA2" id="faqQ2">
-              <span>Quel est le délai de livraison ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA2" role="region" aria-labelledby="faqQ2">
-              <p>Un site vitrine est livré en 2 jours, un site e-commerce en 5 jours. Pour une application mobile, votre app est développée <strong>et publiée sur l'App Store et le Play Store en 12 jours</strong>. Nous respectons toujours les délais convenus.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA2" id="faqQ2"><span>Quel est le délai de livraison ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA2" role="region" aria-labelledby="faqQ2"><div><p>Un site vitrine est livré en 2 jours, un site e-commerce en 5 jours. Pour une application mobile, votre app est développée <strong>et publiée sur l'App Store et le Play Store en 12 jours</strong>. Nous respectons toujours les délais convenus.</p></div></div>
           </div>
-
-          <div class="faq-item reveal reveal-delay-2">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA3" id="faqQ3">
-              <span>Est-ce que vous vous occupez de l'hébergement ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA3" role="region" aria-labelledby="faqQ3">
-              <p>Oui, nous gérons le déploiement complet : hébergement, nom de domaine, SSL, et maintenance.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA3" id="faqQ3"><span>Est-ce que vous vous occupez de l'hébergement ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA3" role="region" aria-labelledby="faqQ3"><div><p>Oui, nous gérons le déploiement complet : hébergement, nom de domaine, SSL, et maintenance.</p></div></div>
           </div>
-
-          <div class="faq-item reveal reveal-delay-3">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA4" id="faqQ4">
-              <span>Mes données et celles de mes clients sont-elles sécurisées ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA4" role="region" aria-labelledby="faqQ4">
-              <p>Absolument. Chaque site est développé avec les meilleures pratiques de cybersécurité : HTTPS, protection contre les injections, headers sécurisés, RGPD.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA4" id="faqQ4"><span>Mes données et celles de mes clients sont-elles sécurisées ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA4" role="region" aria-labelledby="faqQ4"><div><p>Absolument. Chaque site est développé avec les meilleures pratiques de cybersécurité : HTTPS, protection contre les injections, headers sécurisés, RGPD.</p></div></div>
           </div>
-
-          <div class="faq-item reveal reveal-delay-4">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA5" id="faqQ5">
-              <span>Proposez-vous un service après-vente ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA5" role="region" aria-labelledby="faqQ5">
-              <p>Oui, nous offrons un support après livraison et des forfaits de maintenance mensuelle pour garder votre site performant.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA5" id="faqQ5"><span>Proposez-vous un service après-vente ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA5" role="region" aria-labelledby="faqQ5"><div><p>Oui, nous offrons un support après livraison et des forfaits de maintenance mensuelle pour garder votre site performant.</p></div></div>
           </div>
-
-
-          <div class="faq-item reveal reveal-delay-4">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA6" id="faqQ6">
-              <span>Développez-vous des applications mobiles iOS et Android ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA6" role="region" aria-labelledby="faqQ6">
-              <p>Oui. Nous sommes une agence complète d'application mobile : conception, développement iOS &amp; Android, publication sur l'App Store et le Google Play Store (comptes développeurs, fiches store, ASO), puis marketing et acquisition. Votre app est en ligne sur les stores en 12 jours.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA6" id="faqQ6"><span>Développez-vous des applications mobiles iOS et Android ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA6" role="region" aria-labelledby="faqQ6"><div><p>Oui. Nous sommes une agence complète d'application mobile : conception, développement iOS &amp; Android, publication sur l'App Store et le Google Play Store (comptes développeurs, fiches store, ASO), puis marketing et acquisition. Votre app est en ligne sur les stores en 12 jours.</p></div></div>
           </div>
-
-          <div class="faq-item reveal reveal-delay-4">
-            <button class="faq-btn" aria-expanded="false" aria-controls="faqA7" id="faqQ7">
-              <span>L'accompagnement acquisition est-il obligatoire ?</span>
-              <span class="faq-chevron" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-              </span>
-            </button>
-            <div class="faq-body" id="faqA7" role="region" aria-labelledby="faqQ7">
-              <p>Oui, en option. Notre métier principal reste le développement de votre application. Si vous le souhaitez, on vous accompagne ensuite sur l'acquisition en organique (SEO, ASO, contenu, réseaux sociaux) et en UGC, ainsi que sur la stratégie, le conseil et la formation de vos équipes.</p>
-            </div>
+          <div class="qa">
+            <button class="qa-btn" type="button" aria-expanded="false" aria-controls="faqA7" id="faqQ7"><span>L'accompagnement acquisition est-il obligatoire ?</span><span class="qa-icon" aria-hidden="true"></span></button>
+            <div class="qa-body" id="faqA7" role="region" aria-labelledby="faqQ7"><div><p>Non, c'est en option. Notre métier principal reste le développement de votre application. Si vous le souhaitez, on vous accompagne ensuite sur l'acquisition en organique (SEO, ASO, contenu, réseaux sociaux) et en UGC, ainsi que sur la stratégie, le conseil et la formation de vos équipes.</p></div></div>
           </div>
-
-        </div>
-
-        <div class="faq-cta reveal">
-          <div>
-            <p class="faq-cta-title">Une question qui n&rsquo;est pas ici ?</p>
-            <p class="faq-cta-text">30 minutes en visio pour en parler de vive voix, gratuit et sans engagement.</p>
-          </div>
-          <a href="/reserver-un-call.html" class="btn-primary">
-            Réserver un call
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="contact section" id="contact" data-snap aria-labelledby="contactTitle">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge">Contact</span>
-          <h2 class="section-title" data-split id="contactTitle">Parlons de votre application</h2>
-          <p class="section-subtitle">Toutes nos prestations sont sur devis : gratuit, détaillé et sans engagement sous 24h</p>
+    <section class="section section--white" id="contact" data-theme="light" aria-labelledby="contactTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">Contact</span>
+          <h2 class="display" id="contactTitle">Parlons de votre application</h2>
+          <p>Toutes nos prestations sont sur devis : gratuit, détaillé et sans engagement sous 24h.</p>
         </div>
 
         <div class="contact-layout">
-
-          <!-- Form -->
-          <div class="contact-form-wrap reveal">
+          <div class="form-card">
             <form id="contactForm" class="contact-form" novalidate aria-label="Formulaire de contact NZ Agency">
-              <!-- Honeypot anti-spam (invisible) -->
               <input type="text" name="website_url" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
-
               <div class="form-row">
                 <div class="form-group">
                   <label for="fullName">Prénom &amp; Nom <abbr title="Champ obligatoire" class="required">*</abbr></label>
-                  <input type="text" id="fullName" name="fullName" placeholder="Jean Dupont"
-                    required minlength="2" maxlength="100" autocomplete="name"
-                    aria-required="true" aria-describedby="fullNameError">
+                  <input type="text" id="fullName" name="fullName" placeholder="Jean Dupont" required minlength="2" maxlength="100" autocomplete="name" aria-required="true" aria-describedby="fullNameError">
                   <span class="field-error" id="fullNameError" role="alert" aria-live="polite"></span>
                 </div>
-
                 <div class="form-group">
                   <label for="email">Email <abbr title="Champ obligatoire" class="required">*</abbr></label>
-                  <input type="email" id="email" name="email" placeholder="jean@entreprise.fr"
-                    required maxlength="150" autocomplete="email"
-                    aria-required="true" aria-describedby="emailError">
+                  <input type="email" id="email" name="email" placeholder="jean@entreprise.fr" required maxlength="150" autocomplete="email" aria-required="true" aria-describedby="emailError">
                   <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
                 </div>
               </div>
-
               <div class="form-row">
                 <div class="form-group">
                   <label for="phone">Téléphone <abbr title="Champ obligatoire" class="required">*</abbr></label>
-                  <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78"
-                    required maxlength="20" inputmode="tel" autocomplete="tel"
-                    aria-required="true" aria-describedby="phoneError">
+                  <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required maxlength="20" inputmode="tel" autocomplete="tel" aria-required="true" aria-describedby="phoneError">
                   <span class="field-error" id="phoneError" role="alert" aria-live="polite"></span>
                 </div>
-
                 <div class="form-group">
                   <label for="projectType">Type de projet <abbr title="Champ obligatoire" class="required">*</abbr></label>
                   <div class="select-wrap">
-                    <select id="projectType" name="projectType" required
-                      aria-required="true" aria-describedby="projectTypeError">
+                    <select id="projectType" name="projectType" required aria-required="true" aria-describedby="projectTypeError">
                       <option value="" disabled selected>Sélectionnez un type</option>
                       <option value="Application mobile (iOS / Android)">Application mobile (iOS / Android)</option>
                       <option value="Site vitrine / Landing page">Site vitrine / Landing page</option>
@@ -1021,12 +590,10 @@
                   <span class="field-error" id="projectTypeError" role="alert" aria-live="polite"></span>
                 </div>
               </div>
-
               <div class="form-group">
                 <label for="budget">Budget envisagé <abbr title="Champ obligatoire" class="required">*</abbr></label>
                 <div class="select-wrap">
-                  <select id="budget" name="budget" required
-                    aria-required="true" aria-describedby="budgetError">
+                  <select id="budget" name="budget" required aria-required="true" aria-describedby="budgetError">
                     <option value="" disabled selected>Sélectionnez une fourchette</option>
                     <option value="Moins de 1 000 €">Moins de 1 000 €</option>
                     <option value="1 000 € à 2 500 €">1 000 € à 2 500 €</option>
@@ -1041,104 +608,58 @@
                 <span class="field-error" id="budgetError" role="alert" aria-live="polite"></span>
                 <p class="field-hint">Une fourchette suffit : elle nous sert à calibrer la proposition, pas à fixer le prix.</p>
               </div>
-
               <div class="form-group">
                 <label for="message">Description du projet <abbr title="Champ obligatoire" class="required">*</abbr></label>
-                <textarea id="message" name="message" rows="5"
-                  placeholder="Décrivez votre projet, vos objectifs, vos attentes..."
-                  required minlength="10" maxlength="2000"
-                  aria-required="true" aria-describedby="messageError"></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet, vos objectifs, vos attentes..." required minlength="10" maxlength="2000" aria-required="true" aria-describedby="messageError messageCount"></textarea>
                 <span class="field-error" id="messageError" role="alert" aria-live="polite"></span>
+                <span class="field-hint" id="messageCount" aria-live="polite" style="text-align:right">0 / 2000</span>
               </div>
-
               <div class="form-group">
                 <label class="checkbox-label">
-                  <input type="checkbox" id="rgpd" name="rgpd" required
-                    aria-required="true" aria-describedby="rgpdError">
+                  <input type="checkbox" id="rgpd" name="rgpd" required aria-required="true" aria-describedby="rgpdError">
                   <span class="checkbox-custom" aria-hidden="true"></span>
-                  <span class="checkbox-text">
-                    J'accepte que mes données soient utilisées pour me recontacter
-                    <abbr title="Champ obligatoire" class="required">*</abbr>
-                  </span>
+                  <span class="checkbox-text">J'accepte que mes données soient utilisées pour me recontacter <abbr title="Champ obligatoire" class="required">*</abbr></span>
                 </label>
                 <span class="field-error" id="rgpdError" role="alert" aria-live="polite"></span>
               </div>
-
-              <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+              <button type="submit" class="btn btn--flame btn-submit" id="submitBtn">
                 <span class="btn-text">Envoyer ma demande</span>
                 <span class="btn-spinner" aria-hidden="true"></span>
                 <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
               </button>
-
               <div class="form-feedback form-success" id="formSuccess" role="alert" aria-live="assertive" hidden>
-                <span aria-hidden="true">✅</span>
                 <p>Message envoyé ! On revient vers vous sous 24h.</p>
               </div>
-
               <div class="form-feedback form-error-msg" id="formErrorMsg" role="alert" aria-live="assertive" hidden>
-                <span aria-hidden="true">❌</span>
                 <p>Erreur d'envoi. Écrivez-nous directement à <a href="mailto:contact@nzagency.fr">contact@nzagency.fr</a></p>
               </div>
             </form>
           </div>
 
-          <!-- Contact Info -->
-          <aside class="contact-info reveal reveal-delay-2" aria-label="Coordonnées de contact">
-            <div class="info-card">
-              <h3 class="info-title">Parlons de votre projet</h3>
-              <p class="info-text">Site, application mobile, acquisition, conseil ou formation : décrivez votre besoin, notre agence revient vers vous avec un devis personnalisé sous 24h.</p>
-
-              <ul class="contact-details" role="list">
-                <li class="contact-detail">
-                  <span class="detail-icon" aria-hidden="true">📧</span>
-                  <div>
-                    <span class="detail-label">Email</span>
-                    <a href="mailto:contact@nzagency.fr" class="detail-value">contact@nzagency.fr</a>
-                  </div>
-                </li>
-                <li class="contact-detail">
-                  <span class="detail-icon" aria-hidden="true">📍</span>
-                  <div>
-                    <span class="detail-label">Localisation</span>
-                    <span class="detail-value">France</span>
-                  </div>
-                </li>
-                <li class="contact-detail">
-                  <span class="detail-icon" aria-hidden="true">⏱️</span>
-                  <div>
-                    <span class="detail-label">Délai de réponse</span>
-                    <span class="detail-value">Sous 24h</span>
-                  </div>
-                </li>
+          <aside class="contact-aside" aria-label="Coordonnées de contact">
+            <div class="info">
+              <h3>Parlons de votre projet</h3>
+              <p>Site, application mobile, acquisition, conseil ou formation : décrivez votre besoin, notre agence revient vers vous avec un devis personnalisé sous 24h.</p>
+              <ul class="info-list" role="list">
+                <li><span class="info-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span><small>Email</small><a href="mailto:contact@nzagency.fr">contact@nzagency.fr</a></span></li>
+                <li><span class="info-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Localisation</small><span>France</span></span></li>
+                <li><span class="info-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Délai de réponse</small><span>Sous 24h</span></span></li>
               </ul>
-
-              <div class="guarantees" aria-label="Nos garanties">
-                <div class="guarantee-item">
-                  <span class="guarantee-check" aria-hidden="true">✓</span>
-                  <span>Tarifs uniquement sur devis, gratuit</span>
-                </div>
-                <div class="guarantee-item">
-                  <span class="guarantee-check" aria-hidden="true">✓</span>
-                  <span>Sans engagement</span>
-                </div>
-                <div class="guarantee-item">
-                  <span class="guarantee-check" aria-hidden="true">✓</span>
-                  <span>Réponse garantie sous 24h</span>
-                </div>
-              </div>
+              <ul class="promises" role="list" aria-label="Nos garanties">
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Tarifs uniquement sur devis, gratuit</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Sans engagement</li>
+                <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Réponse garantie sous 24h</li>
+              </ul>
             </div>
-
-            <div class="info-card info-card--booking">
-              <div class="info-card-or" aria-hidden="true"><span>ou</span></div>
-              <h3 class="info-title">Réservez directement votre call</h3>
-              <p class="info-text">30 min en visio pour cadrer votre projet, gratuit et sans engagement. Choisissez votre créneau, on vous envoie le lien Google Meet.</p>
-              <a href="/reserver-un-call.html" class="btn-primary btn-booking-card">
+            <div class="book-card">
+              <h3>Réservez directement votre call</h3>
+              <p>30 min en visio pour cadrer votre projet, gratuit et sans engagement. Choisissez votre créneau, on vous envoie le lien Google Meet.</p>
+              <a href="/reserver-un-call.html" class="btn btn--ink">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
                 Réserver un call
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 10l4.55-2.28A1 1 0 0121 8.62v6.76a1 1 0 01-1.45.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
               </a>
             </div>
           </aside>
-
         </div>
       </div>
     </section>
@@ -1146,165 +667,77 @@
   </main>
 
   <!-- ===== BLOC SEO / MAILLAGE ===== -->
-  <section class="seo-block" id="expertise" data-snap aria-labelledby="seoTitle">
-    <div class="container">
-      <div class="seo-intro">
-        <h2 class="seo-title" id="seoTitle">Agence de développement d&rsquo;applications mobiles &amp; incubateur de startups en France</h2>
-
-        <div class="seo-text">
-          <p>
-            <strong>NZ Agency</strong> est une agence de <strong>développement d&rsquo;applications mobiles</strong>
-            basée en France. Nous concevons vos <strong>applications iOS et Android</strong> et les publions sur
-            l&rsquo;<strong>App Store</strong> et le <strong>Google Play Store</strong> en 12 jours :
-            cadrage produit et <strong>MVP</strong>, <strong>design UI/UX</strong>, développement natif,
-            back-end et API, <strong>ASO</strong> et <strong>acquisition</strong>.
-          </p>
-          <p>
-            Nous réalisons aussi des <strong>sites internet</strong> : vitrine, landing page,
-            <strong>site de réservation en ligne</strong>, <strong>e-commerce</strong> avec paiement Stripe,
-            livrés en 2 jours (vitrine) à 5 jours (e-commerce) et optimisés pour le <strong>référencement naturel (SEO)</strong>.
-            Conseil, <strong>accompagnement au lancement de startup</strong>, formation et maintenance complètent
-            l&rsquo;offre. Toutes nos prestations sont sur devis, gratuit et sans engagement sous 24 heures.
-          </p>
-        </div>
+  <section class="seo" id="expertise" data-theme="light" aria-labelledby="seoTitle">
+    <div class="wrap">
+      <h2 id="seoTitle">Agence de développement d&rsquo;applications mobiles &amp; incubateur de startups en France</h2>
+      <div class="seo-text">
+        <p><strong>NZ Agency</strong> est une agence de <strong>développement d&rsquo;applications mobiles</strong> basée en France. Nous concevons vos <strong>applications iOS et Android</strong> et les publions sur l&rsquo;<strong>App Store</strong> et le <strong>Google Play Store</strong> en 12 jours : cadrage produit et <strong>MVP</strong>, <strong>design UI/UX</strong>, développement natif, back-end et API, <strong>ASO</strong> et <strong>acquisition</strong>.</p>
+        <p>Nous réalisons aussi des <strong>sites internet</strong> : vitrine, landing page, <strong>site de réservation en ligne</strong>, <strong>e-commerce</strong> avec paiement Stripe, livrés en 2 jours (vitrine) à 5 jours (e-commerce) et optimisés pour le <strong>référencement naturel (SEO)</strong>. Conseil, <strong>accompagnement au lancement de startup</strong>, formation et maintenance complètent l&rsquo;offre. Toutes nos prestations sont sur devis, gratuit et sans engagement sous 24 heures.</p>
       </div>
-
-      <nav class="seo-links" aria-label="Nos domaines d'expertise">
-
-        <div class="seo-col">
-          <h3 class="seo-col-title">Développement d&rsquo;application</h3>
-          <ul role="list">
-            <li><a href="#services">Développement d&rsquo;application mobile</a></li>
-            <li><a href="#services">Créer une application iOS</a></li>
-            <li><a href="#services">Créer une application Android</a></li>
-            <li><a href="#services">Agence application mobile France</a></li>
-            <li><a href="#services">Développement d&rsquo;app sur mesure</a></li>
-            <li><a href="#services">Développeur d&rsquo;application freelance vs agence</a></li>
-          </ul>
-        </div>
-
-        <div class="seo-col">
-          <h3 class="seo-col-title">Lancement &amp; startup</h3>
-          <ul role="list">
-            <li><a href="#incubateur">Incubateur d&rsquo;applications mobiles</a></li>
-            <li><a href="#incubateur">Accompagnement lancement de startup</a></li>
-            <li><a href="#incubateur">Créer un MVP d&rsquo;application</a></li>
-            <li><a href="#processus">Publier une app sur l&rsquo;App Store</a></li>
-            <li><a href="#processus">Publier une app sur le Play Store</a></li>
-            <li><a href="#services">Conseil produit &amp; stratégie</a></li>
-          </ul>
-        </div>
-
-        <div class="seo-col">
-          <h3 class="seo-col-title">Acquisition &amp; marketing</h3>
-          <ul role="list">
-            <li><a href="#services">ASO : référencement d&rsquo;application</a></li>
-            <li><a href="#services">Acquisition d&rsquo;utilisateurs mobile</a></li>
-            <li><a href="#services">Agence UGC &amp; créateurs</a></li>
-            <li><a href="#services">Marketing organique &amp; contenu</a></li>
-            <li><a href="#services">Référencement naturel SEO</a></li>
-            <li><a href="#services">Formation marketing &amp; acquisition</a></li>
-          </ul>
-        </div>
-
-        <div class="seo-col">
-          <h3 class="seo-col-title">Sites internet</h3>
-          <ul role="list">
-            <li><a href="#services">Création de site vitrine</a></li>
-            <li><a href="#services">Création de landing page</a></li>
-            <li><a href="#services">Site de réservation en ligne</a></li>
-            <li><a href="#services">Création de site e-commerce</a></li>
-            <li><a href="#services">Paiement en ligne Stripe</a></li>
-            <li><a href="#services">Maintenance de site &amp; d&rsquo;application</a></li>
-          </ul>
-        </div>
-
+      <nav class="seo-cols" aria-label="Nos domaines d'expertise">
+        <div><h3>Développement d&rsquo;application</h3><ul role="list">
+          <li><a href="#services">Développement d&rsquo;application mobile</a></li><li><a href="#services">Créer une application iOS</a></li><li><a href="#services">Créer une application Android</a></li><li><a href="#services">Agence application mobile France</a></li><li><a href="#services">Développement d&rsquo;app sur mesure</a></li><li><a href="#services">Développeur d&rsquo;application freelance vs agence</a></li>
+        </ul></div>
+        <div><h3>Lancement &amp; startup</h3><ul role="list">
+          <li><a href="#incubateur">Incubateur d&rsquo;applications mobiles</a></li><li><a href="#incubateur">Accompagnement lancement de startup</a></li><li><a href="#incubateur">Créer un MVP d&rsquo;application</a></li><li><a href="#processus">Publier une app sur l&rsquo;App Store</a></li><li><a href="#processus">Publier une app sur le Play Store</a></li><li><a href="#services">Conseil produit &amp; stratégie</a></li>
+        </ul></div>
+        <div><h3>Acquisition &amp; marketing</h3><ul role="list">
+          <li><a href="#services">ASO : référencement d&rsquo;application</a></li><li><a href="#services">Acquisition d&rsquo;utilisateurs mobile</a></li><li><a href="#services">Agence UGC &amp; créateurs</a></li><li><a href="#services">Marketing organique &amp; contenu</a></li><li><a href="#services">Référencement naturel SEO</a></li><li><a href="#services">Formation marketing &amp; acquisition</a></li>
+        </ul></div>
+        <div><h3>Sites internet</h3><ul role="list">
+          <li><a href="#services">Création de site vitrine</a></li><li><a href="#services">Création de landing page</a></li><li><a href="#services">Site de réservation en ligne</a></li><li><a href="#services">Création de site e-commerce</a></li><li><a href="#services">Paiement en ligne Stripe</a></li><li><a href="#services">Maintenance de site &amp; d&rsquo;application</a></li>
+        </ul></div>
       </nav>
-
-      <p class="seo-areas">
-        Nous intervenons partout en France et à distance, notamment à
-        <span>Bordeaux</span>, <span>Paris</span>, <span>Lyon</span>,
-        <span>Marseille</span>, <span>Toulouse</span>, <span>Nantes</span>, <span>Lille</span> et <span>Bruxelles</span>.
-      </p>
+      <p class="seo-areas">Nous intervenons partout en France et à distance, notamment à <span>Bordeaux</span>, <span>Paris</span>, <span>Lyon</span>, <span>Marseille</span>, <span>Toulouse</span>, <span>Nantes</span>, <span>Lille</span> et <span>Bruxelles</span>.</p>
     </div>
   </section>
 
-  <!-- ===== BARRE D'ACTION MOBILE (apparaît après le hero, disparaît sur le contact) ===== -->
-  <div class="mobile-cta" id="mobileCta" aria-hidden="true">
-    <a href="/reserver-un-call.html" class="btn-outline" tabindex="-1">Réserver un call</a>
-    <a href="#contact" class="btn-primary" tabindex="-1">Lancer mon app</a>
+  <!-- ===== BARRE D'ACTION MOBILE ===== -->
+  <div class="dock" id="dock" aria-hidden="true">
+    <a href="/reserver-un-call.html" class="btn btn--ghost-night" tabindex="-1">Réserver un call</a>
+    <a href="#contact" class="btn btn--flame" tabindex="-1">Lancer mon app</a>
   </div>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
+  <footer class="footer" data-theme="dark" role="contentinfo">
+    <div class="wrap">
       <div class="footer-grid">
-
         <div class="footer-brand">
-          <a href="#hero" class="footer-logo" aria-label="NZ Agency, retour accueil">
-            <img src="/assets/nz-logo.png" alt="" width="132" height="84">
-          </a>
-          <p class="footer-tagline">Incubateur d&rsquo;applications mobiles.<br>On développe, on publie, on fait décoller.</p>
+          <a href="#hero" class="nav-brand" aria-label="NZ Agency, retour à l'accueil"><svg class="nz-mark" viewBox="0 0 92 64" aria-hidden="true"><defs><linearGradient id="nzo3" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6A13"/><stop offset="1" stop-color="#FFB224"/></linearGradient></defs><g class="ink"><rect x="0" y="0" width="13" height="64"/><polygon points="0,0 13,0 45,64 32,64"/><rect x="32" y="0" width="13" height="64"/><rect x="32" y="0" width="60" height="13"/><rect x="45" y="51" width="47" height="13"/></g><polygon points="79,13 92,13 58,51 45,51" fill="url(#nzo3)"/></svg><span>NZ&nbsp;Agency</span></a>
+          <p>Incubateur d&rsquo;applications mobiles. On développe, on publie, on fait décoller.</p>
         </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Services</h4>
+        <div>
+          <h4>Services</h4>
           <ul role="list">
-            <li><a href="#services">Développement d&rsquo;application</a></li>
-            <li><a href="#services">Design UI/UX</a></li>
-            <li><a href="#services">Publication stores &amp; ASO</a></li>
-            <li><a href="#services">Acquisition &amp; growth</a></li>
-            <li><a href="#services">Accompagnement startup</a></li>
-            <li><a href="#services">Sites web &amp; e-commerce</a></li>
-            <li><a href="#contact">Devis gratuit</a></li>
+            <li><a href="#services">Développement d&rsquo;application</a></li><li><a href="#services">Design UI/UX</a></li><li><a href="#services">Publication stores &amp; ASO</a></li><li><a href="#services">Acquisition &amp; growth</a></li><li><a href="#services">Accompagnement startup</a></li><li><a href="#services">Sites web &amp; e-commerce</a></li><li><a href="#contact">Devis gratuit</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Liens rapides</h4>
+        <div>
+          <h4>Liens rapides</h4>
           <ul role="list">
-            <li><a href="#incubateur">Notre modèle d&rsquo;incubateur</a></li>
-            <li><a href="#services">Nos expertises</a></li>
-            <li><a href="#processus">Notre méthode</a></li>
-        <!-- <li><a href="#equipe">L&rsquo;agence</a></li> -->
-            <li><a href="#expertise">Domaines d&rsquo;expertise</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#incubateur">Notre modèle d&rsquo;incubateur</a></li><li><a href="#services">Nos expertises</a></li><li><a href="#processus">Notre méthode</a></li><li><a href="#expertise">Domaines d&rsquo;expertise</a></li><li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Contact</h4>
+        <div>
+          <h4>Contact</h4>
           <ul role="list">
-            <li><a href="mailto:contact@nzagency.fr">contact@nzagency.fr</a></li>
-            <li><span>France</span></li>
-            <li><a href="#contact">Démarrer un projet →</a></li>
-            <li><a href="/reserver-un-call.html">Réserver un call →</a></li>
+            <li><a href="mailto:contact@nzagency.fr">contact@nzagency.fr</a></li><li><span>France</span></li><li><a href="#contact">Démarrer un projet</a></li><li><a href="/reserver-un-call.html">Réserver un call</a></li>
           </ul>
         </div>
-
       </div>
-
+      <p class="footer-word" aria-hidden="true">NZ Agency</p>
       <div class="footer-bottom">
         <p>© 2026 NZ Agency, agence de développement d&rsquo;applications mobiles. Tous droits réservés.</p>
-        <nav class="footer-legal" aria-label="Liens légaux">
-          <a href="/mentions-legales.html">Mentions légales</a>
-          <a href="/cgv.html">CGV</a>
-          <a href="/cgu.html">CGU</a>
-          <a href="/politique-confidentialite.html">Politique de confidentialité</a>
+        <nav aria-label="Liens légaux">
+          <a href="/mentions-legales.html">Mentions légales</a><a href="/cgv.html">CGV</a><a href="/cgu.html">CGU</a><a href="/politique-confidentialite.html">Politique de confidentialité</a>
         </nav>
       </div>
     </div>
   </footer>
 
-  <!-- Smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <!-- Scripts -->
-  <script src="js/particles.js?v=2.2" defer></script>
-  <script src="js/animations.js?v=2.2" defer></script>
-  <script src="js/contact.js?v=2.2" defer></script>
-  <script src="js/main.js?v=2.2" defer></script>
-  <script src="js/effects.js?v=2.2" defer></script>
+  <script src="js/contact.js?v=3.0" defer></script>
+  <script src="js/site.js?v=3.0" defer></script>
 </body>
 </html>

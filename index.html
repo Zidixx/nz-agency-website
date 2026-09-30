@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@150,800;150,900&family=Unbounded:wght@800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/nz.css?v=3.4">
+  <link rel="stylesheet" href="css/nz.css?v=4.1">
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Schema.org JSON-LD -->
@@ -286,7 +286,7 @@
 
     <!-- ===== DÉLAIS DE LIVRAISON ===== -->
     <section class="section has-bg-word" id="delais" data-theme="light" aria-labelledby="deliveryTitle">
-      <span class="bg-word bg-word--days" data-speed="-0.3" aria-hidden="true">12</span>
+      <span class="bg-word bg-word--days" id="daysBig" aria-hidden="true">0</span>
       <div class="wrap">
         <div class="head" data-reveal>
           <span class="tag">Nos délais</span>
@@ -294,7 +294,9 @@
           <p>Des délais annoncés dès le devis et tenus. Vous savez exactement quand votre projet sera en ligne.</p>
         </div>
 
+        <div class="days-track" id="daysTrack"><div class="days-sticky">
         <div class="days" role="list" aria-label="Délais de livraison">
+          <div class="days-clock" aria-hidden="true"><span>Jour</span><b id="daysNow">0</b><small>/ 12</small></div>
           <div class="days-scale" aria-hidden="true">
             <span>Projet</span>
             <div class="days-ticks">
@@ -318,6 +320,7 @@
             <div class="day-track"><div class="day-bar"><b>12 jours<span class="day-more"> · publiée sur les stores</span></b></div></div>
           </article>
         </div>
+        </div></div>
       </div>
     </section>
 
@@ -330,7 +333,7 @@
           <p>Notre offre principale, c&rsquo;est le développement de votre application. Ensuite, libre à vous : on peut s&rsquo;arrêter à la livraison, ou continuer ensemble sur l&rsquo;acquisition, la stratégie et le conseil.</p>
         </div>
 
-        <div class="phases" data-reveal="2">
+        <div class="phases">
           <article class="phase">
             <div class="phase-top"><span class="phase-num" aria-hidden="true">01</span><span class="phase-badge">Inclus</span></div>
             <h3>On construit votre app</h3>
@@ -369,7 +372,7 @@
           <p>Le développement d&rsquo;application est notre métier principal. Autour, vous piochez ce dont vous avez besoin : design, publication, acquisition, conseil, sites web. Tout est sur devis.</p>
         </div>
 
-        <div class="skills" data-reveal="2">
+        <div class="skills">
           <article class="skill skill--main">
             <span class="skill-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 5.5h3"/><circle cx="12" cy="18" r="1.1" fill="currentColor"/></svg></span>
             <h3>Développement d&rsquo;application mobile</h3>
@@ -479,10 +482,12 @@
               <div class="scene">
                 <div class="scard">
                   <span class="scard-label">Installations</span>
+                  <b class="chart-count" data-to="1240">+ 0</b>
                   <svg class="chart" viewBox="0 0 220 110" preserveAspectRatio="none">
                     <defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(255,178,36,0.45)"/><stop offset="100%" stop-color="rgba(255,178,36,0)"/></linearGradient></defs>
                     <path class="area" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8 L220,110 L0,110 Z"/>
-                    <path class="stroke" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8"/>
+                    <path class="stroke" pathLength="1" d="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8"/>
+                    <circle class="chart-dot" r="4.5"><animateMotion dur="1.6s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.22 1 0.36 1" keyTimes="0;1" path="M0,96 C40,92 55,70 82,66 C110,62 124,40 150,30 C176,20 196,14 220,8"/></circle>
                   </svg>
                   <div class="schips"><span>Organique</span><span>UGC</span><span>ASO</span><span>Conseil</span></div>
                 </div>
@@ -740,7 +745,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/contact.js?v=3.0" defer></script>
-  <script src="js/site.js?v=3.2" defer></script>
-  <script src="js/motion.js?v=1.2" defer></script>
+  <script src="js/site.js?v=3.3" defer></script>
+  <script src="js/motion.js?v=1.3" defer></script>
 </body>
 </html>

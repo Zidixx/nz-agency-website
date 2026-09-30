@@ -477,6 +477,9 @@ body.menu-open { overflow: hidden; }
 
 /* Vidéo de présentation */
 .section--video { padding-bottom: 0; }
+.section--video .head { max-width: none; }
+.section--video .head h2 .line { display: block; }
+@media (min-width: 768px) { .section--video .head h2 .line { white-space: nowrap; } }
 .video-card {
   position: relative;
   overflow: hidden;

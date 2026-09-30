@@ -6,7 +6,7 @@ Site de **NZ Agency**, incubateur d'applications mobiles (nzagency.fr).
 
 - **Couleurs** : noir `#0e0e0e` / `#070707`, gris foncé `#1b1b1b`, blanc et gris clair `#f2f2f2`, orange `#ff6a13` vers ambre `#ffb224`. Pas de bleu.
 - **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Unbounded 800 pour « nz agency », Manrope pour le texte.
-- **Logo** : tuile d'app orange avec « nz » blanc (lettres Unbounded converties en tracés), suivie de « nz agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
+- **Logo** : tuile d’app orange avec « NZ » blanc en majuscules (lettres Unbounded converties en tracés), suivie de « agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
 - **Navbar** : pilule en verre liquide sombre (reflet, liseré, flou), identique à Woka ; sur mobile, pilule compacte et menu plein écran.
 - **Motion** (`js/motion.js`, souris et scroll) : curseur personnalisé, boutons aimantés, texte qui roule au survol, titres lettre par lettre, hero incliné en 3D avec halo, cartes inclinables avec reflet, bande qui réagit au scroll, grands mots en contour en parallaxe, lettres du footer qui ondulent. Tout est coupé si l'appareil demande moins d'animations.
 

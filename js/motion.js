@@ -161,33 +161,21 @@
   }
 
 
-  /* ---------- Délais : tête de lecture de Jour 0 à Jour 12 au scroll ---------- */
+  /* ---------- Délais : tête de lecture de Jour 0 à Jour 12, lancée à l'apparition ---------- */
   function initDays() {
     var track = document.getElementById('daysTrack');
     if (!track) return;
-    var sticky = track.querySelector('.days-sticky');
     var rows = $$('.day-row', track);
     var now = document.getElementById('daysNow');
     var big = document.getElementById('daysBig');
-    var pinned = window.matchMedia('(min-width: 901px)');
+    var DURATION = 3600;
     var lastDay = -1;
-    tasks.push(function () {
-      var vh = window.innerHeight;
-      var r = track.getBoundingClientRect();
-      if (r.bottom < -100 || r.top > vh + 100) return;
-      var p;
-      if (pinned.matches) {
-        var top = parseFloat(getComputedStyle(sticky).top) || 0;
-        p = (top - r.top) / Math.max(1, r.height - sticky.offsetHeight);
-      } else {
-        p = (vh * 0.8 - r.top) / (r.height * 0.9);
-      }
-      var ph = clamp((clamp(p, 0, 1) - 0.04) / 0.76, 0, 1) * 12;
+
+    function render(ph) {
       rows.forEach(function (row) {
         var d = parseFloat(row.style.getPropertyValue('--d'));
-        var w = Math.min(d, ph);
         var done = ph >= d - 0.001;
-        row.style.setProperty('--w', Math.max(w, 0.25).toFixed(3));
+        row.style.setProperty('--w', Math.max(Math.min(d, ph), 0.25).toFixed(3));
         row.style.setProperty('--ph', ph.toFixed(3));
         row.style.setProperty('--ph-on', ph > 0.02 && ph < 11.98 ? '1' : '0');
         row.style.setProperty('--lbl', done ? '1' : '0');
@@ -199,7 +187,27 @@
         if (now) now.textContent = day;
         if (big) big.textContent = day;
       }
-    });
+    }
+
+    function play() {
+      var start = null;
+      function step(t) {
+        if (!start) start = t;
+        var k = Math.min((t - start) / DURATION, 1);
+        // Démarrage vif puis ralenti à l'approche du jour 12.
+        render(12 * (1 - Math.pow(1 - k, 2.2)));
+        if (k < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    render(0);
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      play();
+    }, { threshold: 0.35 });
+    io.observe(track);
   }
 
   /* ---------- Hero : recule, s'arrondit et s'efface en scrollant ---------- */

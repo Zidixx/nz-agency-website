@@ -567,7 +567,7 @@ body.menu-open { overflow: hidden; }
 .stat span { display: block; margin-top: 10px; font-size: 14px; color: var(--text-night); }
 
 /* ---------- Expertises ---------- */
-.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.skills { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr)); gap: 16px; }
 .skill {
   position: relative;
   display: flex;
@@ -583,10 +583,10 @@ body.menu-open { overflow: hidden; }
 .skill h3 { font-size: 20px; font-weight: 800; line-height: 1.3; }
 .skill p { margin-top: 12px; font-size: 15px; color: var(--muted); }
 .skill-foot { margin-top: auto; padding-top: 22px; font-size: 13px; font-weight: 700; color: var(--ink-2); }
-.skill--wide { grid-column: span 2; display: grid; grid-template-columns: 52px 1fr; column-gap: 22px; align-items: start; }
+.skill--wide { grid-column: 1 / -1; display: grid; grid-template-columns: 52px 1fr; column-gap: 22px; align-items: start; }
 .skill--wide .skill-ico { margin-bottom: 0; grid-row: span 3; }
 .skill--main {
-  grid-row: span 3;
+  grid-row: span 2;
   color: #fff;
   background:
     radial-gradient(80% 60% at 100% 100%, rgba(255, 106, 19, 0.45), transparent 70%),
@@ -595,7 +595,7 @@ body.menu-open { overflow: hidden; }
 }
 .skill--main:hover { box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6); }
 .skill--main .skill-ico { background: var(--flame); color: var(--night-2); }
-.skill--main h3 { font-family: var(--display); font-stretch: 100%; font-weight: 900; text-transform: uppercase; font-size: clamp(20px, 2.1vw, 30px); line-height: 1.05; hyphens: none; overflow-wrap: normal; }
+.skill--main h3 { font-family: var(--display); font-stretch: 100%; font-weight: 900; text-transform: uppercase; font-size: clamp(20px, 1.7vw, 25px); line-height: 1.05; hyphens: none; overflow-wrap: normal; }
 .skill--main p { color: var(--text-night); font-size: 16px; }
 .skill--main .skill-foot { color: var(--amber); }
 
@@ -1171,13 +1171,11 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- Délais : timeline pilotée par le scroll ---------- */
 .days-track { position: relative; }
-.js .days-track { height: 230vh; }
-.js .days-sticky { position: sticky; top: max(150px, calc(50vh - 290px)); }
 .days { position: relative; }
 .days-clock {
   position: absolute;
   right: 0;
-  top: -66px;
+  top: -62px;
   display: flex;
   align-items: baseline;
   gap: 8px;
@@ -1281,14 +1279,26 @@ body.menu-open { overflow: hidden; }
 .hero-inner { will-change: transform, opacity; }
 
 @media (max-width: 900px) {
-  .js .days-track { height: auto; }
-  .js .days-sticky { position: static; }
   .days-clock { position: static; margin-bottom: 4px; }
   .days-clock b { font-size: 34px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .days-track { height: auto; }
-  .js .days-sticky { position: static; }
   .chart .stroke { stroke-dashoffset: 0; }
   .chart .area { opacity: 1; }
+}
+
+/* ---------- Grande carte « Développement d'application » ---------- */
+.skill--main { gap: 0; }
+.main-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 26px; }
+.main-top .skill-ico { margin-bottom: 0; }
+.main-badge { padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; color: var(--amber); background: rgba(255, 106, 19, 0.14); box-shadow: inset 0 0 0 1px rgba(255, 106, 19, 0.3); }
+.main-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.main-stack li { padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; color: rgba(255, 255, 255, 0.85); background: rgba(255, 255, 255, 0.07); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+.main-foot { margin-top: auto; padding-top: 28px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.main-stat { display: flex; align-items: flex-end; gap: 10px; }
+.main-stat b { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: clamp(56px, 6vw, 84px); line-height: 0.8; background: var(--flame); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.main-stat span { font-size: 14px; font-weight: 700; line-height: 1.3; color: rgba(255, 255, 255, 0.72); }
+.skill--main .skill-foot { display: none; }
+@media (max-width: 560px) {
+  .main-foot .btn { width: 100%; }
 }

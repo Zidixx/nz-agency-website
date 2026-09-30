@@ -6,9 +6,9 @@ Site de **NZ Agency**, incubateur d'applications mobiles (nzagency.fr).
 
 - **Couleurs** : noir `#0e0e0e` / `#070707`, gris foncé `#1b1b1b`, blanc et gris clair `#f2f2f2`, orange `#ff6a13` vers ambre `#ffb224`. Pas de bleu.
 - **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Unbounded 800 pour « nz agency », Manrope pour le texte.
-- **Logo** : tuile d’app orange avec « NZ » blanc en majuscules (lettres Unbounded converties en tracés), suivie de « agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
+- **Logo** : tuile d’app orange avec « NZ » blanc en majuscules (lettres Unbounded converties en tracés), suivie de « Agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
 - **Navbar** : pilule en verre liquide sombre (reflet, liseré, flou), identique à Woka ; sur mobile, pilule compacte et menu plein écran.
-- **Motion** (`js/motion.js`) : animations pilotées par le scroll (timeline des délais épinglée avec tête de lecture Jour 0 à 12, hero qui recule et s'efface, rideau de la méthode, cartes qui arrivent en 3D), titres lettre par lettre, hero incliné en 3D avec halo à la souris, cartes inclinables, bande réactive au scroll, visuels de la méthode animés, lettres du footer qui ondulent. Pas de curseur personnalisé ni d'animation de bouton au survol (refusés). Tout est coupé si l'appareil demande moins d'animations.
+- **Motion** (`js/motion.js`) : animations pilotées par le scroll (timeline des délais qui se lance seule à l’apparition (tête de lecture Jour 0 à 12), hero qui recule et s'efface, rideau de la méthode, cartes qui arrivent en 3D), titres lettre par lettre, hero incliné en 3D avec halo à la souris, cartes inclinables, bande réactive au scroll, visuels de la méthode animés, lettres du footer qui ondulent. Pas de curseur personnalisé ni d'animation de bouton au survol (refusés). Tout est coupé si l'appareil demande moins d'animations.
 
 ## Structure des fichiers
 

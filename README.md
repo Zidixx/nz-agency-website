@@ -4,11 +4,11 @@ Site de **NZ Agency**, incubateur d'applications mobiles (nzagency.fr).
 
 ## Direction artistique (refonte du 2026-09-30)
 
-- **Idée** : le lancement. Ciel nuit, orange de l'allumage.
-- **Couleurs** : nuit `#0b1033` / `#070a22`, orange `#ff6a13` vers ambre `#ffb224`, clair `#f4f5fa`, encre `#11142b`.
-- **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Manrope pour le texte.
-- **Logo** : monogramme N et Z en formes pleines, diagonale du Z en orange (`assets/nz-mark.svg`, `assets/favicon.svg`).
-- **Navbar** : pilule de verre qui passe en clair sur les sections claires (`data-theme` sur chaque section) ; sur mobile, pilule compacte et menu plein écran.
+- **Couleurs** : noir `#0e0e0e` / `#070707`, gris foncé `#1b1b1b`, blanc et gris clair `#f2f2f2`, orange `#ff6a13` vers ambre `#ffb224`. Pas de bleu.
+- **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Unbounded 800 pour « nz agency », Manrope pour le texte.
+- **Logo** : tuile d'app orange avec « nz » blanc (lettres Unbounded converties en tracés), suivie de « nz agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
+- **Navbar** : pilule en verre liquide sombre (reflet, liseré, flou), identique à Woka ; sur mobile, pilule compacte et menu plein écran.
+- **Motion** (`js/motion.js`, souris et scroll) : curseur personnalisé, boutons aimantés, texte qui roule au survol, titres lettre par lettre, hero incliné en 3D avec halo, cartes inclinables avec reflet, bande qui réagit au scroll, grands mots en contour en parallaxe, lettres du footer qui ondulent. Tout est coupé si l'appareil demande moins d'animations.
 
 ## Structure des fichiers
 
@@ -22,6 +22,7 @@ SITE_WEB_NZ/
 │   └── legal.css                 # Pages légales
 ├── js/
 │   ├── site.js                   # Navbar, hero (étoiles, décollage), apparitions, méthode épinglée, FAQ
+│   ├── motion.js                 # Motion design (curseur, aimants, textes, inclinaisons, parallaxe)
 │   ├── contact.js                # Formulaire EmailJS
 │   └── booking.js                # Réservation de call
 ├── assets/                       # Logo, favicons, image de partage (og-image.jpg), photos équipe

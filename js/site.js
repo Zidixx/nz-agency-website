@@ -37,6 +37,7 @@
         if (r.top <= y && r.bottom > y) current = themed[i].getAttribute('data-theme');
       }
       nav.setAttribute('data-tone', current);
+      nav.classList.toggle('is-scrolled', window.scrollY > 24);
     }
 
     // Lien actif : la section la plus présente à l'écran.

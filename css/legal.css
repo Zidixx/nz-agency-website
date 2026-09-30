@@ -4,13 +4,13 @@
    ces pages se lisent, elles ne se contemplent pas.
    ========================================================================== */
 :root {
-  --night: #0b1033;
+  --night: #0e0e0e;
   --orange: #ff6a13;
-  --paper: #f4f5fa;
-  --ink: #11142b;
-  --ink-2: #3a3f5c;
-  --muted: #5b6078;
-  --line: #e2e4ee;
+  --paper: #f2f2f2;
+  --ink: #101010;
+  --ink-2: #3b3b3b;
+  --muted: #6b6b6b;
+  --line: #e5e5e5;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

@@ -12,7 +12,6 @@
   window.addEventListener('pointermove', function (e) {
     if (e.pointerType !== 'mouse') return;
     mouse.x = e.clientX; mouse.y = e.clientY;
-    if (!mouse.moved) document.documentElement.classList.add('cursor-on');
     mouse.moved = true;
   }, { passive: true });
 
@@ -92,41 +91,6 @@
         n.parentNode.replaceChild(wrap, n);
       });
     });
-  }
-
-  /* ---------- Curseur ---------- */
-  function initCursor() {
-    var dot = document.createElement('div');
-    var ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    dot.setAttribute('aria-hidden', 'true');
-    ring.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(ring);
-    document.body.appendChild(dot);
-    document.documentElement.classList.add('has-cursor');
-
-    var rx = mouse.x, ry = mouse.y;
-    tasks.push(function () {
-      if (!mouse.moved) return;
-      rx = lerp(rx, mouse.x, 0.18);
-      ry = lerp(ry, mouse.y, 0.18);
-      dot.style.transform = 'translate(' + mouse.x + 'px,' + mouse.y + 'px)';
-      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
-    });
-
-    document.addEventListener('pointerover', function (e) {
-      var t = e.target;
-      var hot = t.closest && t.closest('a, button, [data-hot], .skill, .phase, .qa-btn, label');
-      var text = t.closest && t.closest('input, textarea, select');
-      ring.classList.toggle('is-hot', !!hot && !text);
-      ring.classList.toggle('is-text', !!text);
-      dot.classList.toggle('is-text', !!text);
-    });
-    document.addEventListener('pointerdown', function () { ring.classList.add('is-down'); });
-    document.addEventListener('pointerup', function () { ring.classList.remove('is-down'); });
-    document.addEventListener('mouseleave', function () { dot.style.opacity = ring.style.opacity = '0'; });
-    document.addEventListener('mouseenter', function () { dot.style.opacity = ring.style.opacity = ''; });
   }
 
   /* ---------- Aimants : les boutons suivent un peu la souris ---------- */
@@ -265,7 +229,6 @@
     initTicker();
     initParallax();
     if (fine) {
-      initCursor();
       initMagnets();
       initHeroPointer();
       initTilt();

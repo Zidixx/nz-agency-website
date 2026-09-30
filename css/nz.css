@@ -1142,32 +1142,6 @@ a:hover > .roll > span, button:hover > .roll > span,
 a:hover > .roll::after, button:hover > .roll::after { transform: translateY(-100%); }
 .btn { transition: transform 0.35s var(--ease), background-color 0.25s, box-shadow 0.35s var(--ease), color 0.25s; }
 
-/* Curseur */
-.has-cursor body, .has-cursor a, .has-cursor button, .has-cursor label { cursor: none; }
-.has-cursor input, .has-cursor textarea, .has-cursor select { cursor: text; }
-.has-cursor select { cursor: pointer; }
-.cursor-dot, .cursor-ring {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  pointer-events: none;
-  border-radius: 50%;
-  transition: opacity 0.3s, width 0.35s var(--ease), height 0.35s var(--ease), margin 0.35s var(--ease), background-color 0.3s, border-color 0.3s;
-}
-html:not(.cursor-on) .cursor-dot, html:not(.cursor-on) .cursor-ring { opacity: 0; }
-.cursor-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--orange); }
-.cursor-ring {
-  width: 38px;
-  height: 38px;
-  margin: -19px 0 0 -19px;
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  mix-blend-mode: difference;
-}
-.cursor-ring.is-hot { width: 64px; height: 64px; margin: -32px 0 0 -32px; mix-blend-mode: normal; background: rgba(255, 106, 19, 0.14); border-color: rgba(255, 106, 19, 0.9); }
-.cursor-ring.is-down { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
-.cursor-ring.is-text, .cursor-dot.is-text { opacity: 0; }
-
 /* Cartes inclinables avec reflet */
 .tilt { position: relative; transform-style: preserve-3d; transition: transform 0.5s var(--ease), box-shadow 0.35s var(--ease); will-change: transform; }
 .tilt::after {

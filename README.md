@@ -8,7 +8,7 @@ Site de **NZ Agency**, incubateur d'applications mobiles (nzagency.fr).
 - **Typo** : Anybody (largeur 125 %, 900, capitales) pour les titres, Unbounded 800 pour « nz agency », Manrope pour le texte.
 - **Logo** : tuile d’app orange avec « NZ » blanc en majuscules (lettres Unbounded converties en tracés), suivie de « agency » (`assets/nz-mark.svg`, `assets/favicon.svg`).
 - **Navbar** : pilule en verre liquide sombre (reflet, liseré, flou), identique à Woka ; sur mobile, pilule compacte et menu plein écran.
-- **Motion** (`js/motion.js`, souris et scroll) : curseur personnalisé, boutons aimantés, texte qui roule au survol, titres lettre par lettre, hero incliné en 3D avec halo, cartes inclinables avec reflet, bande qui réagit au scroll, grands mots en contour en parallaxe, lettres du footer qui ondulent. Tout est coupé si l'appareil demande moins d'animations.
+- **Motion** (`js/motion.js`, souris et scroll) : boutons aimantés, texte qui roule au survol, titres lettre par lettre, hero incliné en 3D avec halo, cartes inclinables avec reflet, bande qui réagit au scroll, grands mots en contour en parallaxe, lettres du footer qui ondulent. Tout est coupé si l'appareil demande moins d'animations.
 
 ## Structure des fichiers
 

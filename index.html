@@ -41,7 +41,12 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/nz.css?v=4.6">
-  <script>document.documentElement.classList.add('js')</script>
+  <script>
+    document.documentElement.classList.add('js');
+    /* Au rechargement, on repart toujours du haut (sauf lien vers une ancre). */
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (!location.hash) window.scrollTo(0, 0);
+  </script>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">

@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@150,800;150,900&family=Unbounded:wght@800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/nz.css?v=4.6">
+  <link rel="stylesheet" href="css/nz.css?v=4.7">
   <script>
     document.documentElement.classList.add('js');
     /* Au rechargement, on repart toujours du haut (sauf lien vers une ancre). */
@@ -288,6 +288,31 @@
         <div class="ticker-group"><span>Développement iOS</span><span>Développement Android</span><span>React Native</span><span>Swift</span><span>Kotlin</span><span>Back-end &amp; API</span><span>Design UI/UX</span><span>Publication App Store</span><span>Publication Play Store</span><span>ASO</span><span>SEO</span><span>Acquisition organique</span><span>UGC &amp; créateurs</span><span>MVP &amp; startup</span><span>Conseil &amp; stratégie</span><span>Sites web &amp; e-commerce</span></div>
       </div>
     </div>
+
+    <!-- ===== VIDÉO DE PRÉSENTATION ===== -->
+    <section class="section section--video" id="video" data-theme="light" aria-labelledby="videoTitle">
+      <div class="wrap">
+        <div class="head" data-reveal>
+          <span class="tag">NZ Agency en 1 minute</span>
+          <h2 class="display" id="videoTitle">De votre idée à une app qui tourne</h2>
+          <p>Conception, développement, publication et acquisition. Toute notre méthode en une minute, avec Fady et Woka, deux applications qu&rsquo;on a lancées nous-mêmes.</p>
+        </div>
+        <div class="video-card" data-reveal>
+          <video id="nzVideo" poster="assets/video/nz-motion-poster.webp" preload="none" muted loop playsinline aria-label="Vidéo de présentation de NZ Agency"></video>
+          <div class="video-ctrl">
+            <button type="button" class="video-btn" id="nzVideoPlay" aria-label="Lire la vidéo">
+              <svg class="i-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+              <svg class="i-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z"/></svg>
+            </button>
+            <button type="button" class="video-btn video-btn--sound" id="nzVideoSound" aria-label="Activer le son">
+              <svg class="i-mute" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M22 9l-6 6M16 9l6 6"/></svg>
+              <svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+              <span class="video-btn-label">Activer le son</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== DÉLAIS DE LIVRAISON ===== -->
     <section class="section has-bg-word" id="delais" data-theme="light" aria-labelledby="deliveryTitle">
@@ -759,7 +784,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/contact.js?v=3.0" defer></script>
-  <script src="js/site.js?v=3.3" defer></script>
+  <script src="js/site.js?v=3.4" defer></script>
   <script src="js/motion.js?v=1.4" defer></script>
 </body>
 </html>

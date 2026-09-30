@@ -296,6 +296,40 @@
     if (contact) new IntersectionObserver(function (e) { onContact = e[0].isIntersecting; render(); }, { threshold: 0.1 }).observe(contact);
   }
 
+  /* ---------- Vidéo de présentation ---------- */
+  /* Chargée à l'approche, lancée en muet quand elle est visible, en pause hors écran. */
+  function initVideo() {
+    var video = $('#nzVideo');
+    if (!video) return;
+    var card = video.parentElement;
+    var play = $('#nzVideoPlay');
+    var sound = $('#nzVideoSound');
+    var label = $('.video-btn-label', sound);
+    video.src = window.matchMedia('(max-width: 767px)').matches
+      ? 'assets/video/nz-motion-720.mp4'
+      : 'assets/video/nz-motion.mp4';
+
+    function toggle() { if (video.paused) video.play().catch(function () {}); else video.pause(); }
+    video.addEventListener('play', function () { card.classList.add('is-playing'); play.setAttribute('aria-label', 'Mettre en pause'); });
+    video.addEventListener('pause', function () { card.classList.remove('is-playing'); play.setAttribute('aria-label', 'Lire la vidéo'); });
+    video.addEventListener('click', toggle);
+    play.addEventListener('click', toggle);
+    sound.addEventListener('click', function () {
+      video.muted = !video.muted;
+      var text = video.muted ? 'Activer le son' : 'Couper le son';
+      card.classList.toggle('has-sound', !video.muted);
+      sound.setAttribute('aria-label', text);
+      label.textContent = text;
+      if (!video.muted && video.paused) video.play().catch(function () {});
+    });
+
+    if (reduced || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) video.play().catch(function () {});
+      else video.pause();
+    }, { threshold: 0.4 }).observe(video);
+  }
+
   function init() {
     document.documentElement.classList.add('js');
     initLenis();
@@ -309,6 +343,7 @@
     initFaq();
     initCharCount();
     initDock();
+    initVideo();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
